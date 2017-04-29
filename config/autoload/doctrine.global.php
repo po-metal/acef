@@ -10,7 +10,7 @@ return array(
                     'port'     => '3306',
                     'user'     => 'root',
                     'password' => '',
-                    'dbname'   => 'db_zf3',
+                    'dbname'   => 'db_acef',
                 )
             )
         ),
