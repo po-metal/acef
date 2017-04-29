@@ -1,5 +1,5 @@
 {
-    "name": "po-metal/template",
+    "name": "po-metal/acef",
     "description": "Template zf3 proyects",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -24,7 +24,7 @@
         "gedmo/doctrine-extensions": "^2.4",
         "swissengine/doctrine-module-extension": "dev-master",
         "zfcampus/zf-development-mode": "^3.0",
-        "zf-metal/logs": "^0.0.2",
+        "zf-metal/log": "^0.0.2",
         "zf-metal/mail": "^0.0.2",
         "zf-metal/security": "dev-master",
         "zf-metal/security-social": "dev-master",

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7cf84bc682b7115d2c25017f93a67ea1",
-    "content-hash": "fdf78ad4cfd98dc7a68949bb88dca1cb",
+    "hash": "ac3af363fa5709401ebbe7a9872aa75b",
+    "content-hash": "1d928df112072e99b57ba5021129dfd5",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -4157,12 +4157,12 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "zendframework/zend-component-installer": 20,
+        "swissengine/doctrine-module-extension": 20,
         "zf-metal/security": 20,
         "zf-metal/security-social": 20,
         "zf-metal/commons": 20,
         "zf-metal/datagrid": 20,
         "zf-metal/generator": 20,
-        "swissengine/doctrine-module-extension": 20,
         "cdi/cdilogger": 20
     },
     "prefer-stable": true,

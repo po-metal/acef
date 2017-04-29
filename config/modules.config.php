@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'Zend\Log',
     //ZF
     'Zend\Mvc\Plugin\Identity',
     'Zend\I18n',
