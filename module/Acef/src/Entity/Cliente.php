@@ -40,18 +40,82 @@ class Cliente
 
     /**
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"cuit", "description":""})
+     * @Annotation\Options({"label":"Cuit", "description":""})
      * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
      */
     public $cuit = null;
 
     /**
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"domicilio", "description":""})
+     * @Annotation\Options({"label":"Domicilio", "description":""})
      * @ORM\Column(type="string", length=200, unique=false, nullable=true,
      * name="domicilio")
      */
     public $domicilio = null;
+
+    /**
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Localidad", "description":""})
+     * @ORM\Column(type="string", length=100, unique=false, nullable=true,
+     * name="localidad")
+     */
+    public $localidad = null;
+
+    /**
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Télefono", "description":""})
+     * @ORM\Column(type="string", length=20, unique=false, nullable=true,
+     * name="telefono")
+     */
+    public $telefono = null;
+
+    /**
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Teléfono Alternativo", "description":""})
+     * @ORM\Column(type="string", length=20, unique=false, nullable=true,
+     * name="telefono_alternativo")
+     */
+    public $telefonoAlternativo = null;
+
+    /**
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Email", "description":""})
+     * @ORM\Column(type="string", length=30, unique=false, nullable=true, name="email")
+     */
+    public $email = null;
+
+    /**
+     * @Annotation\Type("Zend\Form\Element\Date")
+     * @Annotation\Attributes({"type":"date"})
+     * @Annotation\Options({"label":"Fecha Asignación", "description":""})
+     * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_asignacion")
+     */
+    public $fechaAsignacion = null;
+
+    /**
+     * @Annotation\Type("Zend\Form\Element\Date")
+     * @Annotation\Attributes({"type":"date"})
+     * @Annotation\Options({"label":"Fecha de Retencion", "description":""})
+     * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_retencion")
+     */
+    public $fechaRetencion = null;
+
+    /**
+     * @Annotation\Type("Zend\Form\Element\Date")
+     * @Annotation\Attributes({"type":"date"})
+     * @Annotation\Options({"label":"Fecha de Actualización", "description":""})
+     * @ORM\Column(type="date", unique=false, nullable=true,
+     * name="fecha_actualizacion")
+     */
+    public $fechaActualizacion = null;
+
+    /**
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Responsable", "description":""})
+     * @ORM\Column(type="string", length=50, unique=false, nullable=true,
+     * name="responsable")
+     */
+    public $responsable = null;
 
     public function getId()
     {
@@ -91,6 +155,86 @@ class Cliente
     public function setDomicilio($domicilio)
     {
         $this->domicilio = $domicilio;
+    }
+
+    public function getLocalidad()
+    {
+        return $this->localidad;
+    }
+
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+    }
+
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+    }
+
+    public function getTelefonoAlternativo()
+    {
+        return $this->telefonoAlternativo;
+    }
+
+    public function setTelefonoAlternativo($telefonoAlternativo)
+    {
+        $this->telefonoAlternativo = $telefonoAlternativo;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getFechaAsignacion()
+    {
+        return $this->fechaAsignacion;
+    }
+
+    public function setFechaAsignacion($fechaAsignacion)
+    {
+        $this->fechaAsignacion = $fechaAsignacion;
+    }
+
+    public function getFechaRetencion()
+    {
+        return $this->fechaRetencion;
+    }
+
+    public function setFechaRetencion($fechaRetencion)
+    {
+        $this->fechaRetencion = $fechaRetencion;
+    }
+
+    public function getFechaActualizacion()
+    {
+        return $this->fechaActualizacion;
+    }
+
+    public function setFechaActualizacion($fechaActualizacion)
+    {
+        $this->fechaActualizacion = $fechaActualizacion;
+    }
+
+    public function getResponsable()
+    {
+        return $this->responsable;
+    }
+
+    public function setResponsable($responsable)
+    {
+        $this->responsable = $responsable;
     }
 
     public function __toString()

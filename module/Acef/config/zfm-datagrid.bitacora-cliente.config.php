@@ -1,57 +1,38 @@
 <?php
 
 return [
-    'Acef-Entity-Cliente' => [
+    'Acef-Entity-BitacoraCliente' => [
         'sourceConfig' => [
             'type' => 'doctrine',
             'doctrineOptions' => [
-                'entityName' => 'Acef\\Entity\\Cliente',
+                'entityName' => 'Acef\\Entity\\BitacoraCliente',
                 'entityManager' => 'doctrine.entitymanager.orm_default',
             ],
         ],
         'formConfig' => [
-            'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
+            'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
             'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
             'vertical_groups' => [
-               
+                
             ],
             'horizontal_groups' => [
                 
             ],
         ],
         'columnsConfig' => [
-            'domicilio' => [
-                'hidden' => true,
+            'id' => [
+                'displayName' => 'ID',
             ],
-            'razonSocial' => [
-                'displayName' => 'Razón Social',
+            'cliente' => [
+                'displayName' => 'Cliente',
             ],
-            'cuit' => [
-                'displayName' => 'Cuit',
+            'fecha' => [
+                'displayName' => 'Fecha',
+                'type' => 'date',
+                'format' => 'Y-m-d H:i:s',
             ],
-            'localidad' => [
-                'hidden' => true,
-            ],
-            'telefono' => [
-                'hidden' => true,
-            ],
-            'telefonoAlternativo' => [
-                'hidden' => true,
-            ],
-            'email' => [
-                'hidden' => true,
-            ],
-            'fechaAsignacion' => [
-                'hidden' => true,
-            ],
-            'fechaRetencion' => [
-                'hidden' => true,
-            ],
-            'fechaActualizacion' => [
-                'hidden' => true,
-            ],
-            'responsable' => [
-                'displayName' => 'Responsable',
+            'nota' => [
+                'displayName' => 'Nota',
             ],
         ],
         'crudConfig' => [

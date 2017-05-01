@@ -1,57 +1,36 @@
 <?php
 
 return [
-    'Acef-Entity-Cliente' => [
+    'Acef-Entity-Producto' => [
         'sourceConfig' => [
             'type' => 'doctrine',
             'doctrineOptions' => [
-                'entityName' => 'Acef\\Entity\\Cliente',
+                'entityName' => 'Acef\\Entity\\Producto',
                 'entityManager' => 'doctrine.entitymanager.orm_default',
             ],
         ],
         'formConfig' => [
-            'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
+            'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
             'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
             'vertical_groups' => [
-               
+                
             ],
             'horizontal_groups' => [
                 
             ],
         ],
         'columnsConfig' => [
-            'domicilio' => [
-                'hidden' => true,
+            'id' => [
+                'displayName' => 'ID',
             ],
-            'razonSocial' => [
-                'displayName' => 'Razón Social',
+            'nombre' => [
+                'displayName' => 'Nombre',
             ],
-            'cuit' => [
-                'displayName' => 'Cuit',
+            'numero' => [
+                'displayName' => 'Numero',
             ],
-            'localidad' => [
-                'hidden' => true,
-            ],
-            'telefono' => [
-                'hidden' => true,
-            ],
-            'telefonoAlternativo' => [
-                'hidden' => true,
-            ],
-            'email' => [
-                'hidden' => true,
-            ],
-            'fechaAsignacion' => [
-                'hidden' => true,
-            ],
-            'fechaRetencion' => [
-                'hidden' => true,
-            ],
-            'fechaActualizacion' => [
-                'hidden' => true,
-            ],
-            'responsable' => [
-                'displayName' => 'Responsable',
+            'cliente' => [
+                'displayName' => 'Cliente',
             ],
         ],
         'crudConfig' => [
