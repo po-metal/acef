@@ -22,7 +22,7 @@ class ClientesControllerFactory implements FactoryInterface
         /* @var $em \Doctrine\ORM\EntityManager */
         $em = $container->get("doctrine.entitymanager.orm_default");
         /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $container->build("zf-metal-datagrid", ["customOptionsKey" => "Acef-Entity-Cliente"]);
+        $grid = $container->build("zf-metal-datagrid", ["customKey" => "\Acef\Entity\Cliente"]);
         return new \Acef\Controller\ClientesController($em,$grid);
     }
 

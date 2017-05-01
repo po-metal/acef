@@ -22,7 +22,7 @@ class EstadosControllerFactory implements FactoryInterface
         /* @var $em \Doctrine\ORM\EntityManager */
         $em = $container->get("doctrine.entitymanager.orm_default");
         /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $container->build("zf-metal-datagrid", ["customOptionsKey" => "Acef-Entity-Estado"]);
+        $grid = $container->build("zf-metal-datagrid", ["customKey" => "\Acef\Entity\Estado"]);
         return new \Acef\Controller\EstadosController($em,$grid);
     }
 

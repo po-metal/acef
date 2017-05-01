@@ -1,6 +1,6 @@
 <?php
 
-$setting = array_merge(
+$setting = array_merge_recursive(
 include "controller.config.php",
 include "doctrine.config.php",
 include "navigation.config.php",
