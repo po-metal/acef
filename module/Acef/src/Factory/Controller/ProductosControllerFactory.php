@@ -22,7 +22,7 @@ class ProductosControllerFactory implements FactoryInterface
         /* @var $em \Doctrine\ORM\EntityManager */
         $em = $container->get("doctrine.entitymanager.orm_default");
         /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $container->build("zf-metal-datagrid", ["customOptionsKey" => "Acef-Entity-Producto"]);
+        $grid = $container->build("zf-metal-datagrid", ["customKey" => "\Acef\Entity\Producto"]);
         return new \Acef\Controller\ProductosController($em,$grid);
     }
 
