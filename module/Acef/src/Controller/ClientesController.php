@@ -1,17 +1,19 @@
 <?php
 
-namespace Prueba\Controller;
+namespace Acef\Controller;
+
+use Zend\Mvc\Controller\AbstractActionController;
 
 /**
- * OneController
+ * ClientesController
  *
- * Controlador de Prueba
  *
- * @author Cristian Incarnato
- * @license MIT
- * @link
+ *
+ * @author ZfMetal Team
+ * @license Creative Commons
+ * @link https://github.com/zf-metal
  */
-class OneController extends \Zend\Mvc\Controller\AbstractActionController
+class ClientesController extends AbstractActionController
 {
 
     /**

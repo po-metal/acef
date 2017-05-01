@@ -35,7 +35,9 @@
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "Prueba\\": "module/Prueba/src/"
+            "Prueba\\": "module/Prueba/src/",
+            "Test2\\": "module/Test2/src/",
+            "Acef\\": "module/Acef/src/"
         }
     },
     "autoload-dev": {
