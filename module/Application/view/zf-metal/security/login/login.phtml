@@ -1,3 +1,4 @@
+<?php echo $this->flashCurrent(); ?>
 <div class="login-block">
     <div class="block block-transparent">
 
@@ -24,7 +25,7 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-user"></span>
                 </div>
-                <?php $element->setAttribute('class',"form-control"); ?>
+                <?php $element->setAttribute('class', "form-control"); ?>
                 <?php echo $this->formElement($element); ?>
 
 
@@ -50,7 +51,7 @@
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-lock"></span>
                 </div>
-                 <?php $element->setAttribute('class',"form-control"); ?>
+                <?php $element->setAttribute('class', "form-control"); ?>
                 <?php echo $this->formElement($element); ?>
 
 
@@ -68,7 +69,17 @@
 
         </div>
 
+        <?php if ($this->getSecurityOptions()->getRememberMe()) : ?>
+            <?php $element = $form->get('_remember'); ?>
+            <div  class="form-group<?php if ($this->formElementErrors($element)) echo " has-error" ?>">
 
+                <?php
+                echo $this->formElement($element);
+                ?>
+                <?php echo ucfirst($this->translate($element->getLabel())); ?>
+
+            </div>
+        <?php endif; ?>
 
         <?php $element = $form->get('submit')->setLabel('Iniciar Sesión')->setAttribute('class', 'btn btn-default btn-block btn-clean'); ?>
         <div style="" class="form-group <?php if ($this->formElementErrors($element)) echo "has-error" ?>">

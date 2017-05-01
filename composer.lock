@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac3af363fa5709401ebbe7a9872aa75b",
+    "hash": "413523e5861468df82ff50c65d1f261a",
     "content-hash": "1d928df112072e99b57ba5021129dfd5",
     "packages": [
         {
@@ -3443,12 +3443,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/commons.git",
-                "reference": "c90a680272d2e563e4007c43cbd1290141d627c8"
+                "reference": "78c2ff9ced180cd15a3779d6f1a87784023e9ee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/commons/zipball/c90a680272d2e563e4007c43cbd1290141d627c8",
-                "reference": "c90a680272d2e563e4007c43cbd1290141d627c8",
+                "url": "https://api.github.com/repos/zf-metal/commons/zipball/78c2ff9ced180cd15a3779d6f1a87784023e9ee9",
+                "reference": "78c2ff9ced180cd15a3779d6f1a87784023e9ee9",
                 "shasum": ""
             },
             "require": {
@@ -3483,7 +3483,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-04-19 20:35:09"
+            "time": "2017-04-29 20:12:29"
         },
         {
             "name": "zf-metal/datagrid",
@@ -3491,12 +3491,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/datagrid.git",
-                "reference": "151bb91996cef8f0ab81ab28551f37530c2e7b07"
+                "reference": "93e11c07a593ba95f9cf9df2cc0b69adb918011e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/151bb91996cef8f0ab81ab28551f37530c2e7b07",
-                "reference": "151bb91996cef8f0ab81ab28551f37530c2e7b07",
+                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/93e11c07a593ba95f9cf9df2cc0b69adb918011e",
+                "reference": "93e11c07a593ba95f9cf9df2cc0b69adb918011e",
                 "shasum": ""
             },
             "require": {
@@ -3558,7 +3558,7 @@
                 "zf2",
                 "zf3"
             ],
-            "time": "2017-04-10 19:48:36"
+            "time": "2017-05-01 03:23:23"
         },
         {
             "name": "zf-metal/generator",
@@ -3566,12 +3566,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/generator.git",
-                "reference": "ad8b1ab6f732c52a4572b5bf443f75f2635b4a02"
+                "reference": "6e9f10496f38a5ebb0b4c0e311394735b829ee78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/generator/zipball/ad8b1ab6f732c52a4572b5bf443f75f2635b4a02",
-                "reference": "ad8b1ab6f732c52a4572b5bf443f75f2635b4a02",
+                "url": "https://api.github.com/repos/zf-metal/generator/zipball/6e9f10496f38a5ebb0b4c0e311394735b829ee78",
+                "reference": "6e9f10496f38a5ebb0b4c0e311394735b829ee78",
                 "shasum": ""
             },
             "require": {
@@ -3591,7 +3591,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD"
             ],
             "authors": [
                 {
@@ -3618,7 +3618,7 @@
                 "routes",
                 "zf3"
             ],
-            "time": "2017-04-18 12:41:33"
+            "time": "2017-05-01 15:16:30"
         },
         {
             "name": "zf-metal/log",
@@ -3726,12 +3726,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/Security.git",
-                "reference": "9db5029e55278bdef3147b2f298041f45187d0ab"
+                "reference": "399a1fcdefbf390eefd63c042ec7d9e71e4710fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/Security/zipball/9db5029e55278bdef3147b2f298041f45187d0ab",
-                "reference": "9db5029e55278bdef3147b2f298041f45187d0ab",
+                "url": "https://api.github.com/repos/zf-metal/Security/zipball/399a1fcdefbf390eefd63c042ec7d9e71e4710fa",
+                "reference": "399a1fcdefbf390eefd63c042ec7d9e71e4710fa",
                 "shasum": ""
             },
             "require": {
@@ -3776,7 +3776,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-04-12 15:36:34"
+            "time": "2017-05-01 16:23:45"
         },
         {
             "name": "zf-metal/security-social",
@@ -3784,12 +3784,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/security-social.git",
-                "reference": "e2b8e988193e0b6a2680d5d8e90c0ca18bc1fced"
+                "reference": "9842a8b1b3c46e2749c731004701be9a45f7cd5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/security-social/zipball/e2b8e988193e0b6a2680d5d8e90c0ca18bc1fced",
-                "reference": "e2b8e988193e0b6a2680d5d8e90c0ca18bc1fced",
+                "url": "https://api.github.com/repos/zf-metal/security-social/zipball/9842a8b1b3c46e2749c731004701be9a45f7cd5c",
+                "reference": "9842a8b1b3c46e2749c731004701be9a45f7cd5c",
                 "shasum": ""
             },
             "require": {
@@ -3826,7 +3826,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-03-14 18:22:17"
+            "time": "2017-04-29 16:51:10"
         },
         {
             "name": "zfcampus/zf-development-mode",
