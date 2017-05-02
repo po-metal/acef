@@ -110,6 +110,74 @@ return [
                             ],
                         ],
                     ],
+                    'ManagerCliente' => [
+                        'type' => 'literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/manager-cliente',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                'action' => 'main',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Main' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/main/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'main',
+                                    ],
+                                ],
+                            ],
+                            'Productos' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/productos/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'productos',
+                                    ],
+                                ],
+                            ],
+                            'Bitacoras' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/bitacoras/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'bitacoras',
+                                    ],
+                                ],
+                            ],
+                            'EditarCliente' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/editar-cliente/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'editarCliente',
+                                    ],
+                                ],
+                            ],
+                            'VerCliente' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/ver-cliente/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'verCliente',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
