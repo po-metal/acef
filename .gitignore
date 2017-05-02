@@ -1,8 +1,7 @@
 .vagrant/
 vendor/
-config/development.config.php
 data/*
-!data/zf-meal-generator
-!data/cache/.gitkeep
+!data/zf-metal-generator/
+config/development.config.php
 phpunit.xml
 ubuntu-xenial-16.04-cloudimg-console.log
