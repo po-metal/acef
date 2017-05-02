@@ -8,6 +8,7 @@ return array(
             \Acef\Controller\ProductosController::class => \Acef\Factory\Controller\ProductosControllerFactory::class,
             \Acef\Controller\BitacoraClienteController::class => \Acef\Factory\Controller\BitacoraClienteControllerFactory::class,
             \Acef\Controller\ManagerController::class => \Acef\Factory\Controller\ManagerControllerFactory::class,
+            \Acef\Controller\ManagerClienteController::class => \Acef\Factory\Controller\ManagerClienteControllerFactory::class,
         ),
     ),
 );
