@@ -7,9 +7,25 @@
             });
 
             $.get("/acef/manager-cliente/bitacoras/" + clienteId).done(function (data) {
-               $("#bitacora-content").html(data);
+                $("#bitacora-content").html(data);
             });
         }
+        $('#btn-search-clientes').click(function (e) {
+            $('#input-text-search').slideToggle(100);
+        });
+
+        $('#list-search-clientes').btsListFilter('#input-text-search', {
+            loadingClass: 'loading',
+            sourceTmpl: '<a class="list-group-item" href="/acef/manager-cliente/main/{id}"><span>{razonSocial}</span></a>',
+            sourceData: function (text, callback) {
+                $('#list-search-clientes').html('<div><img src="img/loading.gif"/></div>');
+                return $.getJSON('/acef/manager-cliente/get-clientes/' + text, function (json) {
+                    
+                    console.log(json);
+                    callback(json);
+                });
+            }
+        });
 
     });
 
@@ -33,3 +49,4 @@ function editarCliente(clienteId) {
         $("#cliente-content").html(data);
     });
 }
+
