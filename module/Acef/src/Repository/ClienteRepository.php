@@ -31,8 +31,9 @@ class ClienteRepository extends EntityRepository {
         return $this->getEntityManager()->createQueryBuilder()
                         ->select("u.id,u.razonSocial")
                         ->from(self::ENTITY, "u")
-                        ->where("u.razonSocial like '%".$razonSocial."%' ")
-                        ->getQuery()->getOneOrNullResult();
+                        ->where("u.razonSocial like :param ")
+                        ->setParameter('param','%'.$razonSocial.'%')
+                        ->getQuery()->getArrayResult();
     }
 
 }
