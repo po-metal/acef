@@ -176,6 +176,17 @@ return [
                                     ],
                                 ],
                             ],
+                            'GetClientes' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/get-clientes/:nombreCliente',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'getClientes',
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],
