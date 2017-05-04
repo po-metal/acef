@@ -5,7 +5,8 @@ return [
         'guest_role' => 'invitado',
         'guards' => [
             'ZfcRbac\Guard\RouteGuard' => [
-                 'Application*' => ['user'],
+                'Acef*' => ['admin','usuario'],
+                'home' => ['admin','usuario'],
             ]
         ],
     ]
