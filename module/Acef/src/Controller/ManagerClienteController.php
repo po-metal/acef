@@ -141,7 +141,7 @@ class ManagerClienteController extends AbstractActionController {
         $nombreCliente = $this->params('nombreCliente');
         
         $clientes = $this->getClienteRepository()->getClienteByRazonSocial($nombreCliente);
-        return new \Zend\View\Model\JsonModel([$clientes]);
+        return new \Zend\View\Model\JsonModel($clientes);
     }
 
 }

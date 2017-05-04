@@ -14,13 +14,22 @@
             $('#input-text-search').slideToggle(100);
         });
 
+        $('#input-text-search').keypress(function () {
+            console.log('oka');
+            $('#list-search-clientes').html('<h2>Cargando...</h2>').fadeToggle(10);
+            $('#list-search-clientes').html('');
+        });
+
+
         $('#list-search-clientes').btsListFilter('#input-text-search', {
             loadingClass: 'loading',
             sourceTmpl: '<a class="list-group-item" href="/acef/manager-cliente/main/{id}"><span>{razonSocial}</span></a>',
+            cancelNode: function () {
+                return '<span class="btn btn-link form-control-feedback" style="margin-right:10px; margin-top:2px; color:#7C7C80" aria-hidden="true"><b>X</b></span>';
+            },
             sourceData: function (text, callback) {
-                $('#list-search-clientes').html('<div><img src="img/loading.gif"/></div>');
                 return $.getJSON('/acef/manager-cliente/get-clientes/' + text, function (json) {
-                    
+                    $('#list-search-clientes').html('');
                     console.log(json);
                     callback(json);
                 });

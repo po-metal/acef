@@ -6,8 +6,9 @@
 
                     <form role="search">
                         <div>
-                            <input id="input-text-search" type="text" class="" placeholder="Buscar Cliente..." style="display: none;">
                             <i id="btn-search-clientes" class="btn btn-info fa fa-search nav-search-icon"></i>
+                            <input id="input-text-search" type="text" class="" placeholder="Buscar Cliente..." style="display: none;">
+                            
                             <div id="list-search-clientes" class="">
 
                             </div>
@@ -72,5 +73,5 @@
 <?php
 $this->headScript()
         ->appendScript($this->partial('acef/manager-cliente/js/cliente.js'), 'text/javascript')
-        ->prependFile($this->basePath() . '/shared/bootstrap/js/bootstrap-list-filter.min.js')
+        ->prependFile($this->basePath() . '/shared/bootstrap/js/bootstrap-list-filter.js')
 ?>
