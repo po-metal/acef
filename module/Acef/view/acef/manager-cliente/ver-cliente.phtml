@@ -25,13 +25,13 @@
             <th class="text-right">Email:</th><td class="text-left"><?php echo $this->cliente->getEmail(); ?></td>
         </tr>
         <tr>
-            <th class="text-right">Fecha de Asignación:</th><td class="text-left"><?php echo $this->cliente->getFechaAsignacion(); ?></td>
+            <th class="text-right">Fecha de Asignación:</th><td class="text-left"><?php echo ($this->cliente->getFechaAsignacion())?$this->cliente->getFechaAsignacion()->format('Y-m-d'):'' ?></td>
         </tr>
         <tr>
-            <th class="text-right">Fecha de Retención:</th><td class="text-left"><?php echo $this->cliente->getFechaRetencion(); ?></td>
+            <th class="text-right">Fecha de Retención:</th><td class="text-left"><?php echo ($this->cliente->getFechaRetencion())?$this->cliente->getFechaRetencion()->format('Y-m-d'):'';?></td>
         </tr>
         <tr>
-            <th class="text-right">Fecha de Actualización:</th><td class="text-left"><?php echo $this->cliente->getFechaActualizacion(); ?></td>
+            <th class="text-right">Fecha de Actualización:</th><td class="text-left"><?php echo ($this->cliente->getFechaActualizacion())?$this->cliente->getFechaActualizacion()->format('Y-m-d'):'';?></td>
         </tr>
         <tr>
             <th class="text-right">Responsable:</th><td class="text-left"><?php echo $this->cliente->getResponsable(); ?></td>
