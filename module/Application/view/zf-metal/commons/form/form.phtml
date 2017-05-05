@@ -73,9 +73,12 @@ $elementsReady = array();
                     <?php endif; ?>
 
                 <?php endforeach; ?>
-                <div class="pull-right">
-                    <a class="btn btn-default" href="<?php echo $this->url($this->route, array(), array('query' => $this->routeParams), true); ?>" >Cancel</a>
-                </div>
+
+                <?php if (strpos($this->form->getAttribute('action'),'java') === false) : ?>
+                    <div class="pull-right">
+                        <a class="btn btn-default" href="<?php echo $this->url($this->route, array(), array('query' => $this->routeParams), true); ?>" >Cancel</a>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <?php echo $this->form()->closeTag($form); ?>
