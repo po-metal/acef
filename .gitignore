@@ -5,3 +5,4 @@ data/*
 config/development.config.php
 phpunit.xml
 ubuntu-xenial-16.04-cloudimg-console.log
+/nbproject/private/

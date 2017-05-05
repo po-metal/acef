@@ -38,22 +38,22 @@ return [
                 'enable' => true,
                 'add' => [
                     'enable' => true,
-                    'class' => ' glyphicon glyphicon-plus cursor-pointer',
+                    'class' => 'btn btn-link glyphicon glyphicon-plus cursor-pointer',
                     'value' => '',
                 ],
                 'edit' => [
                     'enable' => true,
-                    'class' => ' glyphicon glyphicon-edit cursor-pointer',
+                    'class' => 'btn btn-link glyphicon glyphicon-edit cursor-pointer',
                     'value' => '',
                 ],
                 'del' => [
                     'enable' => true,
-                    'class' => ' glyphicon glyphicon-trash cursor-pointer',
+                    'class' => 'btn btn-link glyphicon glyphicon-trash cursor-pointer',
                     'value' => '',
                 ],
                 'view' => [
                     'enable' => true,
-                    'class' => ' glyphicon glyphicon-list-alt cursor-pointer',
+                    'class' => 'btn btn-link glyphicon glyphicon-list-alt cursor-pointer',
                     'value' => '',
                 ],
             ],
