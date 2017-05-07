@@ -30,7 +30,6 @@
             sourceData: function (text, callback) {
                 return $.getJSON('/acef/manager-cliente/get-clientes/' + text, function (json) {
                     $('#list-search-clientes').html('');
-                    console.log(json);
                     callback(json);
                 });
             }

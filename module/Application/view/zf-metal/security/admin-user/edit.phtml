@@ -1,0 +1,27 @@
+<a class="btn btn-default" href="/admin/users">Admin Users</a>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+       <?php
+        $horizontalGroups = [
+            'User' => ['name','username','email','password'],
+            'Enable/Disable User' => ['active'],
+            'Roles' => ['roles'],
+            'Groups' => ['groups'],
+   
+        ];
+
+        echo $this->renderForm($this->form, \ZfMetal\Commons\Consts::STYLE_VERTICAL, \ZfMetal\Commons\Consts::COLUMNS_TWO, $horizontalGroups);
+        ?>
+    </div>
+
+</div>
+
+
+<style>
+    .multi-check label{
+        padding: 10px ! important;
+        margin: 5px ! important;
+    }
+
+</style>

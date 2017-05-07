@@ -47,7 +47,7 @@ class ManagerClienteController extends AbstractActionController {
     public function productosAction() {
         $clienteId = $this->params('clienteId');
         /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $this->gridBuilder('acef-entity-bitacoracliente', 'cliente', $clienteId);
+        $grid = $this->gridBuilder('acef-entity-producto', 'cliente', $clienteId);
 
         $grid->setTemplate('ajax');
         $grid->setId('gridProductos');
@@ -79,7 +79,7 @@ class ManagerClienteController extends AbstractActionController {
     public function bitacorasAction() {
         $clienteId = $this->params('clienteId');
         /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $this->gridBuilder( 'acef-entity-producto', 'cliente', $clienteId);
+        $grid = $this->gridBuilder( 'acef-entity-bitacoracliente', 'cliente', $clienteId);
 
         $grid->setTemplate('ajax');
         $grid->setId('gridBitacoras');

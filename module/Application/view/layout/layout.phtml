@@ -43,13 +43,9 @@
 
                             <ul class="nav navbar-nav pull-right">
 
+                                <!--Render zf-metal/security partial menu-->
+                                <?php echo $this->partial('zf-metal/security/menu/menu'); ?>
 
-                                <li class="dropdown profile-dropdown">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <!--Render zf-metal/security partial menu-->
-                                        <?php echo $this->partial('zf-metal/security/menu/menu'); ?>
-                                    </ul>
-                                </li>
                                 <li class="hidden-xxs">
                                     <a href="<?= $this->url('zf-metal.user/logout'); ?>" class="btn">
                                         <i class="fa fa-power-off"></i>
