@@ -8,11 +8,11 @@
 
     $form->add(array(
         'name' => 'cancel',
-        'type' => 'Zend\Form\Element\Submit',
+        'type' => 'Zend\Form\Element\Button',
         'attributes' => array(
             'value' => "Cancel",
             'class' => 'pull-right btn btn-default',
-            'onclick' => 'cdiListRecords_' . $this->grid->getId(),
+            'onclick' => 'cdiListRecords_' . $this->grid->getId().'()',
         ),
         'options' => array(
             'label' => 'Cancel',
@@ -23,10 +23,7 @@
     <?php
     echo $this->renderForm($form, $formConfig->getStyle(), $formConfig->getColumns(), $formConfig->getHorizontalGroups(), $formConfig->getVerticalGroups());
     ?>
-    <!--    <div class="clearfix"></div>
-        <div class="pull-right">
-            <a class="btn btn-default" onclick="cdiListRecords_<?php echo $this->grid->getId(); ?>()" >Cancel</a>
-        </div>-->
+
 </div>
 
 

@@ -2,13 +2,25 @@
 
     <?php
     $form = $this->grid->getCrudForm();
-
     $formConfig = $this->grid->getOptions()->getFormConfig();
-    ?>
-        <?php
-        echo $this->renderForm($form, $formConfig->getStyle(), $formConfig->getColumns(), $formConfig->getHorizontalGroups(), $formConfig->getVerticalGroups());
-        ?>
 
-   
+    $form->add(array(
+        'name' => 'cancel',
+        'type' => 'Zend\Form\Element\Button',
+        'attributes' => array(
+            'value' => "Cancel",
+            'class' => 'pull-right btn btn-default',
+            'onclick' => 'window.location.href="'.$this->url($this->route, array(), array('query' => $this->routeParams), true).'"',
+        ),
+        'options' => array(
+            'label' => 'Cancel',
+        )
+    ));
+    ?>
+    <?php
+    echo $this->renderForm($form, $formConfig->getStyle(), $formConfig->getColumns(), $formConfig->getHorizontalGroups(), $formConfig->getVerticalGroups());
+    ?>
+
+
 </div>
 
