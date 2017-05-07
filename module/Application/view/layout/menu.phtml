@@ -4,7 +4,7 @@
             <div id="user-left-box" class="clearfix hidden-sm hidden-xs">
                 <?php if ($user = $this->isAuthenticated()): ?>   
                     <?php if ($user->getImg()): ?>
-                        <img src="<?php echo $this->getSecurityOptions()->getProfilePicturePathRelative() . $user->getImg(); ?>" class="" alt="">
+                        <img src="<?php echo $this->getSecurityOptions()->getProfilePicturePathRelative() . $user->getImg(); ?>">
                     <?php else: ?>
                         <i class="glyphicon glyphicon-user"></i>
                     <?php endif; ?>
