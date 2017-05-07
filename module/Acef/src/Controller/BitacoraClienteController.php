@@ -16,6 +16,8 @@ use Zend\Mvc\Controller\AbstractActionController;
 class BitacoraClienteController extends AbstractActionController
 {
 
+    const ENTITY = '\\Acef\\Entity\\BitacoraCliente';
+
     /**
      * @var \Doctrine\ORM\EntityManager
      */
@@ -56,6 +58,11 @@ class BitacoraClienteController extends AbstractActionController
     {
         $this->grid->prepare();
         return array("grid" => $this->grid);
+    }
+
+    public function getEntityRepository()
+    {
+        return $this->getEm()->getRepository(self::ENTITY);
     }
 
 

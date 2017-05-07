@@ -22,7 +22,7 @@ class BitacoraClienteControllerFactory implements FactoryInterface
         /* @var $em \Doctrine\ORM\EntityManager */
         $em = $container->get("doctrine.entitymanager.orm_default");
         /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $container->build("zf-metal-datagrid", ["customKey" => "\Acef\Entity\BitacoraCliente"]);
+        $grid = $container->build("zf-metal-datagrid", ["customKey" => "acef-entity-bitacoracliente"]);
         return new \Acef\Controller\BitacoraClienteController($em,$grid);
     }
 
