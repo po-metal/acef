@@ -2,7 +2,8 @@
 
 return [
     'zf-metal-datagrid.custom' => [
-        '\\Acef\\Entity\\Cliente' => [
+        'acef-entity-cliente' => [
+            'gridId' => 'zfmdg_Cliente',
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -28,27 +29,35 @@ return [
                     'displayName' => 'Cuit',
                 ],
                 'domicilio' => [
+                    'displayName' => 'Domicilio',
                     'hidden' => true,
                 ],
                 'localidad' => [
+                    'displayName' => 'Localidad',
                     'hidden' => true,
                 ],
                 'telefono' => [
+                    'displayName' => 'Télefono',
                     'hidden' => true,
                 ],
                 'telefonoAlternativo' => [
+                    'displayName' => 'Teléfono Alternativo',
                     'hidden' => true,
                 ],
                 'email' => [
+                    'displayName' => 'Email',
                     'hidden' => true,
                 ],
                 'fechaAsignacion' => [
+                    'displayName' => 'Fecha Asignación',
                     'hidden' => true,
                 ],
                 'fechaRetencion' => [
+                    'displayName' => 'Fecha de Retencion',
                     'hidden' => true,
                 ],
                 'fechaActualizacion' => [
+                    'displayName' => 'Fecha de Actualización',
                     'hidden' => true,
                 ],
                 'responsable' => [
@@ -59,22 +68,22 @@ return [
                 'enable' => true,
                 'add' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-plus cursor-pointer',
+                    'class' => ' glyphicon glyphicon-plus cursor-pointer',
                     'value' => '',
                 ],
                 'edit' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-edit cursor-pointer',
+                    'class' => ' glyphicon glyphicon-edit cursor-pointer',
                     'value' => '',
                 ],
                 'del' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-trash cursor-pointer',
+                    'class' => ' glyphicon glyphicon-trash cursor-pointer',
                     'value' => '',
                 ],
                 'view' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-list-alt cursor-pointer',
+                    'class' => ' glyphicon glyphicon-list-alt cursor-pointer',
                     'value' => '',
                 ],
             ],

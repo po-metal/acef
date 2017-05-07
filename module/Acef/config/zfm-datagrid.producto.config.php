@@ -2,7 +2,8 @@
 
 return [
     'zf-metal-datagrid.custom' => [
-        '\\Acef\\Entity\\Producto' => [
+        'acef-entity-producto' => [
+            'gridId' => 'zfmdg_Producto',
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -32,28 +33,29 @@ return [
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
+                    'type' => 'relational',
                 ],
             ],
             'crudConfig' => [
                 'enable' => true,
                 'add' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-plus cursor-pointer',
+                    'class' => ' glyphicon glyphicon-plus cursor-pointer',
                     'value' => '',
                 ],
                 'edit' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-edit cursor-pointer',
+                    'class' => ' glyphicon glyphicon-edit cursor-pointer',
                     'value' => '',
                 ],
                 'del' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-trash cursor-pointer',
+                    'class' => ' glyphicon glyphicon-trash cursor-pointer',
                     'value' => '',
                 ],
                 'view' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-list-alt cursor-pointer',
+                    'class' => ' glyphicon glyphicon-list-alt cursor-pointer',
                     'value' => '',
                 ],
             ],

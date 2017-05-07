@@ -16,6 +16,8 @@ use Zend\Mvc\Controller\AbstractActionController;
 class EstadosController extends AbstractActionController
 {
 
+    const ENTITY = '\\Acef\\Entity\\Estado';
+
     /**
      * @var \Doctrine\ORM\EntityManager
      */
@@ -56,6 +58,11 @@ class EstadosController extends AbstractActionController
     {
         $this->grid->prepare();
         return array("grid" => $this->grid);
+    }
+
+    public function getEntityRepository()
+    {
+        return $this->getEm()->getRepository(self::ENTITY);
     }
 
 

@@ -2,7 +2,8 @@
 
 return [
     'zf-metal-datagrid.custom' => [
-        '\\Acef\\Entity\\BitacoraCliente' => [
+        'acef-entity-bitacoracliente' => [
+            'gridId' => 'zfmdg_BitacoraCliente',
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -26,6 +27,7 @@ return [
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
+                    'type' => 'relational',
                 ],
                 'fecha' => [
                     'displayName' => 'Fecha',
@@ -40,22 +42,22 @@ return [
                 'enable' => true,
                 'add' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-plus cursor-pointer',
+                    'class' => ' glyphicon glyphicon-plus cursor-pointer',
                     'value' => '',
                 ],
                 'edit' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-edit cursor-pointer',
+                    'class' => ' glyphicon glyphicon-edit cursor-pointer',
                     'value' => '',
                 ],
                 'del' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-trash cursor-pointer',
+                    'class' => ' glyphicon glyphicon-trash cursor-pointer',
                     'value' => '',
                 ],
                 'view' => [
                     'enable' => true,
-                    'class' => 'btn btn-link glyphicon glyphicon-list-alt cursor-pointer',
+                    'class' => ' glyphicon glyphicon-list-alt cursor-pointer',
                     'value' => '',
                 ],
             ],
