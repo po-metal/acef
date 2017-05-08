@@ -2,12 +2,12 @@
 
 return [
     'zf-metal-datagrid.custom' => [
-        'acef-entity-estado' => [
-            'gridId' => 'zfmdg_Estado',
+        'acef-entity-tipoproducto' => [
+            'gridId' => 'zfmdg_TipoProducto',
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
-                    'entityName' => \Acef\Entity\Estado::class,
+                    'entityName' => \Acef\Entity\TipoProducto::class,
                     'entityManager' => 'doctrine.entitymanager.orm_default',
                 ],
             ],
@@ -22,9 +22,6 @@ return [
                 ],
             ],
             'columnsConfig' => [
-                'id' => [
-                    'displayName' => 'ID',
-                ],
                 'nombre' => [
                     'displayName' => 'Nombre',
                 ],

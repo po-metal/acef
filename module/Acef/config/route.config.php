@@ -189,6 +189,78 @@ return [
                             ],
                         ],
                     ],
+                    'Inicio' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/inicio',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\InicioController::CLASS,
+                                'action' => 'main',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Main' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/main',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\InicioController::CLASS,
+                                        'action' => 'main',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'TipoProducto' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/tipo-producto',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\TipoProductoController::CLASS,
+                                'action' => 'grid',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Grid' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/grid',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\TipoProductoController::CLASS,
+                                        'action' => 'grid',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'TablasMaestras' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/tablas-maestras',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\TablasMaestrasController::CLASS,
+                                'action' => 'main',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Main' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/main',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\TablasMaestrasController::CLASS,
+                                        'action' => 'main',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],

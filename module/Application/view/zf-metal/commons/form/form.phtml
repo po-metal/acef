@@ -1,3 +1,4 @@
+
 <?php
 $form = $this->form;
 $form->prepare();
@@ -5,10 +6,10 @@ $elementsReady = array();
 ?>
 <div class="row">
     <div class="main-box">
-        <header class="main-box-header clearfix">
-            <h2><?= $form->getName(); ?></h2>
-        </header>
         <div class="main-box-body clearfix">
+            <div class="clearfix"></div>
+            <br>
+            <div class="clearfix"></div>
             <?php echo $this->form()->openTag($form); ?>
 
             <!--HORIZONTAL GROUPS-->
@@ -73,7 +74,7 @@ $elementsReady = array();
                     <?php endif; ?>
 
                 <?php endforeach; ?>
-             </div>
+            </div>
 
             <?php echo $this->form()->closeTag($form); ?>
         </div>       

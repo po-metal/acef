@@ -3,12 +3,15 @@
 return array(
     'controllers' => array(
         'factories' => array(
+            'Acef\\Controller\\ManagerController' => \Acef\Factory\Controller\ManagerControllerFactory::class,
             \Acef\Controller\ClientesController::class => \Acef\Factory\Controller\ClientesControllerFactory::class,
             \Acef\Controller\EstadosController::class => \Acef\Factory\Controller\EstadosControllerFactory::class,
             \Acef\Controller\ProductosController::class => \Acef\Factory\Controller\ProductosControllerFactory::class,
             \Acef\Controller\BitacoraClienteController::class => \Acef\Factory\Controller\BitacoraClienteControllerFactory::class,
-            \Acef\Controller\ManagerController::class => \Acef\Factory\Controller\ManagerControllerFactory::class,
             \Acef\Controller\ManagerClienteController::class => \Acef\Factory\Controller\ManagerClienteControllerFactory::class,
+            \Acef\Controller\InicioController::class => \Acef\Factory\Controller\InicioControllerFactory::class,
+            \Acef\Controller\TipoProductoController::class => \Acef\Factory\Controller\TipoProductoControllerFactory::class,
+            \Acef\Controller\TablasMaestrasController::class => \Acef\Factory\Controller\TablasMaestrasControllerFactory::class,
         ),
     ),
 );

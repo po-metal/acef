@@ -28,7 +28,21 @@
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse" id="sidebar-nav">	
 
-                <?= $this->renderMenu(\ZfMetal\Commons\Consts::STYLE_MENU_VERTICAL, 'default', 'nav nav-pills nav-stacked'); ?>
+         
+                <?php
+
+                $inicio =  $this->
+                        navigation('default')
+                        ->findOneByLabel('INICIO');
+                
+                echo $this->
+                        navigation($inicio)
+                        ->menu()
+                        ->setUlClass('nav nav-pills nav-stacked')
+                        ->setPartial('zf-metal/commons/menu/vertical/nav-vertical');
+                ?>
+
+         
 
             </div>
         </div>

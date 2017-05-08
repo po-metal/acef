@@ -5,7 +5,7 @@ namespace Acef\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 
 /**
- * ClientesController
+ * TipoProductoController
  *
  *
  *
@@ -13,10 +13,10 @@ use Zend\Mvc\Controller\AbstractActionController;
  * @license Creative Commons
  * @link https://github.com/zf-metal
  */
-class ClientesController extends AbstractActionController
+class TipoProductoController extends AbstractActionController
 {
 
-    const ENTITY = '\\Acef\\Entity\\Cliente';
+    const ENTITY = '\\Acef\\Entity\\TipoProducto';
 
     /**
      * @var \Doctrine\ORM\EntityManager
@@ -38,10 +38,15 @@ class ClientesController extends AbstractActionController
         $this->em = $em;
     }
 
+    public function getEntityRepository()
+    {
+        return $this->getEm()->getRepository(self::ENTITY);
+    }
+
     public function __construct(\Doctrine\ORM\EntityManager $em, \ZfMetal\Datagrid\Grid $grid)
     {
         $this->em = $em;
-        $this->grid = $grid;
+         $this->grid = $grid;
     }
 
     public function getGrid()
@@ -56,15 +61,8 @@ class ClientesController extends AbstractActionController
 
     public function gridAction()
     {
-       // $this->grid->addExtraColumn("Manager", "<a class=' table-link success' href='/acef/manager-cliente/main/{{id}}' ><span class='fa-stack'><i class='fa fa-square fa-stack-2x'></i><i class='fa fa-cog fa-stack-1x fa-inverse'></i></span></a>", "right", false);
-
         $this->grid->prepare();
         return array("grid" => $this->grid);
-    }
-
-    public function getEntityRepository()
-    {
-        return $this->getEm()->getRepository(self::ENTITY);
     }
 
 
