@@ -13,21 +13,25 @@ use Doctrine\ORM\EntityRepository;
  * @license Creative Commons
  * @link https://github.com/zf-metal
  */
-class ClienteRepository extends EntityRepository {
+class ClienteRepository extends EntityRepository
+{
 
-    const ENTITY = '\Acef\Entity\Cliente';
+    const ENTITY = '\\Acef\\Entity\\Cliente';
 
-    public function save(\Acef\Entity\Cliente $entity) {
+    public function save(\Acef\Entity\Cliente $entity)
+    {
         $this->getEntityManager()->persist($entity);
         $this->getEntityManager()->flush();
     }
 
-    public function remove(\Acef\Entity\Cliente $entity) {
+    public function remove(\Acef\Entity\Cliente $entity)
+    {
         $this->getEntityManager()->remove($entity);
         $this->getEntityManager()->flush();
     }
 
-    public function getClienteByRazonSocial($razonSocial) {
+    public function getClienteByRazonSocial($razonSocial)
+    {
         return $this->getEntityManager()->createQueryBuilder()
                         ->select("u.id,u.razonSocial")
                         ->from(self::ENTITY, "u")
@@ -36,4 +40,6 @@ class ClienteRepository extends EntityRepository {
                         ->getQuery()->getArrayResult();
     }
 
+
 }
+

@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 use Zend\Form\Annotation as Annotation;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\UniqueConstraint as UniqueConstraint;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Cliente
@@ -22,6 +23,7 @@ class Cliente
 {
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Hidden")
      * @Annotation\Attributes({"type":"hidden"})
      * @Annotation\Type("Zend\Form\Element\Hidden")
      * @ORM\Id
@@ -31,55 +33,68 @@ class Cliente
     public $id = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Razón Social", "description":""})
+     * @Annotation\Options({"label":"Razón Social", "description":"", "addon":""})
      * @ORM\Column(type="string", length=200, unique=true, nullable=false,
      * name="razon_social")
      */
     public $razonSocial = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Cuit", "description":""})
+     * @Annotation\Options({"label":"Cuit", "description":"ex. 999-99-9999",
+     * "addon":"fa fa-male"})
      * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
      */
     public $cuit = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Domicilio", "description":""})
+     * @Annotation\Options({"label":"Domicilio", "description":"", "addon":"fa
+     * fa-building"})
      * @ORM\Column(type="string", length=200, unique=false, nullable=true,
      * name="domicilio")
      */
     public $domicilio = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Localidad", "description":""})
+     * @Annotation\Options({"label":"Localidad", "description":"", "addon":"fa 
+     * fa-map-marker"})
      * @ORM\Column(type="string", length=100, unique=false, nullable=true,
      * name="localidad")
      */
     public $localidad = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Télefono", "description":""})
+     * @Annotation\Options({"label":"Télefono", "description":"ex. (999) 999-9999",
+     * "addon":"fa fa-phone"})
      * @ORM\Column(type="string", length=20, unique=false, nullable=true,
      * name="telefono")
      */
     public $telefono = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Teléfono Alternativo", "description":""})
+     * @Annotation\Options({"label":"Teléfono Alternativo", "description":"ex. (999)
+     * 999-9999", "addon":"fa fa-phone"})
      * @ORM\Column(type="string", length=20, unique=false, nullable=true,
      * name="telefono_alternativo")
      */
     public $telefonoAlternativo = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Email", "description":""})
+     * @Annotation\Options({"label":"Email", "description":"", "addon":"fa
+     * fa-envelope"})
      * @ORM\Column(type="string", length=30, unique=false, nullable=true, name="email")
      */
     public $email = null;
@@ -87,7 +102,8 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
      * @Annotation\Attributes({"type":"date"})
-     * @Annotation\Options({"label":"Fecha Asignación", "description":""})
+     * @Annotation\Options({"label":"Fecha Asignación", "description":"ex.
+     * 99/99/9999", "addon":"fa fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_asignacion")
      */
     public $fechaAsignacion = null;
@@ -95,7 +111,8 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
      * @Annotation\Attributes({"type":"date"})
-     * @Annotation\Options({"label":"Fecha de Retencion", "description":""})
+     * @Annotation\Options({"label":"Fecha de Retencion", "description":"ex.
+     * 99/99/9999", "addon":"fa fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_retencion")
      */
     public $fechaRetencion = null;
@@ -103,17 +120,19 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
      * @Annotation\Attributes({"type":"date"})
-     * @Annotation\Options({"label":"Fecha de Actualización", "description":""})
+     * @Annotation\Options({"label":"Fecha de Actualización", "description":"ex.
+     * 99/99/9999", "addon":"fa fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true,
      * name="fecha_actualizacion")
      */
     public $fechaActualizacion = null;
 
     /**
-     * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Responsable", "description":""})
-     * @ORM\Column(type="string", length=50, unique=false, nullable=true,
-     * name="responsable")
+     * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
+     * @Annotation\Options({"label":"Responsable","empty_option": "",
+     * "target_class":"\ZfMetal\Security\Entity\User", "description":""})
+     * @ORM\ManyToOne(targetEntity="\ZfMetal\Security\Entity\User")
+     * @ORM\JoinColumn(name="responsable_id", referencedColumnName="id", nullable=true)
      */
     public $responsable = null;
 
