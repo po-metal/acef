@@ -40,7 +40,7 @@ return [
                 'enable' => true,
                 'side' => "right",
                 'add' => [
-                    'enable' => false,
+                    'enable' => true,
                     'class' => 'btn btn-primary btn-xs',
                     'value' => '<i class="fa fa-plus-circle fa-lg"></i> Crear',
                 ],
