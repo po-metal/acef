@@ -9,7 +9,8 @@ include "view.config.php",
 include "zfm-datagrid.bitacora-cliente.config.php",
 include "zfm-datagrid.cliente.config.php",
 include "zfm-datagrid.estado.config.php",
-include "zfm-datagrid.producto.config.php"
+include "zfm-datagrid.producto.config.php",
+include "zfm-datagrid.tipo-producto.config.php"
 );
 
 return $setting;

@@ -62,6 +62,12 @@
                     <?= $this->partial('layout/menu'); ?>
 
                     <div id="content-wrapper">
+                        
+                           <?php
+                                echo $this->navigation('default')->breadcrumbs()->setMinDepth(1)
+                              ->setPartial('layout/breadcrumbs');
+                         ?>
+                        <div class="clearfix"></div>
 
                         <?= $this->content; ?>
 

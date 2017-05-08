@@ -31,6 +31,6 @@ return [
     'ZfMetal\Datagrid',
     'ZfMetal\Generator',
     //MODULES
-    'Application',
     'Acef',
+    'Application',
 ];

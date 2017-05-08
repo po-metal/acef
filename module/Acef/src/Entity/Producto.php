@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 use Zend\Form\Annotation as Annotation;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\UniqueConstraint as UniqueConstraint;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Producto
@@ -31,10 +32,11 @@ class Producto
     public $id = null;
 
     /**
-     * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Nombre", "description":""})
-     * @ORM\Column(type="string", length=80, unique=false, nullable=true,
-     * name="nombre")
+     * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
+     * @Annotation\Options({"label":"Nombre","empty_option": "",
+     * "target_class":"\Acef\Entity\TipoProducto", "description":""})
+     * @ORM\ManyToOne(targetEntity="\Acef\Entity\TipoProducto")
+     * @ORM\JoinColumn(name="nombre_id", referencedColumnName="id", nullable=false)
      */
     public $nombre = null;
 
@@ -49,8 +51,8 @@ class Producto
     /**
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
      * @Annotation\Options({"label":"Cliente","empty_option": "",
-     * "target_class":"Acef\Entity\Cliente", "description":""})
-     * @ORM\ManyToOne(targetEntity="Acef\Entity\Cliente")
+     * "target_class":"\Acef\Entity\Cliente", "description":""})
+     * @ORM\ManyToOne(targetEntity="\Acef\Entity\Cliente")
      * @ORM\JoinColumn(name="cliente_id", referencedColumnName="id", nullable=true)
      */
     public $cliente = null;
