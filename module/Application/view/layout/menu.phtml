@@ -11,7 +11,7 @@
 
                     <div class="user-box">
                         <span class="name">
-                            Welcome<br/>
+                                <?php //echo $this->translate('Bienvenido'); ?><br/>
                             <?php if ($user->getName()): ?>
                                 <?php echo $user->getName(); ?>
                             <?php elseif ($user->getUsername()): ?>

@@ -9,6 +9,6 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        
+        $this->redirect()->toRoute("Acef/Inicio/Main");
     }
 }

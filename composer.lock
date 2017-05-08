@@ -3447,12 +3447,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/commons.git",
-                "reference": "4a87a612fe8d826503704cc15d9f5ee42e5180a9"
+                "reference": "292a5ee527493702e1dbc3fd3bea0e531a0057ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/commons/zipball/4a87a612fe8d826503704cc15d9f5ee42e5180a9",
-                "reference": "4a87a612fe8d826503704cc15d9f5ee42e5180a9",
+                "url": "https://api.github.com/repos/zf-metal/commons/zipball/292a5ee527493702e1dbc3fd3bea0e531a0057ef",
+                "reference": "292a5ee527493702e1dbc3fd3bea0e531a0057ef",
                 "shasum": ""
             },
             "require": {
@@ -3487,7 +3487,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-05-04 15:47:07"
+            "time": "2017-05-08 01:31:41"
         },
         {
             "name": "zf-metal/datagrid",
@@ -3570,12 +3570,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/generator.git",
-                "reference": "38233ec05b75ce537ace90899daaf6f811d8e3e2"
+                "reference": "df23f7aa531a02fd50a010951eab5053e30f812f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/generator/zipball/38233ec05b75ce537ace90899daaf6f811d8e3e2",
-                "reference": "38233ec05b75ce537ace90899daaf6f811d8e3e2",
+                "url": "https://api.github.com/repos/zf-metal/generator/zipball/df23f7aa531a02fd50a010951eab5053e30f812f",
+                "reference": "df23f7aa531a02fd50a010951eab5053e30f812f",
                 "shasum": ""
             },
             "require": {
@@ -3622,7 +3622,7 @@
                 "routes",
                 "zf3"
             ],
-            "time": "2017-05-07 23:02:36"
+            "time": "2017-05-08 01:46:36"
         },
         {
             "name": "zf-metal/log",
@@ -3730,12 +3730,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/Security.git",
-                "reference": "87469438144308cffae185b7f270522e181593d6"
+                "reference": "9104c2d4dc2a49b65fdffc5cf627b1e49dc80f47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/Security/zipball/87469438144308cffae185b7f270522e181593d6",
-                "reference": "87469438144308cffae185b7f270522e181593d6",
+                "url": "https://api.github.com/repos/zf-metal/Security/zipball/9104c2d4dc2a49b65fdffc5cf627b1e49dc80f47",
+                "reference": "9104c2d4dc2a49b65fdffc5cf627b1e49dc80f47",
                 "shasum": ""
             },
             "require": {
@@ -3780,7 +3780,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-05-04 15:47:27"
+            "time": "2017-05-08 01:57:50"
         },
         {
             "name": "zf-metal/security-social",
