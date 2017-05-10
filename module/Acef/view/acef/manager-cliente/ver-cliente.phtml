@@ -1,41 +1,122 @@
-<div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-    <table class="table table-striped table-right">
-        <tr>
-            <th class="text-right">Id:</th><td class="text-left" id="clienteId"><?php echo $this->cliente->getId(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Razón Social:</th><td class="text-left"><?php echo $this->cliente->getRazonSocial(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Cuit:</th><td class="text-left"><?php echo $this->cliente->getCuit(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Domicilio:</th><td class="text-left"><?php echo $this->cliente->getDomicilio(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Localidad:</th><td class="text-left"><?php echo $this->cliente->getLocalidad(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Teléfono:</th><td class="text-left"><?php echo $this->cliente->getTelefono(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Teléfono Alternativo:</th><td class="text-left"><?php echo $this->cliente->getTelefonoAlternativo(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Email:</th><td class="text-left"><?php echo $this->cliente->getEmail(); ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Fecha de Asignación:</th><td class="text-left"><?php echo ($this->cliente->getFechaAsignacion())?$this->cliente->getFechaAsignacion()->format('Y-m-d'):'' ?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Fecha de Retención:</th><td class="text-left"><?php echo ($this->cliente->getFechaRetencion())?$this->cliente->getFechaRetencion()->format('Y-m-d'):'';?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Fecha de Actualización:</th><td class="text-left"><?php echo ($this->cliente->getFechaActualizacion())?$this->cliente->getFechaActualizacion()->format('Y-m-d'):'';?></td>
-        </tr>
-        <tr>
-            <th class="text-right">Responsable:</th><td class="text-left"><?php echo $this->cliente->getResponsable(); ?></td>
-        </tr>
-    </table>
+<style>
+    .table tbody > tr > td:first-child {
+            font-size: 0.875em;
+    }
+    
+</style>
     <button class="btn btn-warning pull-right" onclick="editarCliente(<?php echo $this->cliente->getId(); ?>)">Editar Cliente</button>
+                                <div class="clearfix"></div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+
+                <tr>
+                    <td class="text-right">
+                        <strong>ID:</strong>
+                    </td>
+                    <td>
+                        <div id="clienteId"><?php echo $this->cliente->getId(); ?></div>
+                    </td> 
+                </tr>
+
+                <tr>
+                    <td class="text-right">
+                          <strong>Razón Social:</strong>
+                    </td>
+                    <td><?php echo $this->cliente->getRazonSocial(); ?></td> 
+                </tr>
+
+
+                <tr>
+                    <td class="text-right">
+                       <strong>CUIT:</strong>
+                    </td>
+                    <td><?php echo $this->cliente->getCuit(); ?></td> 
+                </tr>
+
+
+                <tr>
+                    <td class="text-right">
+                       <strong>    Localidad:</strong>
+                    </td>
+                    <td><?php echo $this->cliente->getLocalidad(); ?></td> 
+                </tr>
+
+                <tr>
+                    <td class="text-right">
+                        <strong>Domicilio:</strong>
+                    </td>
+                    <td><?php echo $this->cliente->getDomicilio(); ?></td> 
+                </tr>
+
+                <tr>
+                    <td class="text-right">
+                        <strong>Responsable:</strong>
+                    </td>
+                    <td><?php echo $this->cliente->getResponsable(); ?></td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <td class="text-right">
+                    <strong> Telefono:</strong>
+                </td>
+                <td><?php echo $this->cliente->getTelefono(); ?></td> 
+            </tr>
+
+            <tr>
+                <td class="text-right">
+                    <strong> Telefono Alt:</strong>
+                </td>
+                <td><?php echo $this->cliente->getTelefonoAlternativo(); ?></td> 
+            </tr>
+
+
+            <tr>
+                <td class="text-right">
+                    <strong> Fecha Asignación:</strong>
+                </td>
+                <td> <?php echo ($this->cliente->getFechaAsignacion()) ? $this->cliente->getFechaAsignacion()->format('Y-m-d') : ''; ?>
+                </td> 
+            </tr>
+
+
+            <tr>
+                <td class="text-right">
+                    <strong> Fecha Retencion:</strong>
+                </td>
+                <td>    <?php echo ($this->cliente->getFechaRetencion()) ? $this->cliente->getFechaRetencion()->format('Y-m-d') : ''; ?>
+                </td> 
+            </tr>
+
+            <tr>
+                <td class="text-right">
+                  <strong>   Fecha Actualizacion:</strong>
+                </td>
+                <td>       <?php echo ($this->cliente->getFechaActualizacion()) ? $this->cliente->getFechaActualizacion()->format('Y-m-d') : ''; ?>
+                </td> 
+            </tr>
+
+            <tr>
+                <td class="text-right">
+                   <strong>  Estado:</strong>
+                </td>
+                <td>  <?php echo $this->cliente->getEstado();   ?></td> 
+            </tr>
+
+        </table>
+    </div>
+
 </div>

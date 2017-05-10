@@ -66,9 +66,9 @@ return [
                 'enable' => true,
                 'side' => "right",
                 'add' => [
-                    'enable' => false,
-                    'class' => 'btn btn-primary btn-xs',
-                    'value' => '<i class="fa fa-plus-circle fa-lg"></i> Crear Cliente',
+                    'enable' => true,
+                    'class' => '',
+                    'value' => '',
                 ],
                 'view' => [
                     'enable' => true,

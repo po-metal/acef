@@ -136,6 +136,15 @@ class Cliente
      */
     public $responsable = null;
 
+    /**
+     * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
+     * @Annotation\Options({"label":"Estado","empty_option": "",
+     * "target_class":"\Acef\Entity\Estado", "description":""})
+     * @ORM\ManyToOne(targetEntity="\Acef\Entity\Estado")
+     * @ORM\JoinColumn(name="estado_id", referencedColumnName="id", nullable=true)
+     */
+    public $estado = null;
+
     public function getId()
     {
         return $this->id;
@@ -254,6 +263,16 @@ class Cliente
     public function setResponsable($responsable)
     {
         $this->responsable = $responsable;
+    }
+
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
     }
 
     public function __toString()
