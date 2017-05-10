@@ -34,8 +34,8 @@ return [
                       'side' => "right",
                 'add' => [
                     'enable' => true,
-                    'class' => 'btn btn-primary btn-xs',
-                    'value' => '<i class="fa fa-plus-circle fa-lg"></i> Crear',
+                    'class' => '',
+                    'value' => '',
                 ],
                 'view' => [
                     'enable' => true,

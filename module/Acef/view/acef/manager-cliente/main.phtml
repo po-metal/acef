@@ -1,3 +1,28 @@
+<style>
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+        border-left: 0px;
+    }
+</style>
+<div class="pull-left">
+    <ol class="breadcrumb">
+
+        <li><a href="/acef/inicio/main">INICIO</a>
+        </li>
+
+        <li>
+            <a href="/acef/clientes/grid"> Clientes</a>
+        </li>
+
+        <li class="active">
+            <span>Manager Clientes</span>
+        </li>
+
+    </ol>
+
+    <h1>Clientes</h1>
+
+</div>
+<div class="clearfix"></div>
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <?php if ($this->cliente): ?>
@@ -6,9 +31,9 @@
 
                     <form role="search">
                         <div>
-                            <i id="btn-search-clientes" class="btn btn-info fa fa-search nav-search-icon"></i>
+                            <i id="btn-search-clientes" class="btn btn-info btn-sm fa fa-search nav-search-icon"></i>
                             <input id="input-text-search" type="text" class="" placeholder="Buscar Cliente..." autocomplete="off" style="display: none;">
-                            
+
                             <div id="list-search-clientes" class="">
 
                             </div>
@@ -25,14 +50,20 @@
 
 
                 </div>
-                <div class="panel-body">
 
+
+
+            </div>
+        
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="main-box clearfix">
+                <div class="tabs-wrapper profile-tabs">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#clienteTab" data-toggle="tab" aria-expanded="true">Cliente</a>
+                        <li class="active"><a href="#clienteTab" data-toggle="tab" >Cliente</a>
                         </li>
-                        <li class=""><a href="#productosTab" data-toggle="tab" aria-expanded="true">Productos</a>
+                        <li class=""><a href="#productosTab" data-toggle="tab" >Productos</a>
                         </li>
-                        <li class=""><a href="#bitacoraTab" data-toggle="tab" aria-expanded="false">Bitacora</a>
+                        <li class=""><a href="#bitacoraTab" data-toggle="tab" >Bitacora</a>
                         </li>
 
                     </ul>
@@ -40,7 +71,10 @@
                     <div class="tab-content">
                         <div class="tab-pane fade active in" id="clienteTab">
                             <div id="cliente-content">
+
+
                                 <?php echo $this->partial("acef/manager-cliente/ver-cliente", ["cliente" => $this->cliente]); ?>
+
                             </div>
 
                         </div>
@@ -65,7 +99,7 @@
                 </div>
 
             </div>
-
+</div>
         <?php endif; ?>
     </div>
 </div>

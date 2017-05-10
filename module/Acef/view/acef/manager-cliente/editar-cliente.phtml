@@ -1,6 +1,7 @@
-<br>
-<?php echo $this->flashCurrent(); ?>
-<?php echo $this->renderForm($this->form, \ZfMetal\Commons\Consts::STYLE_VERTICAL,\ZfMetal\Commons\Consts::COLUMNS_TWO ); ?>
-<button class="btn btn-default pull-right" onclick="verCliente(<?= $this->form->getObject()->getId();?>)">
-    Visualizar Cliente
-</button>
+    <button class="btn btn-default pull-right" onclick="verCliente(<?php echo $this->form->getObject()->getId(); ?>)">Ver Cliente</button>
+    <div class="clearfix"></div>                           
+<div class="main-box-body clearfix">
+    <?php echo $this->flashCurrent(); ?>
+    <?php echo $this->renderForm($this->form, \ZfMetal\Commons\Consts::STYLE_VERTICAL, \ZfMetal\Commons\Consts::COLUMNS_TWO); ?>
+
+</div>

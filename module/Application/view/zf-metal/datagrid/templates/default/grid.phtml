@@ -1,12 +1,21 @@
+<?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
+    <div class="pull-right" style="margin-top: 25px;">
+        <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
+            class="btn btn-primary pull-right">
+            <i class="fa fa-plus-circle fa-lg"></i> Crear
+        </a>
+    </div>
+<?php endif; ?>
+<div class="clearfix"></div>
 <div class="row">
 
-    <div class="col-lg-12">
-        <div class="main-box clearfix">
+    <div class="main-box no-header clearfix">
+        <div class="main-box-body clearfix">
             <div id="<?php echo $this->grid->getId(); ?>" >
 
                 <a class="pull-right" data-toggle="collapse" data-parent="#accordion" href="#collapseFilter_<?php echo $this->grid->getId(); ?>" aria-expanded="true" aria-controls="collapseFilter_<?php echo $this->grid->getId(); ?>" >
                     <i class="btn btn-primary btn-sm fa fa-filter "> <i class="fa fa-caret-down "> </i></i> 
-                       
+
                 </a>
                 <div class="clearfix"></div>
                 <div id="collapseFilter_<?php echo $this->grid->getId(); ?>" class="panel-body panel-collapse collapse"  role="tabpanel" aria-labelledby="headingOne">
