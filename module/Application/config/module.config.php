@@ -17,6 +17,17 @@ return [
                     ],
                 ],
             ],
+            'test' =>[
+                'type' => 'Literal',
+                'mayTerminate' => true,
+                'options' => [
+                    'route' => '/test',
+                    'defaults' => [
+                        'controller' => \Application\Controller\IndexController::class,
+                        'action' => 'test',
+                    ],
+                ],
+            ],
         ],
     ],
     'controllers' => [
