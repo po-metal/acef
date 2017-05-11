@@ -79,7 +79,7 @@ class ManagerClienteController extends AbstractActionController {
     public function bitacorasAction() {
         $clienteId = $this->params('clienteId');
         /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $this->gridBuilder( 'acef-entity-bitacoracliente', 'cliente', $clienteId);
+        $grid = $this->gridBuilder('acef-entity-bitacoracliente', 'cliente', $clienteId);
 
         $grid->setTemplate('ajax');
         $grid->setId('gridBitacoras');
@@ -93,10 +93,20 @@ class ManagerClienteController extends AbstractActionController {
         // Elimina la columna cliente del datagrid
         $grid->setColumnsConfig(array_merge_recursive($grid->getColumnsConfig(), ['cliente' => ['hidden' => true]]));
 
+        //CLIENTE
         $cliente = $this->getClienteRepository()->find($clienteId);
-        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente) {
+
+        //RESPONSABLE
+        if (!$this->identity()) {
+            throw new \Exception("Identidy not found");
+        }
+        $identity = $this->identity();
+        $responsable = $this->getEm()->getRepository("ZfMetal\Security\Entity\User")->find($identity->getId());
+
+        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente, $responsable) {
             $record = $e->getParam('record');
             $record->setCliente($cliente);
+            $record->setResponsable($responsable);
         });
 
         $grid->prepare();
@@ -139,7 +149,7 @@ class ManagerClienteController extends AbstractActionController {
     public function getClientesAction() {
 
         $nombreCliente = $this->params('nombreCliente');
-        
+
         $clientes = $this->getClienteRepository()->getClienteByRazonSocial($nombreCliente);
         return new \Zend\View\Model\JsonModel($clientes);
     }

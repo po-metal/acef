@@ -23,8 +23,9 @@ class BitacoraCliente
 {
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"ID", "description":""})
+     * @Annotation\Options({"label":"ID", "description":"", "addon":""})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer", length=0, unique=false, nullable=false, name="id")
@@ -34,8 +35,8 @@ class BitacoraCliente
     /**
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
      * @Annotation\Options({"label":"Cliente","empty_option": "",
-     * "target_class":"Acef\Entity\Cliente", "description":""})
-     * @ORM\ManyToOne(targetEntity="Acef\Entity\Cliente")
+     * "target_class":"\Acef\Entity\Cliente", "description":""})
+     * @ORM\ManyToOne(targetEntity="\Acef\Entity\Cliente")
      * @ORM\JoinColumn(name="cliente_id", referencedColumnName="id", nullable=true)
      */
     public $cliente = null;
@@ -48,11 +49,20 @@ class BitacoraCliente
     public $fecha = null;
 
     /**
+     * @Annotation\Type("Zend\Form\Element\Textarea")
      * @Annotation\Attributes({"type":"textarea"})
      * @Annotation\Options({"label":"Nota", "description":""})
      * @ORM\Column(type="string", length=800, unique=false, nullable=true, name="nota")
      */
     public $nota = null;
+
+    /**
+     * @Annotation\Exclude()
+     * @ORM\ManyToOne(targetEntity="\ZfMetal\Security\Entity\User")
+     * @ORM\JoinColumn(name="responsable_id", referencedColumnName="id",
+     * nullable=false)
+     */
+    public $responsable = null;
 
     public function getId()
     {
@@ -92,6 +102,16 @@ class BitacoraCliente
     public function setNota($nota)
     {
         $this->nota = $nota;
+    }
+
+    public function getResponsable()
+    {
+        return $this->responsable;
+    }
+
+    public function setResponsable($responsable)
+    {
+        $this->responsable = $responsable;
     }
 
     public function __toString()
