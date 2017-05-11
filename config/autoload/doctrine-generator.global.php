@@ -17,7 +17,7 @@ return [
             ),
         ),
         'eventmanager' => array(
-            'orm_zf_metal_generator' => array(
+            'orm_default' => array(
                 'subscribers' => array(
                     'Gedmo\Timestampable\TimestampableListener',
                 ),
