@@ -5,19 +5,31 @@ $this->notyFlash(true);
 <div class="row">
     <div class="col-xs-12 col-md-12">
 
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 text-center">
-                        <img src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $user->getImg(); ?>" alt=""
-                             class="center-block img-circle img-responsive">
-                        <br>
+        <div class="row" id="user-profile">
+            <div class="col-lg-3 col-md-4 col-sm-4">
+                <div class="main-box clearfix">
+                    <header class="main-box-header clearfix">
+                        <h2><?= ucfirst($user->getName()); ?></h2>
+                    </header>
+
+                    <div class="main-box-body clearfix">
+                        <div class="profile-status">
+                            <i class="fa fa-circle"></i> Online
+                        </div>
+
+                        <img src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $user->getImg(); ?>" alt="" class="profile-img img-responsive center-block" />
+
+                        <div class="profile-label">
+                            <?php foreach ($user->getRoles() as $rol) : ?>
+                                        <span class="label label-default tags"><?= $rol->getName(); ?></span>
+                                    <?php endforeach; ?>
+                        </div>
 
                         <?php echo $this->form()->openTag($formImg) ?>
 
                         <div class="btn-block">
                             <?php echo $this->formElement($formImg->get('img')); ?>
-         
+
                         </div>
                         <div class="btn-block">
                             <?php echo $this->formElement($formImg->get('submitbtn')); ?>
@@ -25,44 +37,75 @@ $this->notyFlash(true);
 
 
                         <?php echo $this->form()->closeTag($formImg); ?>
+                        <div class="profile-stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span>Super User</span>
+                        </div>
 
-                        <br>
+                        <div class="profile-since">
+                            Member since: Jan 2012
+                        </div>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-7 col-sm-offset-1">
-                        <h2><?= $user->getName(); ?></h2>
-                        <p><strong>Email: </strong> <?= $user->getEmail(); ?> </p>
+                        <div class="profile-details">
+                            <ul class="fa-ul">
+                                <li><i class="fa-li fa fa-truck"></i>Orders: <span>456</span></li>
+                                <li><i class="fa-li fa fa-comment"></i>Posts: <span>828</span></li>
+                                <li><i class="fa-li fa fa-tasks"></i>Tasks done: <span>1024</span></li>
+                            </ul>
+                        </div>
 
-                        <p><strong>Roles: </strong>
-                            <?php foreach ($user->getRoles() as $rol) : ?>
-                                <span class="label label-default tags"><?= $rol->getName(); ?></span>
-                            <?php endforeach; ?>
-                        </p>
-
-                        <p><strong>Permissions: </strong>
-                            <?php foreach ($user->getRoles() as $rol) : ?>
-                                <?php foreach ($rol->getPermissions() as $permission) : ?>
-
-                                    <span class="label label-success tags"><?= $rol->getName() . ' - ' . $permission->getName(); ?></span>
-
-                                <?php endforeach; ?>
-                            <?php endforeach; ?>
-                        </p>
-                        
-                        <br><br>
-                        
-                        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+                        <div class="profile-message-btn center-block text-center">
                             <a class="btn btn-default btn-block" href="<?= $this->url('zf-metal.user/profile/password-update'); ?>" >
-                                <span class="fa fa-lock"></span>
-                                <?php echo $this->translate('Modificar Password'); ?>
-                            </a>
+                                        <span class="fa fa-lock"></span>
+                                        <?php echo $this->translate('Modificar Password'); ?>
+                                    </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8 col-sm-8">
+                <div class="main-box clearfix">
+                    <div class="tabs-wrapper profile-tabs">
+
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab-newsfeed">
+
+                                <h2><?= $user->getName(); ?></h2>
+                                <p><strong>Email: </strong> <?= $user->getEmail(); ?> </p>
+
+                                <p><strong>Roles: </strong>
+                                    <?php foreach ($user->getRoles() as $rol) : ?>
+                                        <span class="label label-default tags"><?= $rol->getName(); ?></span>
+                                    <?php endforeach; ?>
+                                </p>
+
+                                <p><strong>Permissions: </strong>
+                                    <?php foreach ($user->getRoles() as $rol) : ?>
+                                        <?php foreach ($rol->getPermissions() as $permission) : ?>
+
+                                            <span class="label label-success tags"><?= $rol->getName() . ' - ' . $permission->getName(); ?></span>
+
+                                        <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                </p>
+
+                 
+
+                            </div>
+
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
-
 
     </div>
 </div>
