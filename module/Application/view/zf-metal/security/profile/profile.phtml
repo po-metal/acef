@@ -1,7 +1,11 @@
 <?php
-$this->notyFlash(true);
+$this->flashCurrent();
 ?>
-
+<style>
+    .blue-bg {
+        background-color: #2C3E50 !important;
+    }
+</style>
 <div class="row">
     <div class="col-xs-12 col-md-12">
 
@@ -19,11 +23,7 @@ $this->notyFlash(true);
 
                         <img src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $user->getImg(); ?>" alt="" class="profile-img img-responsive center-block" />
 
-                        <div class="profile-label">
-                            <?php foreach ($user->getRoles() as $rol) : ?>
-                                        <span class="label label-default tags"><?= $rol->getName(); ?></span>
-                                    <?php endforeach; ?>
-                        </div>
+
 
                         <?php echo $this->form()->openTag($formImg) ?>
 
@@ -37,32 +37,26 @@ $this->notyFlash(true);
 
 
                         <?php echo $this->form()->closeTag($formImg); ?>
-                        <div class="profile-stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                            <span>Super User</span>
-                        </div>
 
+                        <?php if($user->getCreateAt()):?>
+                        <hr>                      
                         <div class="profile-since">
-                            Member since: Jan 2012
+                            <?= $this->translate('Miembro desde')?>: <?=$user->getCreateAt()->format('d m Y');?>
                         </div>
-
-                        <div class="profile-details">
-                            <ul class="fa-ul">
-                                <li><i class="fa-li fa fa-truck"></i>Orders: <span>456</span></li>
-                                <li><i class="fa-li fa fa-comment"></i>Posts: <span>828</span></li>
-                                <li><i class="fa-li fa fa-tasks"></i>Tasks done: <span>1024</span></li>
-                            </ul>
-                        </div>
-
+                        <?php endif; ?>
+                        <!--                        <div class="profile-details">
+                                                    <ul class="fa-ul">
+                                                        <li><i class="fa-li fa fa-truck"></i>Orders: <span>456</span></li>
+                                                        <li><i class="fa-li fa fa-comment"></i>Posts: <span>828</span></li>
+                                                        <li><i class="fa-li fa fa-tasks"></i>Tasks done: <span>1024</span></li>
+                                                    </ul>
+                                                </div>-->
+                        <hr>
                         <div class="profile-message-btn center-block text-center">
                             <a class="btn btn-default btn-block" href="<?= $this->url('zf-metal.user/profile/password-update'); ?>" >
-                                        <span class="fa fa-lock"></span>
-                                        <?php echo $this->translate('Modificar Password'); ?>
-                                    </a>
+                                <span class="fa fa-lock"></span>
+                                <?php echo $this->translate('Modificar Password'); ?>
+                            </a>
                         </div>
                     </div>
 
@@ -71,41 +65,50 @@ $this->notyFlash(true);
 
             <div class="col-lg-9 col-md-8 col-sm-8">
                 <div class="main-box clearfix">
-                    <div class="tabs-wrapper profile-tabs">
-
-
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="tab-newsfeed">
-
-                                <h2><?= $user->getName(); ?></h2>
-                                <p><strong>Email: </strong> <?= $user->getEmail(); ?> </p>
-
-                                <p><strong>Roles: </strong>
-                                    <?php foreach ($user->getRoles() as $rol) : ?>
-                                        <span class="label label-default tags"><?= $rol->getName(); ?></span>
-                                    <?php endforeach; ?>
-                                </p>
-
-                                <p><strong>Permissions: </strong>
-                                    <?php foreach ($user->getRoles() as $rol) : ?>
-                                        <?php foreach ($rol->getPermissions() as $permission) : ?>
-
-                                            <span class="label label-success tags"><?= $rol->getName() . ' - ' . $permission->getName(); ?></span>
-
-                                        <?php endforeach; ?>
-                                    <?php endforeach; ?>
-                                </p>
-
-                 
-
+                    <div class="main-box clearfix profile-box-menu">
+                        <div class="main-box-body clearfix">
+                            <div class="profile-box-header blue-bg clearfix">
+                                <h2><?= ucfirst($user->getName()); ?></h2>
                             </div>
+                            <div class="profile-box-content clearfix">
+                                <ul class="menu-items">
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <i class="fa fa-envelope fa-lg"></i> Email:
+                                            <span class=""><?= $user->getEmail(); ?></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <i class="fa fa-cubes fa-lg"></i> Roles: 
 
+                                            <?php foreach ($user->getRoles() as $rol) : ?>
+                                                <span class="label label-info tags"><?= $rol->getName(); ?></span>
+                                            <?php endforeach; ?>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="clearfix">
+                                            <i class="fa fa-calendar fa-lg"></i> Permissions:
+                                            <?php foreach ($user->getRoles() as $rol) : ?>
+                                                <?php foreach ($rol->getPermissions() as $permission) : ?>
+
+                                                    <span class="label label-success tags"><?= $rol->getName() . ' - ' . $permission->getName(); ?></span>
+
+                                                <?php endforeach; ?>
+                                            <?php endforeach; ?>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+
         </div>
 
     </div>
 </div>
+

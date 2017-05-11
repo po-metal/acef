@@ -1,40 +1,63 @@
-<div class="login-block">
-    <div class="block block-transparent"> 
-        <h3><?php echo $this->translate('Recuperar Password'); ?></h3>
-        <?php
-        $form = $this->form;
-        $form->prepare();
-        $element = $form->get("email");
-        $element->setLabel(null);
-        ?>
-        <?php echo $this->form()->openTag($form); ?>
+<?php $this->layout()->setTemplate('layout/loginLayout') ?>
+<?php echo $this->flashCurrent(); ?>
+<div id="login-box">
+    <div id="login-box-holder">
+        <div class="row">
+            <div class="col-xs-12">
+                <header id="login-header">
+                    <div id="login-logo">
+                        <img src="<?= $this->basePath('shared/centaurus') ?>/img/logo.png" alt="">
+                    </div>
+                </header>
+                <div id="login-box-inner" class="with-heading">
+                    <h4><?php echo $this->translate('Olvidaste tu clave?'); ?></h4>
+                    <p>
+                        <?php echo $this->translate('Ingresa tu casilla de Email para recuperar tu clave.'); ?>
+                    </p>
+
+                    <?php
+                    $form = $this->form;
+                    $form->prepare();
+                    $element = $form->get("email");
+                    ?>
+                    <?php echo $this->form()->openTag($form); ?>
 
 
-        <div  class="form-group<?php if ($this->formElementErrors($element)) echo " has-error" ?>">
-            <div class="input-group">
-                <div class="input-group-addon">
-                    <span class="glyphicon glyphicon-user"></span>
+                    <div  class="form-group<?php if ($this->formElementErrors($element)) echo " has-error" ?>">
+                        <div class="input-group reset-pass-input">
+                            <span class="input-group-addon">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            <?php echo $this->formInput($element); ?>
+                        </div>
+
+
+                        <?php if ($this->formElementErrors($element)) : ?>
+                            <?php
+                            // Imprimo los errores
+                            echo $this->formElementErrors()
+                                    ->setMessageOpenFormat('<span class="help-block">')
+                                    ->setMessageSeparatorString('</span><span class="help-block">')
+                                    ->setMessageCloseString('</span>')
+                                    ->render($element);
+                            ?>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <?php $element = $form->get("submit")->setAttribute('value', $this->translate('Enviar')); ?>
+                            <?php echo $this->formElement($element); ?>
+                        </div>
+                        <div class="col-xs-12">
+                            <br>
+                            <a href="<?= $this->url('zf-metal.user/login')?>" id="login-forget-link" class="forgot-link col-xs-12"><?= $this->translate('Volver a Login') ?></a>
+                        </div>
+                    </div>
+                    <?php echo $this->form()->closeTag($form); ?>
                 </div>
-                <?php echo $this->formInput($element); ?>
             </div>
-
-
-            <?php if ($this->formElementErrors($element)) : ?>
-                <?php
-                // Imprimo los errores
-                echo $this->formElementErrors()
-                        ->setMessageOpenFormat('<span class="help-block">')
-                        ->setMessageSeparatorString('</span><span class="help-block">')
-                        ->setMessageCloseString('</span>')
-                        ->render($element);
-                ?>
-            <?php endif; ?>
         </div>
-        
-        <div class="clearfix"></div>
-        <?php $element = $form->get("submit"); ?>
-        <?php echo $this->formElement($element); ?>
-        <?php echo $this->form()->closeTag($form); ?>
-
     </div>
 </div>
+
