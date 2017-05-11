@@ -38,12 +38,7 @@ $this->flashCurrent();
 
                         <?php echo $this->form()->closeTag($formImg); ?>
 
-                        <?php if($user->getCreateAt()):?>
-                        <hr>                      
-                        <div class="profile-since">
-                            <?= $this->translate('Miembro desde')?>: <?=$user->getCreateAt()->format('d m Y');?>
-                        </div>
-                        <?php endif; ?>
+
                         <!--                        <div class="profile-details">
                                                     <ul class="fa-ul">
                                                         <li><i class="fa-li fa fa-truck"></i>Orders: <span>456</span></li>
@@ -69,6 +64,12 @@ $this->flashCurrent();
                         <div class="main-box-body clearfix">
                             <div class="profile-box-header blue-bg clearfix">
                                 <h2><?= ucfirst($user->getName()); ?></h2>
+                                <?php if ($user->getCreateAt()): ?>
+                                
+                                    <div class="profile-box-content gray">
+                                        <?= $this->translate('Miembro desde') ?>: <?= $user->getCreateAt()->format('jS F Y'); ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             <div class="profile-box-content clearfix">
                                 <ul class="menu-items">
