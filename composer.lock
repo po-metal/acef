@@ -3495,12 +3495,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/datagrid.git",
-                "reference": "865015ae6f78a9c8a76ae6819ad502e9751c7d78"
+                "reference": "72f55c85b99eca5b4d7d4afbb76649277d67cbc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/865015ae6f78a9c8a76ae6819ad502e9751c7d78",
-                "reference": "865015ae6f78a9c8a76ae6819ad502e9751c7d78",
+                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/72f55c85b99eca5b4d7d4afbb76649277d67cbc0",
+                "reference": "72f55c85b99eca5b4d7d4afbb76649277d67cbc0",
                 "shasum": ""
             },
             "require": {
@@ -3562,7 +3562,7 @@
                 "zf2",
                 "zf3"
             ],
-            "time": "2017-05-10 01:33:55"
+            "time": "2017-05-14 22:15:30"
         },
         {
             "name": "zf-metal/generator",
@@ -3570,12 +3570,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/generator.git",
-                "reference": "df23f7aa531a02fd50a010951eab5053e30f812f"
+                "reference": "4bf36c2f15c3ffcd8085831ad829c9f788d48ad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/generator/zipball/df23f7aa531a02fd50a010951eab5053e30f812f",
-                "reference": "df23f7aa531a02fd50a010951eab5053e30f812f",
+                "url": "https://api.github.com/repos/zf-metal/generator/zipball/4bf36c2f15c3ffcd8085831ad829c9f788d48ad3",
+                "reference": "4bf36c2f15c3ffcd8085831ad829c9f788d48ad3",
                 "shasum": ""
             },
             "require": {
@@ -3622,7 +3622,7 @@
                 "routes",
                 "zf3"
             ],
-            "time": "2017-05-08 01:46:36"
+            "time": "2017-05-13 22:42:20"
         },
         {
             "name": "zf-metal/log",
