@@ -7,13 +7,17 @@
     $form->setAttribute("action", "javascript:cdiForm_" . $this->grid->getId() . "('" . $form->getName() . "')");
     $formConfig = $this->grid->getOptions()->getFormConfig();
 
+    $form->get('submit')->setAttribute('value', 'Enviar')
+            ->setAttribute('class', 'pull-right btn btn-info')
+            ->setAttribute('style', 'margin-left: 2px');    
+
     $form->add(array(
         'name' => 'cancel',
         'type' => 'Zend\Form\Element\Button',
         'attributes' => array(
-            'value' => "Cancel",
+            'value' => "Cancelar",
             'class' => 'pull-right btn btn-default',
-            'onclick' => 'cdiListRecords_' . $this->grid->getId().'()',
+            'onclick' => 'cdiListRecords_' . $this->grid->getId() . '()',
         ),
         'options' => array(
             'label' => 'Cancel',
