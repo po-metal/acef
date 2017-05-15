@@ -18,9 +18,11 @@
             <header class="navbar" id="header-navbar">
                 <div class="container">
                     <a href="<?= $this->url('home'); ?>" id="logo" class="navbar-brand">
+                        <?php if ($this->applicationOptions()->getShowImages()) : ?>
                         <img src="<?= $this->basePath() ?>/shared/centaurus/img/logo.png" alt="" class="normal-logo logo-white"/>
                         <img src="<?= $this->basePath() ?>/shared/centaurus/img/logo-black.png" alt="" class="normal-logo logo-black"/>
                         <img src="<?= $this->basePath() ?>/shared/centaurus/img/logo-small.png" alt="" class="small-logo hidden-xs hidden-sm hidden"/>
+                        <?php endif; ?>
                     </a>
                     <div class="clearfix">
                         <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">

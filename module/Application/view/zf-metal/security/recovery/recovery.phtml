@@ -6,7 +6,9 @@
             <div class="col-xs-12">
                 <header id="login-header">
                     <div id="login-logo">
+                        <?php if ($this->applicationOptions()->getShowImages()) : ?>
                         <img src="<?= $this->basePath('shared/centaurus') ?>/img/logo.png" alt="">
+                        <?php endif; ?>
                     </div>
                 </header>
                 <div id="login-box-inner" class="with-heading">
