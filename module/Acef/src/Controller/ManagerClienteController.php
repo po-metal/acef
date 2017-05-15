@@ -123,9 +123,14 @@ class ManagerClienteController extends AbstractActionController {
         $cliente = $this->getClienteRepository()->find($clienteId);
 
         $form = $this->formBuilder($this->getEm(), \Acef\Entity\Cliente::class, TRUE);
+        $form->add(new \Zend\Form\Element\Hidden("id"));
         $form->bind($cliente);
         $form->setAttribute('action', 'javascript:submitFormCliente(' . $cliente->getId() . ')');
-        $this->formProcess($this->getEm(), $form, TRUE);
+        $formProcess = $this->formProcess($this->getEm(), $form, TRUE);
+        
+        if($formProcess->getStatus()){
+        return $this->forward()->dispatch("Acef\Controller\ManagerClienteController", ["action" => "ver-cliente", "clienteId" => $clienteId]);
+        }
 
         $view = new \Zend\View\Model\ViewModel(array('form' => $form));
 
