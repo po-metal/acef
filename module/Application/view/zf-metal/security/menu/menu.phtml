@@ -5,10 +5,12 @@
         <a class="dropdown-toggle " data-toggle="dropdown" href="#">
 
             <!--Picture OR Icon-->
+            <?php if($this->applicationOptions()->getShowImages()) : ?>
             <?php if ($user->getImg()): ?>
                 <img src="<?php echo $this->getSecurityOptions()->getProfilePicturePathRelative() . $user->getImg(); ?>" >
             <?php else: ?>
                 <i class="glyphicon glyphicon-user"></i>
+            <?php endif; ?>
             <?php endif; ?>
 
             <!--Name, Username or Email-->    

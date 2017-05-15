@@ -8,9 +8,13 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <header id="login-header">
+
                             <div id="login-logo">
-                                <img src="<?= $this->basePath();?>/shared/centaurus/img/logo.png" alt=""/>
+                                <?php if ($this->applicationOptions()->getShowImages()) : ?>
+                                    <img src="<?= $this->basePath(); ?>/shared/centaurus/img/logo.png" alt=""/>
+                                <?php endif; ?>    
                             </div>
+
                         </header>
                         <div id="login-box-inner">
                             <?php
@@ -87,21 +91,21 @@
                                 </div>
                             </div>
                             <?php if ($this->getSecuritySocialOptions()->getFacebookLogin()): ?>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <p class="social-text">Or login with</p>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="social-text">Or login with</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12">
-                                    <a href="<?= $this->url('zf-metal.user-fb/login'); ?>" class="btn btn-primary col-xs-12 btn-facebook">
-                                        <i class="fa fa-facebook"></i> facebook
-                                    </a>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12">
+                                        <a href="<?= $this->url('zf-metal.user-fb/login'); ?>" class="btn btn-primary col-xs-12 btn-facebook">
+                                            <i class="fa fa-facebook"></i> facebook
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
                             <?php endif ?>
                             <?php echo $this->form()->closeTag(); ?>
-                            
+
                         </div>
                     </div>
                 </div>
