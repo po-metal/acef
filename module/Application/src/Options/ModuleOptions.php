@@ -18,6 +18,8 @@ class ModuleOptions extends \Zend\Stdlib\AbstractOptions
 
     private $showItemsRangePaginator = true;
 
+    private $showBreadcrumbs = true;
+
     public function getShowImages()
     {
         return $this->showImages;
@@ -36,6 +38,16 @@ class ModuleOptions extends \Zend\Stdlib\AbstractOptions
     public function setShowItemsRangePaginator($showItemsRangePaginator)
     {
         $this->showItemsRangePaginator= $showItemsRangePaginator;
+    }
+
+    public function getShowBreadcrumbs()
+    {
+        return $this->showBreadcrumbs;
+    }
+
+    public function setShowBreadcrumbs($showBreadcrumbs)
+    {
+        $this->showBreadcrumbs= $showBreadcrumbs;
     }
 
 
