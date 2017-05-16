@@ -19,6 +19,8 @@ class ModuleOptions extends \Zend\Stdlib\AbstractOptions
     private $showItemsRangePaginator = true;
 
     private $showBreadcrumbs = true;
+    
+    private $showUserAvatarAndWelcome = true;
 
     public function getShowImages()
     {
@@ -50,6 +52,13 @@ class ModuleOptions extends \Zend\Stdlib\AbstractOptions
         $this->showBreadcrumbs= $showBreadcrumbs;
     }
 
+    function getShowUserAvatarAndWelcome() {
+        return $this->showUserAvatarAndWelcome;
+    }
+
+    function setShowUserAvatarAndWelcome($showUserAvatarAndWelcome) {
+        $this->showUserAvatarAndWelcome = $showUserAvatarAndWelcome;
+    }
 
 }
 

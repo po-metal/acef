@@ -1,7 +1,22 @@
-    <button class="btn btn-default pull-right" onclick="verCliente(<?php echo $this->form->getObject()->getId(); ?>)">Ver Cliente</button>
-    <div class="clearfix"></div>                           
 <div class="main-box-body clearfix">
     <?php echo $this->flashCurrent(); ?>
+    <?php
+    $this->form->get('submitbtn')->setAttribute('value', 'Enviar')
+            ->setAttribute('class', 'pull-right btn btn-info')
+            ->setAttribute('style', 'margin-left: 2px');
+    $this->form->add(array(
+        'name' => 'cancel',
+        'type' => 'Zend\Form\Element\Button',
+        'attributes' => array(
+            'value' => "Cancelar",
+            'class' => 'pull-right btn btn-default',
+            'onclick' => 'verCliente("' . $this->form->getObject()->getId() . '")',
+        ),
+        'options' => array(
+            'label' => 'Cancelar',
+        )
+    ));
+    ?>
     <?php echo $this->renderForm($this->form, \ZfMetal\Commons\Consts::STYLE_VERTICAL, \ZfMetal\Commons\Consts::COLUMNS_TWO); ?>
 
 </div>
