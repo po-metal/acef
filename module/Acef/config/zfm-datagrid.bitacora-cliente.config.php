@@ -23,6 +23,7 @@ return [
             'columnsConfig' => [
                 'id' => [
                     'displayName' => 'ID',
+                    "hidden"=>false
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
@@ -43,7 +44,7 @@ return [
                 'add' => [
                     'enable' => true,
                     'class' => 'btn btn-primary btn-xs',
-                    'value' => 'Agregar Bitacora',
+                    'value' => 'Agregar Nota',
                 ],
                 'view' => [
                     'enable' => true,
