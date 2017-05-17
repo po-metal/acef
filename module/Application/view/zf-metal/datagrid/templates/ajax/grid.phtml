@@ -1,13 +1,16 @@
-<?= $this->flashCurrent(); ?>
+<div class="filter-block pull-right" style="margin-right: 10px">
+    <div class="form-group pull-left">
+        <input class="form-control" placeholder="Search..." type="text">
+        <i class="fa fa-search search-icon"></i>
+    </div>
 
-<?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
-    <div class="pull-right" style="margin-right: 5px">
+    <?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
         <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
-            class="btn btn-primary pull-right">
+            class="btn btn-primary pull-right" >
             <i class="fa fa-plus-circle fa-lg"></i> <?php echo $this->grid->getCrudColumn()->getAdd()["value"]; ?>
         </a>
-    </div>
 <?php endif; ?>
+</div>
 <div class="row">
     <?php if ($this->grid->getOptions()->getTitle()): ?>
         <div class="main-box-header clearfix">
