@@ -21,6 +21,10 @@ return [
                 ],
             ],
             'columnsConfig' => [
+                'id' => [
+                    'displayName' => 'ID',
+                    "hidden"=>true
+                ],
                 'razonSocial' => [
                     'displayName' => 'Razón Social',
                 ],

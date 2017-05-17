@@ -21,6 +21,8 @@ class ModuleOptions extends \Zend\Stdlib\AbstractOptions
     private $showBreadcrumbs = true;
     
     private $showUserAvatarAndWelcome = true;
+    
+    private $makeSmallNav = true;
 
     public function getShowImages()
     {
@@ -58,6 +60,14 @@ class ModuleOptions extends \Zend\Stdlib\AbstractOptions
 
     function setShowUserAvatarAndWelcome($showUserAvatarAndWelcome) {
         $this->showUserAvatarAndWelcome = $showUserAvatarAndWelcome;
+    }
+
+    function getMakeSmallNav() {
+        return $this->makeSmallNav;
+    }
+
+    function setMakeSmallNav($makeSmallNav) {
+        $this->makeSmallNav = $makeSmallNav;
     }
 
 }

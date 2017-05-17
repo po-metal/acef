@@ -1,6 +1,7 @@
 $(function ($) {
-    $('#page-wrapper').toggleClass(getCookie('nav'));
-
+    if ($('#block-small-nav').find("#make-small-nav").length) {
+        $('#page-wrapper').toggleClass(getCookie('nav'));
+    }
     $('#make-small-nav').on('click', function () {
         $('#page-wrapper').toggleClass('nav-small');
 
