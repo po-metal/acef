@@ -4,6 +4,7 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-tipoproducto' => [
             'gridId' => 'zfmdg_TipoProducto',
+                 'title' => "Tipo de Productos",
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [

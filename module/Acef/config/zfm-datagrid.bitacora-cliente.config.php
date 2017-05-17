@@ -4,6 +4,7 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-bitacoracliente' => [
             'gridId' => 'zfmdg_BitacoraCliente',
+            'title' => "Bitacora",
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [

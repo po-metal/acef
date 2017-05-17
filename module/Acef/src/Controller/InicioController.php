@@ -18,7 +18,8 @@ class InicioController extends AbstractActionController
 
     public function mainAction()
     {
-        return [];
+        //Se aplica Redirect por pedido de Lio de que la home sea la vista de clientes
+         $this->redirect()->toRoute("Acef/Clientes/Grid");
     }
 
 

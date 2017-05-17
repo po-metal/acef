@@ -2,14 +2,23 @@
     <div class="pull-right" style="margin-top: 25px;">
         <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
             class="btn btn-primary pull-right">
-            <i class="fa fa-plus-circle fa-lg"></i> Crear
+            <i class="fa fa-plus-circle fa-lg"></i> <?php echo $this->grid->getCrudColumn()->getAdd()["value"]; ?>
         </a>
     </div>
 <?php endif; ?>
 <div class="clearfix"></div>
 <div class="row">
 
-    <div class="main-box no-header clearfix">
+    <div class="main-box clearfix">
+        
+        <?php if($this->grid->getOptions()->getTitle()): ?>
+        
+        <div class="main-box-header clearfix">
+            <h2> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
+        </div>
+
+        <?php endif; ?>
+        
         <div class="main-box-body clearfix">
             <div id="<?php echo $this->grid->getId(); ?>" >
 

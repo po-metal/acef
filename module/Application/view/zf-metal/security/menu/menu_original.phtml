@@ -37,6 +37,26 @@
         </ul>
     </li>
 
+    <?php if ($this->isGranted("general-admin")): ?>
+        <li class="dropdown profile-dropdown">
+            <a class="dropdown-toggle " data-toggle="dropdown" href="#">
+                <i class="glyphicon glyphicon-th-large"></i> 
+
+                <b class="fa  fa-caret-down" ></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="/admin/users"><i class="fa fa-user"></i> <?php echo $this->translate('Usuarios'); ?></a>
+                </li>    
+                <li class="divider"></li>
+                <li><a href="/admin/roles"><i class="fa fa-cog"></i>  <?php echo $this->translate('Roles'); ?></a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="/admin/groups"><i class="fa fa-group"></i>  <?php echo $this->translate('Grupos'); ?></a>
+                </li>
+
+            </ul>
+        </li>
+    <?php endif; ?>
 
 <?php else: ?>
     <li class="pull-right">

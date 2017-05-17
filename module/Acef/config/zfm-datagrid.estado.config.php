@@ -4,6 +4,7 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-estado' => [
             'gridId' => 'zfmdg_Estado',
+                 'title' => "Estados",
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [

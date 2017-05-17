@@ -2,8 +2,8 @@
 
 $setting = array_merge_recursive(
 include "controller.config.php",
-include "doctrine.config.php",
 include "custom-validators.config.php",
+include "doctrine.config.php",
 include "navigation.config.php",
 include "route.config.php",
 include "view.config.php",
