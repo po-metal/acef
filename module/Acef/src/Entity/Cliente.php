@@ -47,7 +47,7 @@ class Cliente {
      * "addon":"fa fa-male"})
      * @Annotation\Validator({"name":"CuitValidator"}) 
      * @Annotation\Validator({"name":"Zend\Validator\Regex", "options":{"pattern":"/^\d{2}(-)?\d{8}(-)?\d{1}$/", "messages":{"regexNotMatch":"El formato del cuit no coincide.", "regexInvalid": "El patrón es inválido", "regexErrorous":"El patrón tiene errores"}}})
-     * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
+     * @ORM\Column(type="string", length=200, unique=true, nullable=false, name="cuit")
      */
     public $cuit = null;
 

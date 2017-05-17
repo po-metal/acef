@@ -33,7 +33,7 @@ return [
                 'add' => [
                     'enable' => true,
                     'class' => '',
-                    'value' => '',
+                    'value' => 'Agregar Producto',
                 ],
                 'view' => [
                     'enable' => true,
