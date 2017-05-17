@@ -4,6 +4,7 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-cliente' => [
             'gridId' => 'zfmdg_Cliente',
+            'title' => "Clientes",
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -68,7 +69,7 @@ return [
                 'add' => [
                     'enable' => true,
                     'class' => '',
-                    'value' => '',
+                    'value' => 'Agregar Cliente',
                 ],
                 'view' => [
                     'enable' => true,

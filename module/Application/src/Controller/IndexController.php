@@ -9,7 +9,7 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        $this->redirect()->toRoute("Acef/Inicio/Main");
+        $this->redirect()->toRoute("Acef/Clientes/Grid");
     }
     
     public function testAction(){
