@@ -3,11 +3,11 @@
         var clienteId = $('#clienteId').text();
         if (clienteId) {
             $.get("/acef/manager-cliente/productos/" + clienteId).done(function (data) {
-                $("#productos-content").html(data);
+                $("#gridProductos").html(data);
             });
 
             $.get("/acef/manager-cliente/bitacoras/" + clienteId).done(function (data) {
-                $("#bitacora-content").html(data);
+                $("#gridBitacoras").html(data);
             });
         }
         $('#btn-search-clientes').click(function (e) {

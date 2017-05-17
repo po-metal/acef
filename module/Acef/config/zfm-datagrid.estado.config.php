@@ -36,7 +36,7 @@ return [
                 'add' => [
                     'enable' => true,
                     'class' => '',
-                    'value' => '',
+                    'value' => 'Agregar Estado',
                 ],
                 'view' => [
                     'enable' => true,
