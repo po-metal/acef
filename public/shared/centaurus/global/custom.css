@@ -1,10 +1,15 @@
 .btnCustom{
     background-color: #fff;
-    border: 1px solid #2980b9;
+    border: 1px solid #3498db;
     font-size: 12px;
     color: #2980b9;   
     margin-top: 2px;
 }
 .btnCustom:hover{
-    background-color: #eef;
+    background-color: #3498db;
+    color: #fff; 
+}
+
+.razonSocialStyle{
+    font-size: 18px !important;
 }
