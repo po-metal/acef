@@ -63,6 +63,8 @@ return [
                 'fechaActualizacion' => [
                     'displayName' => 'Fecha de Actualización',
                     'hidden' => false,
+                    'type'=>'datetime',
+                    'format'=>'d/m/Y'
                 ],
                 'responsable' => [
                     'displayName' => 'Responsable',
