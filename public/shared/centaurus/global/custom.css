@@ -10,6 +10,20 @@
     color: #fff; 
 }
 
+.btnCancelCustom{
+    background-color: #fff;
+    border: 1px solid #7f8c8d;
+    font-size: 12px;
+    color: #7f8c8d;   
+    border-radius: 2px;
+    font-size: 12px;
+    margin-top: 2px;
+}
+.btnCancelCustom:hover{
+    background-color: #7f8c8d;
+    color: #fff; 
+}
+
 .razonSocialStyle{
     font-size: 18px !important;
 }
