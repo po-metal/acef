@@ -27,6 +27,7 @@ return [
                 ],
                 'razonSocial' => [
                     'displayName' => 'Razón Social',
+                    'tdClass' => 'razonSocialStyle'
                 ],
                 'cuit' => [
                     'displayName' => 'Cuit',
