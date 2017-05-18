@@ -62,10 +62,15 @@ return [
                 ],
                 'fechaActualizacion' => [
                     'displayName' => 'Fecha de Actualización',
-                    'hidden' => true,
+                    'hidden' => false,
                 ],
                 'responsable' => [
                     'displayName' => 'Responsable',
+                    'type'=> 'relational'
+                ],
+                'estado' => [
+                    'displayName' => 'Estado',
+                    'type'=> 'relational'
                 ],
             ],
             'crudConfig' => [

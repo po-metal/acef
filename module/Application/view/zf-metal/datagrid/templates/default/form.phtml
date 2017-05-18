@@ -10,7 +10,7 @@
             $formConfig = $this->grid->getOptions()->getFormConfig();
 
             $form->get('submit')->setAttribute('value', 'Enviar')
-                    ->setAttribute('class', 'pull-right btn btn-info')
+                    ->setAttribute('class', 'pull-right btn btnCustom')
                     ->setAttribute('style', 'margin-left: 2px');
             
             $form->add(array(
@@ -18,7 +18,7 @@
                 'type' => 'Zend\Form\Element\Button',
                 'attributes' => array(
                     'value' => "Cancelar",
-                    'class' => 'pull-right btn btn-default',
+                    'class' => 'pull-right btn btnCancelCustom',
                     'onclick' => 'window.location.href="' . $this->url($this->route, array(), array('query' => $this->routeParams), true) . '"',
                 ),
                 'options' => array(
