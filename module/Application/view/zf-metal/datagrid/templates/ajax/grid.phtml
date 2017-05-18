@@ -14,7 +14,7 @@
 
         <?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
             <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
-                class="btn btn-primary pull-right" >
+                class="btn pull-right btnCustom" >
                 <i class="fa fa-plus-circle fa-lg"></i> <?php echo $this->grid->getCrudColumn()->getAdd()["value"]; ?>
             </a>
         <?php endif; ?>
