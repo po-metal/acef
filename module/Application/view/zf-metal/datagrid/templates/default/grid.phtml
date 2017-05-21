@@ -5,16 +5,9 @@
         <?php if ($this->grid->getOptions()->getTitle()): ?>
 
             <div class="main-box-header clearfix">
-                <h2> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
-            </div>
-
-        <?php endif; ?>
-
-        <div class="main-box-body clearfix">
-            <div id="<?php echo $this->grid->getId(); ?>" >
-
-
-                <div class="filter-block pull-right" style="margin-top: 25px; margin-right: 10px">
+                <h2 class="pull-left"> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
+                
+                <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 10px">
 
                     <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
                         <?php echo $this->partial($this->partialSearch, array("grid" => $this->grid)); ?>
@@ -32,9 +25,13 @@
                     <?php endif; ?>
 
                 </div>
+            </div>
 
+        <?php endif; ?>
 
-                <div class="clearfix"></div>
+        <div class="main-box-body clearfix">
+            <div id="<?php echo $this->grid->getId(); ?>" >
+
 
                 <div class="main-box-body clearfix">
                     <div class="table-responsive">

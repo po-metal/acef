@@ -5,6 +5,8 @@ return [
         'acef-entity-producto' => [
             'gridId' => 'zfmdg_Producto',
             'title' => "Productos",
+            'title_add' => "Nuevo Producto",
+            'title_edit' => "Editar Producto",
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

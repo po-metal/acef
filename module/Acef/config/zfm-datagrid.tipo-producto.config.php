@@ -6,7 +6,7 @@ return [
             'gridId' => 'zfmdg_TipoProducto',
             'title' => "Tipo de Productos",
             'title_add' => "Nuevo Tipo de Producto",
-            'title_edit' => "Editando Tipo de Producto",
+            'title_edit' => "Editar Tipo de Producto",
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

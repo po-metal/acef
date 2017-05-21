@@ -6,7 +6,7 @@ return [
             'gridId' => 'zfmdg_Cliente',
             'title' => "Clientes",
             'title_add' => "Nuevo Cliente",
-            'title_edit' => "Editando Cliente",
+            'title_edit' => "Editar Cliente",
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

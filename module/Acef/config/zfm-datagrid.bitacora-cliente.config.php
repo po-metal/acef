@@ -5,6 +5,8 @@ return [
         'acef-entity-bitacoracliente' => [
             'gridId' => 'zfmdg_BitacoraCliente',
             'title' => "Historial",
+            'title_add' => "Nueva Nota",
+            'title_edit' => "Editar Nota",
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

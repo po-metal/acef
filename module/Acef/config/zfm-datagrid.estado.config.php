@@ -6,7 +6,7 @@ return [
             'gridId' => 'zfmdg_Estado',
             'title' => "Estados",
             'title_add' => "Nuevo Estado",
-            'title_edit' => "Editando Estado",
+            'title_edit' => "Editar Estado",
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []
