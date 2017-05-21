@@ -2,30 +2,29 @@
 <div class="row">
     <?php if ($this->grid->getOptions()->getTitle()): ?>
         <div class="main-box-header clearfix">
-            <h2> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
+            <h2 class="pull-left"> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
+            <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 10px">
+
+                <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
+                    <?php echo $this->partial($this->partialSearch, array("grid" => $this->grid)); ?>
+                <?php endif; ?>     
+
+                <?php if ($this->grid->getOptions()->getMultiFilterConfig()->getEnable()): ?>
+                    <?php echo $this->partial($this->partialFilter, array("grid" => $this->grid)); ?>
+                <?php endif; ?>
+
+                <?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
+                    <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
+                        class="btn pull-right btnCustom" >
+                        <i class="fa fa-plus-circle fa-lg"></i> <?php echo $this->grid->getCrudColumn()->getAdd()["value"]; ?>
+                    </a>
+                <?php endif; ?>
+            </div>
         </div>
 
     <?php endif; ?>
-    <div class="filter-block pull-right" style="margin-right: 10px">
 
-        <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
-            <?php echo $this->partial($this->partialSearch, array("grid" => $this->grid)); ?>
-        <?php endif; ?>     
-
-        <?php if ($this->grid->getOptions()->getMultiFilterConfig()->getEnable()): ?>
-            <?php echo $this->partial($this->partialFilter, array("grid" => $this->grid)); ?>
-        <?php endif; ?>
-
-        <?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
-            <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
-                class="btn pull-right btnCustom" >
-                <i class="fa fa-plus-circle fa-lg"></i> <?php echo $this->grid->getCrudColumn()->getAdd()["value"]; ?>
-            </a>
-        <?php endif; ?>
-    </div>
     <div id="<?php echo $this->grid->getId(); ?>" >
-
-        <div class="main-box-body clearfix"></div>
 
         <div class="main-box-body clearfix">
             <div class="table-responsive">
