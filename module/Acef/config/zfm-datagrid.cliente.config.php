@@ -5,13 +5,15 @@ return [
         'acef-entity-cliente' => [
             'gridId' => 'zfmdg_Cliente',
             'title' => "Clientes",
-             'multi_filter_config' => [
+            'title_add' => "Nuevo Cliente",
+            'title_edit' => "Editando Cliente",
+            'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []
             ],
             "multi_search_config" => [
                 "enable" => true,
-                "properties_enabled" => ['razonSocial','cuit']
+                "properties_enabled" => ['razonSocial', 'cuit']
             ],
             'sourceConfig' => [
                 'type' => 'doctrine',
@@ -31,11 +33,10 @@ return [
             'columnsConfig' => [
                 'id' => [
                     'displayName' => 'ID',
-                    "hidden"=>true
+                    "hidden" => true
                 ],
                 'razonSocial' => [
                     'displayName' => 'Razón Social',
-                    'tdClass' => 'razonSocialStyle'
                 ],
                 'cuit' => [
                     'displayName' => 'Cuit',
@@ -71,22 +72,24 @@ return [
                 'fechaActualizacion' => [
                     'displayName' => 'Fecha',
                     'hidden' => false,
-                    'type'=>'datetime',
-                    'format'=>'d/m/Y'
+                    'type' => 'datetime',
+                    'format' => 'd/m/Y'
                 ],
                 'responsable' => [
                     'displayName' => 'Responsable',
-                    'type'=> 'relational'
+                    'type' => 'relational'
                 ],
                 'estado' => [
                     'displayName' => 'Estado',
-                    'type'=> 'relational'
+                    'type' => 'relational'
                 ],
             ],
             'crudConfig' => [
                 'enable' => true,
                 'side' => "right",
                 'displayName' => 'Acciones',
+                'tdClass' => 'action_column',
+                'thClass' => 'action_column',
                 'add' => [
                     'enable' => true,
                     'class' => '',

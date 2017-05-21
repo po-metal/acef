@@ -1,3 +1,14 @@
+.search-btn{
+    font-size: 12px !important;
+    height: 34px !important;
+    padding: 6px 20px !important; 
+}
+
+.action_column{
+    text-align: right;
+
+}
+
 .navbar-right .dropdown-menu {
     right: 0;
     left: auto !important;
@@ -31,8 +42,4 @@
 .btnCancelCustom:hover{
     background-color: #7f8c8d;
     color: #fff; 
-}
-
-.razonSocialStyle{
-    font-size: 18px !important;
 }

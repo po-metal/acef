@@ -144,6 +144,15 @@ class Cliente
      */
     public $estado = null;
 
+    /**
+     * @Annotation\Type("Zend\Form\Element\Text")
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Deuda", "description":"", "addon":""})
+     * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
+     * name="deuda")
+     */
+    public $deuda = null;
+
     public function getId()
     {
         return $this->id;
@@ -272,6 +281,16 @@ class Cliente
     public function setEstado($estado)
     {
         $this->estado = $estado;
+    }
+
+    public function getDeuda()
+    {
+        return $this->deuda;
+    }
+
+    public function setDeuda($deuda)
+    {
+        $this->deuda = $deuda;
     }
 
     public function __toString()
