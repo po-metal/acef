@@ -41,6 +41,15 @@ class Estado
      */
     public $nombre = null;
 
+    /**
+     * @Annotation\Type("Zend\Form\Element\Textarea")
+     * @Annotation\Attributes({"type":"textarea"})
+     * @Annotation\Options({"label":"Descripción", "description":""})
+     * @ORM\Column(type="string", length=500, unique=false, nullable=true,
+     * name="descripcion")
+     */
+    public $descripcion = null;
+
     public function getNombre()
     {
         return $this->nombre;
@@ -59,6 +68,16 @@ class Estado
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
     }
 
     public function __toString()

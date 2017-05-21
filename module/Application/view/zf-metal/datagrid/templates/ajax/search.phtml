@@ -8,7 +8,7 @@ $searchForm->setAttribute('action', 'javascript:' . $grid->get_f_search() . '()'
 <?php
 /* @var $element \Zend\Form\Element\Text */
 $element = $searchForm->get($grid->getMultiSearhKey());
-$element->setAttribute('class', 'form-control');
+$element->setAttribute('class', 'form-control search-btn');
 $element->setAttribute('placeholder', 'Search');
 ?>
 

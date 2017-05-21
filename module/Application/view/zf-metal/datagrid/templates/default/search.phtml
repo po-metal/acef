@@ -7,7 +7,7 @@ $searchForm = $grid->getFormSearch();
 <?php
 /* @var $element \Zend\Form\Element\Text */
 $element = $searchForm->get($grid->getMultiSearhKey());
-$element->setAttribute('class', 'form-control');
+$element->setAttribute('class', 'form-control search-btn');
 //$element->setAttribute('onkeypress', 'if(event.keyCode==13) {javascript:form.submit();}');
 $element->setAttribute('placeholder', 'Search..');
 ?>

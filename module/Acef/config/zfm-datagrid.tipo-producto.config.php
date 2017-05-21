@@ -5,7 +5,9 @@ return [
         'acef-entity-tipoproducto' => [
             'gridId' => 'zfmdg_TipoProducto',
             'title' => "Tipo de Productos",
-             'multi_filter_config' => [
+            'title_add' => "Nuevo Tipo de Producto",
+            'title_edit' => "Editando Tipo de Producto",
+            'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []
             ],
@@ -29,6 +31,10 @@ return [
                 ],
             ],
             'columnsConfig' => [
+                'id' => [
+                    'displayName' => 'ID',
+                    'hidden' => true,
+                ],
                 'nombre' => [
                     'displayName' => 'Nombre',
                 ],
@@ -37,6 +43,8 @@ return [
                 'enable' => true,
                 'side' => "right",
                 'displayName' => 'Acciones',
+                'tdClass' => 'action_column',
+                'thClass' => 'action_column',
                 'add' => [
                     'enable' => true,
                     'class' => '',

@@ -5,7 +5,9 @@ return [
         'acef-entity-estado' => [
             'gridId' => 'zfmdg_Estado',
             'title' => "Estados",
-             'multi_filter_config' => [
+            'title_add' => "Nuevo Estado",
+            'title_edit' => "Editando Estado",
+            'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []
             ],
@@ -31,15 +33,18 @@ return [
             'columnsConfig' => [
                 'id' => [
                     'displayName' => 'ID',
+                    'hidden' => true,
                 ],
                 'nombre' => [
                     'displayName' => 'Nombre',
-                ],
+                ]
             ],
             'crudConfig' => [
                 'enable' => true,
                 'side' => "right",
                 'displayName' => 'Acciones',
+                'tdClass' => 'action_column',
+                'thClass' => 'action_column',
                 'add' => [
                     'enable' => true,
                     'class' => '',

@@ -54,6 +54,8 @@ return [
                 'enable' => true,
                 'side' => "right",
                 'displayName' => 'Acciones',
+                'tdClass' => 'action_column',
+                'thClass' => 'action_column',
                 'add' => [
                     'enable' => true,
                     'class' => 'btn btn-primary btn-xs',
