@@ -13,7 +13,7 @@ return [
             ],
             "multi_search_config" => [
                 "enable" => true,
-                "properties_enabled" => ['razonSocial', 'cuit']
+                "properties_enabled" => ['razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado','deuda']
             ],
             'sourceConfig' => [
                 'type' => 'doctrine',
@@ -77,11 +77,13 @@ return [
                 ],
                 'responsable' => [
                     'displayName' => 'Responsable',
-                    'type' => 'relational'
+                    'type' => 'relational',
+                    'multiSearchProperty' => "username"
                 ],
                 'estado' => [
                     'displayName' => 'Estado',
-                    'type' => 'relational'
+                    'type' => 'relational',
+                    'multiSearchProperty' => "nombre"
                 ],
             ],
             'crudConfig' => [
