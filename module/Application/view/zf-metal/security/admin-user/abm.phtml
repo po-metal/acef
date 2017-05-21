@@ -3,11 +3,19 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="main-box  clearfix">
-              <div class="main-box-header clearfix">
-                  <h2>Usuarios</h2>
-              </div>
-            
+            <div class="main-box-header clearfix">
+                <h2>Usuarios</h2>
+            </div>
+
             <div class="main-box-body clearfix">
+
+                <div class="filter-block pull-right" style="margin-top: 25px; margin-right: 10px">
+                    <a href="/admin/users/create" class="btn pull-right btnCustom" >
+                        <i class="fa fa-plus-circle fa-lg"></i> 
+                        Agregar Usuario
+                    </a>
+                </div>
+                <div class="clearfix"></div>
                 <div class="table-responsive">
                     <table class="table user-list table-hover">
                         <thead>
@@ -26,10 +34,10 @@
 
                                     <td><?php echo $item->getId(); ?></td>
                                     <td>
-                                        <?php if ($this->applicationOptions()->getShowImages()) :?> 
-                                        <img class="img-circle" src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $item->getImg(); ?>" alt="">
-                                        <?php endif;?>
-                                        <span href="#" class="<?php echo $this->applicationOptions()->getShowImages()?'user-link': 'h5'?>"><?php echo $item->getName(); ?></span><br>
+                                        <?php if ($this->applicationOptions()->getShowImages()) : ?> 
+                                            <img class="img-circle" src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $item->getImg(); ?>" alt="">
+                                        <?php endif; ?>
+                                        <span href="#" class="<?php echo $this->applicationOptions()->getShowImages() ? 'user-link' : 'h5' ?>"><?php echo $item->getName(); ?></span><br>
                                         <?php foreach ($item->getRoles() as $rol) : ?>
                                             <span class="label label-info" style="padding: 1px;"><?= $rol->getName(); ?></span>
                                         <?php endforeach; ?>
