@@ -36,6 +36,7 @@ class Cliente
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Razón Social", "description":"", "addon":""})
+     * @Annotation\Validator({"name":"RazonSocialValidator"}) 
      * @ORM\Column(type="string", length=200, unique=true, nullable=false,
      * name="razon_social")
      */
@@ -45,6 +46,8 @@ class Cliente
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Cuit", "description":"", "addon":"fa fa-male"})
+     * @Annotation\Validator({"name":"CuitValidator"}) 
+     * @Annotation\Validator({"name":"Zend\Validator\Regex", "options":{"pattern":"/^\d{2}(-)?\d{8}(-)?\d{1}$/", "messages":{"regexNotMatch":"El formato del cuit no coincide.", "regexInvalid": "El patrón es inválido", "regexErrorous":"El patrón tiene errores"}}})
      * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
      */
     public $cuit = null;
@@ -94,6 +97,7 @@ class Cliente
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Email", "description":"", "addon":"fa
      * fa-envelope"})
+     * @Annotation\Validator({"name":"Zend\Validator\EmailAddress", "options":{"messages":{"emailAddressInvalidFormat": "El formato de email es inválido."}}}) 
      * @ORM\Column(type="string", length=30, unique=false, nullable=true, name="email")
      */
     public $email = null;
