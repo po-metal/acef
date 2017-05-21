@@ -4,7 +4,15 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-producto' => [
             'gridId' => 'zfmdg_Producto',
-                 'title' => "Productos",
+            'title' => "Productos",
+            'multi_filter_config' => [
+                "enable" => false,
+                "properties_disabled" => []
+            ],
+            "multi_search_config" => [
+                "enable" => true,
+                "properties_enabled" => ['numero', 'nombre']
+            ],
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -16,10 +24,8 @@ return [
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                 'vertical_groups' => [
-                    
                 ],
                 'horizontal_groups' => [
-                    
                 ],
             ],
             'columnsConfig' => [
@@ -28,6 +34,8 @@ return [
                 ],
                 'nombre' => [
                     'displayName' => 'Nombre',
+                    'type' => 'relational',
+                    'multiSearchProperty' => "nombre"
                 ],
                 'numero' => [
                     'displayName' => 'Numero',
@@ -39,7 +47,8 @@ return [
             ],
             'crudConfig' => [
                 'enable' => true,
-                       'side' => "right",
+                'side' => "right",
+                'displayName' => 'Acciones',
                 'add' => [
                     'enable' => true,
                     'class' => 'btn btn-primary btn-xs',

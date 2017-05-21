@@ -4,7 +4,15 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-bitacoracliente' => [
             'gridId' => 'zfmdg_BitacoraCliente',
-            'title' => "Bitacora",
+            'title' => "Historial",
+            'multi_filter_config' => [
+                "enable" => false,
+                "properties_disabled" => []
+            ],
+            "multi_search_config" => [
+                "enable" => true,
+                "properties_enabled" => ['nota', 'responsable']
+            ],
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -23,7 +31,7 @@ return [
             'columnsConfig' => [
                 'id' => [
                     'displayName' => 'ID',
-                    "hidden"=>false
+                    "hidden" => false
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
@@ -37,10 +45,15 @@ return [
                 'nota' => [
                     'displayName' => 'Nota',
                 ],
+                'responsable' => [
+                    'type' => 'relational',
+                    'multiSearchProperty' => "username"
+                ]
             ],
             'crudConfig' => [
                 'enable' => true,
                 'side' => "right",
+                'displayName' => 'Acciones',
                 'add' => [
                     'enable' => true,
                     'class' => 'btn btn-primary btn-xs',

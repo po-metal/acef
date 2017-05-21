@@ -2,7 +2,7 @@
 
 return[
     'zf-metal-security.options' => [
-        'public_register' => true,
+        'public_register' => false,
         'email_confirmation_require' => true,
         'user_state_default' => true,
         'password_recovery' => true,

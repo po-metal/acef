@@ -13,11 +13,16 @@
         <div class="main-box-body clearfix">
             <div id="<?php echo $this->grid->getId(); ?>" >
 
+
                 <div class="filter-block pull-right" style="margin-top: 25px; margin-right: 10px">
-                    <div class="form-group pull-left">
-                        <input class="form-control" placeholder="Search..." type="text">
-                        <i class="fa fa-search search-icon"></i>
-                    </div>
+
+                    <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
+                        <?php echo $this->partial($this->partialSearch, array("grid" => $this->grid)); ?>
+                    <?php endif; ?>     
+
+                    <?php if ($this->grid->getOptions()->getMultiFilterConfig()->getEnable()): ?>
+                        <?php echo $this->partial($this->partialFilter, array("grid" => $this->grid)); ?>
+                    <?php endif; ?>
 
                     <?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
                         <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
@@ -25,7 +30,10 @@
                             <i class="fa fa-plus-circle fa-lg"></i> <?php echo $this->grid->getCrudColumn()->getAdd()["value"]; ?>
                         </a>
                     <?php endif; ?>
+
                 </div>
+
+
                 <div class="clearfix"></div>
 
                 <div class="main-box-body clearfix">
@@ -35,10 +43,10 @@
                                 <tr>
                                     <?php foreach ($this->grid->getColumns() as $column): ?>
                                         <?php if (!$column->getHidden()): ?>
+                                            <th>                                    
+                                                <?php echo $this->translate((string) $column); ?>
+                                                <?php if ($column->getType() != "extra" && $column->getType() != "crud"): ?>
 
-                                            <?php if ($column->getType() != "extra" && $column->getType() != "crud"): ?>
-                                                <th>                                    
-                                                    <?php echo $this->translate((string) $column); ?>
 
                                                     <!--SORT-->
                                                     <?php if ($this->grid->getSort() && $this->grid->getSort()->getBy() == $column->getName()): ?>
@@ -50,8 +58,9 @@
                                                     <?php else: ?>
                                                         <a class="sorting" href="<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>"></a>
                                                     <?php endif; ?>   
-                                                </th>
-                                            <?php endif; ?>
+
+                                                <?php endif; ?>
+                                            </th>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                     <th>&nbsp;</th>

@@ -4,7 +4,15 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-tipoproducto' => [
             'gridId' => 'zfmdg_TipoProducto',
-                 'title' => "Tipo de Productos",
+            'title' => "Tipo de Productos",
+             'multi_filter_config' => [
+                "enable" => false,
+                "properties_disabled" => []
+            ],
+            "multi_search_config" => [
+                "enable" => true,
+                "properties_enabled" => ['nombre']
+            ],
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -16,10 +24,8 @@ return [
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                 'vertical_groups' => [
-                    
                 ],
                 'horizontal_groups' => [
-                    
                 ],
             ],
             'columnsConfig' => [
@@ -29,7 +35,8 @@ return [
             ],
             'crudConfig' => [
                 'enable' => true,
-                      'side' => "right",
+                'side' => "right",
+                'displayName' => 'Acciones',
                 'add' => [
                     'enable' => true,
                     'class' => '',

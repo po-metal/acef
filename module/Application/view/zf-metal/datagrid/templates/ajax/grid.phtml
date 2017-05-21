@@ -7,10 +7,14 @@
 
     <?php endif; ?>
     <div class="filter-block pull-right" style="margin-right: 10px">
-        <div class="form-group pull-left">
-            <input class="form-control" placeholder="Search..." type="text">
-            <i class="fa fa-search search-icon"></i>
-        </div>
+
+        <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
+            <?php echo $this->partial($this->partialSearch, array("grid" => $this->grid)); ?>
+        <?php endif; ?>     
+
+        <?php if ($this->grid->getOptions()->getMultiFilterConfig()->getEnable()): ?>
+            <?php echo $this->partial($this->partialFilter, array("grid" => $this->grid)); ?>
+        <?php endif; ?>
 
         <?php if ($this->grid->getOptions()->getCrudConfig()->getAdd()->getEnable()): ?>
             <a <?php echo $this->grid->getCrudColumn()->getAdd()["action"]; ?>
@@ -30,10 +34,10 @@
                         <tr>
                             <?php foreach ($this->grid->getColumns() as $column): ?>
                                 <?php if (!$column->getHidden()): ?>
+                                    <th>                                    
+                                        <?php echo $this->translate((string) $column); ?>
+                                        <?php if ($column->getType() != "extra" && $column->getType() != "crud"): ?>
 
-                                    <?php if ($column->getType() != "extra" && $column->getType() != "crud"): ?>
-                                        <th>                                    
-                                            <?php echo $this->translate((string) $column); ?>
                                             <!--SORT-->
                                             <?php if ($this->grid->getSort() && $this->grid->getSort()->getBy() == $column->getName()): ?>
                                                 <?php if ($this->grid->getSort()->getDirection() == "DESC"): ?>
@@ -44,8 +48,9 @@
                                             <?php else: ?>
                                                 <a class="sorting" onclick="cdiOrder_<?php echo $this->grid->getId(); ?>('<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>')"></a>
                                             <?php endif; ?>
-                                        </th>
-                                    <?php endif; ?>
+
+                                        <?php endif; ?>
+                                    </th>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                             <th>&nbsp;</th>
