@@ -19,8 +19,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Table(name="acef_clientes")
  * @ORM\Entity(repositoryClass="Acef\Repository\ClienteRepository")
  */
-class Cliente
-{
+class Cliente {
 
     /**
      * @Annotation\Type("Zend\Form\Element\Hidden")
@@ -45,10 +44,11 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Cuit", "description":"", "addon":"fa fa-male"})
-     * @Annotation\Validator({"name":"CuitValidator"}) 
-     * @Annotation\Validator({"name":"Zend\Validator\Regex", "options":{"pattern":"/^\d{2}(-)?\d{8}(-)?\d{1}$/", "messages":{"regexNotMatch":"El formato del cuit no coincide.", "regexInvalid": "El patrón es inválido", "regexErrorous":"El patrón tiene errores"}}})
-     * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
+     * @Annotation\Options({"label":"Cuit", "description":"", "allowEmpty": false, "addon":"fa fa-male"})
+     * @Annotation\Validator({"name":"CuitValidator"})
+     * @Annotation\Validator({"name":"Zend\Validator\NotEmpty", "options":{"messages": {"isEmpty" : "El Cuit es requerido y no puede estar vacio"}} })
+     * @Annotation\Validator({"name":"Zend\Validator\Regex", "options":{"pattern":"/^\d{2}(-)?\d{8}(-)?\d{1}$/", "messages":{"regexNotMatch":"El formato del cuit no es valido.", "regexInvalid": "El patrón es inválido", "regexErrorous":"El patrón tiene errores"}}})
+     * @ORM\Column(type="string", length=200, unique=true, nullable=false, name="cuit")
      */
     public $cuit = null;
 
@@ -157,151 +157,120 @@ class Cliente
      */
     public $deuda = null;
 
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
     }
 
-    public function getRazonSocial()
-    {
+    public function getRazonSocial() {
         return $this->razonSocial;
     }
 
-    public function setRazonSocial($razonSocial)
-    {
+    public function setRazonSocial($razonSocial) {
         $this->razonSocial = $razonSocial;
     }
 
-    public function getCuit()
-    {
+    public function getCuit() {
         return $this->cuit;
     }
 
-    public function setCuit($cuit)
-    {
+    public function setCuit($cuit) {
         $this->cuit = $cuit;
     }
 
-    public function getDomicilio()
-    {
+    public function getDomicilio() {
         return $this->domicilio;
     }
 
-    public function setDomicilio($domicilio)
-    {
+    public function setDomicilio($domicilio) {
         $this->domicilio = $domicilio;
     }
 
-    public function getLocalidad()
-    {
+    public function getLocalidad() {
         return $this->localidad;
     }
 
-    public function setLocalidad($localidad)
-    {
+    public function setLocalidad($localidad) {
         $this->localidad = $localidad;
     }
 
-    public function getTelefono()
-    {
+    public function getTelefono() {
         return $this->telefono;
     }
 
-    public function setTelefono($telefono)
-    {
+    public function setTelefono($telefono) {
         $this->telefono = $telefono;
     }
 
-    public function getTelefonoAlternativo()
-    {
+    public function getTelefonoAlternativo() {
         return $this->telefonoAlternativo;
     }
 
-    public function setTelefonoAlternativo($telefonoAlternativo)
-    {
+    public function setTelefonoAlternativo($telefonoAlternativo) {
         $this->telefonoAlternativo = $telefonoAlternativo;
     }
 
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
     }
 
-    public function getFechaAsignacion()
-    {
+    public function getFechaAsignacion() {
         return $this->fechaAsignacion;
     }
 
-    public function setFechaAsignacion($fechaAsignacion)
-    {
+    public function setFechaAsignacion($fechaAsignacion) {
         $this->fechaAsignacion = $fechaAsignacion;
     }
 
-    public function getFechaRetencion()
-    {
+    public function getFechaRetencion() {
         return $this->fechaRetencion;
     }
 
-    public function setFechaRetencion($fechaRetencion)
-    {
+    public function setFechaRetencion($fechaRetencion) {
         $this->fechaRetencion = $fechaRetencion;
     }
 
-    public function getFechaActualizacion()
-    {
+    public function getFechaActualizacion() {
         return $this->fechaActualizacion;
     }
 
-    public function setFechaActualizacion($fechaActualizacion)
-    {
+    public function setFechaActualizacion($fechaActualizacion) {
         $this->fechaActualizacion = $fechaActualizacion;
     }
 
-    public function getResponsable()
-    {
+    public function getResponsable() {
         return $this->responsable;
     }
 
-    public function setResponsable($responsable)
-    {
+    public function setResponsable($responsable) {
         $this->responsable = $responsable;
     }
 
-    public function getEstado()
-    {
+    public function getEstado() {
         return $this->estado;
     }
 
-    public function setEstado($estado)
-    {
+    public function setEstado($estado) {
         $this->estado = $estado;
     }
 
-    public function getDeuda()
-    {
+    public function getDeuda() {
         return $this->deuda;
     }
 
-    public function setDeuda($deuda)
-    {
+    public function setDeuda($deuda) {
         $this->deuda = $deuda;
     }
 
-    public function __toString()
-    {
-        return  $this->razonSocial;
+    public function __toString() {
+        return $this->razonSocial;
     }
 
-
 }
-
