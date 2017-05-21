@@ -33,7 +33,7 @@ class Producto
 
     /**
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
-     * @Annotation\Options({"label":"Nombre","empty_option": "",
+     * @Annotation\Options({"label":"Tipo","empty_option": "",
      * "target_class":"\Acef\Entity\TipoProducto", "description":""})
      * @ORM\ManyToOne(targetEntity="\Acef\Entity\TipoProducto")
      * @ORM\JoinColumn(name="nombre_id", referencedColumnName="id", nullable=false)
@@ -42,7 +42,7 @@ class Producto
 
     /**
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Numero", "description":""})
+     * @Annotation\Options({"label":"Número", "description":""})
      * @ORM\Column(type="integer", length=20, unique=false, nullable=true,
      * name="numero")
      */

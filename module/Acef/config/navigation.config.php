@@ -22,13 +22,13 @@ return [
                         'route' => 'Acef/TablasMaestras/Main',
                         'pages' => [
                             [
-                                'label' => 'Tipo de Estados',
+                                'label' => 'Estados',
                                 'detail' => '',
                                 'icon' => '',
                                 'route' => 'Acef/Estados/Grid',
                             ],
                             [
-                                'label' => 'Tipo de Productos',
+                                'label' => 'Productos',
                                 'detail' => '',
                                 'icon' => '',
                                 'route' => 'Acef/TipoProducto/Grid',
@@ -50,6 +50,12 @@ return [
                                 'uri' => '/admin/users',
                             ],
                         ],
+                    ],
+                    [
+                        'label' => 'Simulación',
+                        'detail' => '',
+                        'icon' => 'fa fa-coffee',
+                        'route' => 'Acef/CalculoDeuda/Simulador',
                     ],
                 ],
                 'route' => 'Acef/Inicio/Main',

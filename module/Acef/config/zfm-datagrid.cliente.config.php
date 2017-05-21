@@ -71,7 +71,7 @@ return [
                 ],
                 'fechaActualizacion' => [
                     'displayName' => 'Fecha',
-                    'hidden' => false,
+                    'hidden' => true,
                     'type' => 'datetime',
                     'format' => 'd/m/Y'
                 ],

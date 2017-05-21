@@ -4,9 +4,9 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-tipoproducto' => [
             'gridId' => 'zfmdg_TipoProducto',
-            'title' => "Tipo de Productos",
-            'title_add' => "Nuevo Tipo de Producto",
-            'title_edit' => "Editar Tipo de Producto",
+            'title' => "Productos",
+            'title_add' => "Nuevo Producto",
+            'title_edit' => "Editar Producto",
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

@@ -261,6 +261,30 @@ return [
                             ],
                         ],
                     ],
+                    'CalculoDeuda' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/calculo-deuda',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\CalculoDeudaController::CLASS,
+                                'action' => 'simulador',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Simulador' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/simulador',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\CalculoDeudaController::CLASS,
+                                        'action' => 'simulador',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],

@@ -44,7 +44,7 @@ class Cliente {
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Cuit", "description":"", "allowEmpty": false, "addon":"fa fa-male"})
+     * @Annotation\Options({"label":"CUIT", "description":"", "allowEmpty": false, "addon":"fa fa-male"})
      * @Annotation\Validator({"name":"CuitValidator"})
      * @Annotation\Validator({"name":"Zend\Validator\NotEmpty", "options":{"messages": {"isEmpty" : "El Cuit es requerido y no puede estar vacio"}} })
      * @Annotation\Validator({"name":"Zend\Validator\Regex", "options":{"pattern":"/^\d{2}(-)?\d{8}(-)?\d{1}$/", "messages":{"regexNotMatch":"El formato del cuit no es valido.", "regexInvalid": "El patrón es inválido", "regexErrorous":"El patrón tiene errores"}}})
@@ -75,7 +75,7 @@ class Cliente {
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Télefono", "description":"", "addon":"fa
+     * @Annotation\Options({"label":"Teléfono", "description":"", "addon":"fa
      * fa-phone"})
      * @ORM\Column(type="string", length=20, unique=false, nullable=true,
      * name="telefono")
@@ -105,7 +105,7 @@ class Cliente {
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
      * @Annotation\Attributes({"type":"date"})
-     * @Annotation\Options({"label":"Fecha Asignación", "description":"", "addon":"fa
+     * @Annotation\Options({"label":"Fecha de Asignación", "description":"", "addon":"fa
      * fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_asignacion")
      */
@@ -114,7 +114,7 @@ class Cliente {
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
      * @Annotation\Attributes({"type":"date"})
-     * @Annotation\Options({"label":"Fecha de Retencion", "description":"", "addon":"fa
+     * @Annotation\Options({"label":"Fecha de Retención", "description":"", "addon":"fa
      * fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_retencion")
      */
