@@ -33,7 +33,7 @@ return [
             'columnsConfig' => [
                 'id' => [
                     'displayName' => 'ID',
-                    "hidden" => false
+                    "hidden" => true
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
@@ -42,7 +42,7 @@ return [
                 'fecha' => [
                     'displayName' => 'Fecha',
                     'type' => 'date',
-                    'format' => 'Y-m-d H:i:s',
+                    'format' => 'Y-m-d',
                 ],
                 'nota' => [
                     'displayName' => 'Nota',

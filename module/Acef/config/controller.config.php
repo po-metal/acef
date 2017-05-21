@@ -12,6 +12,7 @@ return array(
             \Acef\Controller\InicioController::class => \Acef\Factory\Controller\InicioControllerFactory::class,
             \Acef\Controller\TipoProductoController::class => \Acef\Factory\Controller\TipoProductoControllerFactory::class,
             \Acef\Controller\TablasMaestrasController::class => \Acef\Factory\Controller\TablasMaestrasControllerFactory::class,
+            \Acef\Controller\CalculoDeudaController::class => \Acef\Factory\Controller\CalculoDeudaControllerFactory::class,
         ),
     ),
 );

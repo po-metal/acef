@@ -33,9 +33,10 @@ return [
             'columnsConfig' => [
                 'id' => [
                     'displayName' => 'ID',
+                    'hidden' => true
                 ],
                 'nombre' => [
-                    'displayName' => 'Nombre',
+                    'displayName' => 'Tipo',
                     'type' => 'relational',
                     'multiSearchProperty' => "nombre"
                 ],

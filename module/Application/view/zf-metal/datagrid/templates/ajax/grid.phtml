@@ -1,8 +1,12 @@
-<?php $this->flashCurrent(); ?>
-<div class="row">
-    <?php if ($this->grid->getOptions()->getTitle()): ?>
+<div id="<?php echo $this->grid->getId(); ?>" >
+    <?php $this->flashCurrent(); ?>
+
+    <div class="row">
+
         <div class="main-box-header clearfix">
-            <h2 class="pull-left"> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
+            <?php if ($this->grid->getOptions()->getTitle()): ?>
+                <h2 class="pull-left"> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
+            <?php endif; ?>
             <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 10px">
 
                 <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
@@ -22,9 +26,9 @@
             </div>
         </div>
 
-    <?php endif; ?>
 
-    <div id="<?php echo $this->grid->getId(); ?>" >
+
+
 
         <div class="main-box-body clearfix">
             <div class="table-responsive">
