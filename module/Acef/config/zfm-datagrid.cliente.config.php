@@ -5,6 +5,14 @@ return [
         'acef-entity-cliente' => [
             'gridId' => 'zfmdg_Cliente',
             'title' => "Clientes",
+             'multi_filter_config' => [
+                "enable" => false,
+                "properties_disabled" => []
+            ],
+            "multi_search_config" => [
+                "enable" => true,
+                "properties_enabled" => ['razonSocial','cuit']
+            ],
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
@@ -78,6 +86,7 @@ return [
             'crudConfig' => [
                 'enable' => true,
                 'side' => "right",
+                'displayName' => 'Acciones',
                 'add' => [
                     'enable' => true,
                     'class' => '',

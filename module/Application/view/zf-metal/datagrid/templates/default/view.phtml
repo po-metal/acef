@@ -8,7 +8,7 @@
                 
                <a class="btn btn-success btn-xs pull-right" href="<?php echo $this->url($this->route, array(), array('query' => $this->routeParams), true); ?>" ><?php echo $this->translate('Listar'); ?></a> 
                 <?php if ($this->grid->getOptions()->getCrudConfig()->getEdit()->getEnable()): ?>
-                    <i class='btn btn-danger btn-xs pull-right' onclick='cdiEditRecord_<?php echo $this->grid->getId(); ?>(<?php echo $record->getId(); ?>)'><?php echo $this->translate('Editar'); ?></i>
+               <i class='btn btn-danger btn-xs pull-right' onclick='<?php echo \ZfMetal\Datagrid\C::F_EDIT.$this->grid->getId(); ?>(<?php echo $record->getId(); ?>)'><?php echo $this->translate('Editar'); ?></i>
                 <?php endif; ?>
 
             </h4>

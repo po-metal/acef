@@ -8,6 +8,7 @@ return array(
         "crudConfig" => [
             "enable" => true,
             'side' => "left",
+            'displayName' => 'Acciones',
             'add' => [
                 'enable' => false,
                 'class' => '',

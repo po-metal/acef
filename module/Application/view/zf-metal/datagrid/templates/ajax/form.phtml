@@ -4,7 +4,7 @@
 
     <?php
     $form = $this->grid->getCrudForm();
-    $form->setAttribute("action", "javascript:cdiForm_" . $this->grid->getId() . "('" . $form->getName() . "')");
+    $form->setAttribute("action", "javascript:".\ZfMetal\Datagrid\C::F_FORM. $this->grid->getId() . "('" . $form->getName() . "')");
     $formConfig = $this->grid->getOptions()->getFormConfig();
 
     $form->get('submit')->setAttribute('value', 'Enviar')
@@ -17,7 +17,7 @@
         'attributes' => array(
             'value' => "Cancelar",
             'class' => 'pull-right btn btnCancelCustom',
-            'onclick' => 'cdiListRecords_' . $this->grid->getId() . '()',
+            'onclick' => \ZfMetal\Datagrid\C::F_LIST. $this->grid->getId() . '()',
         ),
         'options' => array(
             'label' => 'Cancel',
