@@ -25,10 +25,6 @@ return [
             'formConfig' => [
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                'vertical_groups' => [
-                ],
-                'horizontal_groups' => [
-                ],
             ],
             'columnsConfig' => [
                 'id' => [
