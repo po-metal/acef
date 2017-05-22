@@ -13,7 +13,7 @@ return [
             ],
             "multi_search_config" => [
                 "enable" => true,
-                "properties_enabled" => ['razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado','deuda']
+                "properties_enabled" => ['razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
             ],
             'sourceConfig' => [
                 'type' => 'doctrine',
@@ -37,9 +37,14 @@ return [
                 ],
                 'razonSocial' => [
                     'displayName' => 'Razón Social',
+                    'priority' => 10,
                 ],
                 'cuit' => [
                     'displayName' => 'Cuit',
+                    'priority' => 20,
+                ],
+                'deuda' => [
+                    'priority' => 30,
                 ],
                 'domicilio' => [
                     'displayName' => 'Domicilio',
@@ -78,12 +83,14 @@ return [
                 'responsable' => [
                     'displayName' => 'Responsable',
                     'type' => 'relational',
-                    'multiSearchProperty' => "username"
+                    'multiSearchProperty' => "username",
+                     'priority' => 40,
                 ],
                 'estado' => [
                     'displayName' => 'Estado',
                     'type' => 'relational',
-                    'multiSearchProperty' => "nombre"
+                    'multiSearchProperty' => "nombre",
+                     'priority' => 50,
                 ],
             ],
             'crudConfig' => [
@@ -98,7 +105,7 @@ return [
                     'value' => 'Agregar Cliente',
                 ],
                 'view' => [
-                    'enable' => true,
+                    'enable' => false,
                     'class' => ' table-link',
                     'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-search-plus fa-stack-1x fa-inverse"></i></span>',
                 ],

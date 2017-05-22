@@ -38,7 +38,8 @@ return [
                 'nombre' => [
                     'displayName' => 'Tipo',
                     'type' => 'relational',
-                    'multiSearchProperty' => "nombre"
+                    'multiSearchProperty' => "nombre",
+                    'priority' => 80,
                 ],
                 'numero' => [
                     'displayName' => 'Numero',

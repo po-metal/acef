@@ -37,6 +37,7 @@ return [
                 ],
                 'nombre' => [
                     'displayName' => 'Nombre',
+                    'priority' => 80,
                 ],
             ],
             'crudConfig' => [

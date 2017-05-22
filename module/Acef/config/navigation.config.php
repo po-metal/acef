@@ -52,9 +52,9 @@ return [
                         ],
                     ],
                     [
-                        'label' => 'Simulación',
+                        'label' => 'Simulador Deudas',
                         'detail' => '',
-                        'icon' => 'fa fa-coffee',
+                        'icon' => 'fa fa-pencil-square-o',
                         'route' => 'Acef/CalculoDeuda/Simulador',
                     ],
                 ],

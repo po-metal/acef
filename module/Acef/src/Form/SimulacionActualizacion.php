@@ -1,13 +1,13 @@
 <?php
 
-namespace ZfMetal\Security\Form;
+namespace Acef\Form;
 
 use Zend\Form\Form;
 
-class Simulacion extends \Zend\Form\Form {
+class SimulacionActualizacion extends \Zend\Form\Form {
 
-    public function __construct($rememberMe) {
-        parent::__construct('simulacion');
+    public function __construct() {
+        parent::__construct('simulacion_actualizacion');
         $this->setAttribute('method', 'post');
         $this->setAttribute('class', "form");
         $this->setAttribute('role', "form");
