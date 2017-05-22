@@ -25,10 +25,24 @@ return [
             'formConfig' => [
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                'vertical_groups' => [
-                ],
-                'horizontal_groups' => [
-                ],
+                'groups' => [
+                    [
+                        'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
+                        'id' => 'User',
+                        'title' => null,
+                        'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
+                        'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                        'fields' => ['razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
+                    ],
+                    [
+                        'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
+                        'id' => 'User',
+                        'title' => null,
+                        'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
+                        'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                        'fields' => [ 'fechaAsignacion', 'fechaRetencion', 'fechaActualizacion']
+                    ],
+                ]
             ],
             'columnsConfig' => [
                 'id' => [
@@ -84,13 +98,13 @@ return [
                     'displayName' => 'Responsable',
                     'type' => 'relational',
                     'multiSearchProperty' => "username",
-                     'priority' => 40,
+                    'priority' => 40,
                 ],
                 'estado' => [
                     'displayName' => 'Estado',
                     'type' => 'relational',
                     'multiSearchProperty' => "nombre",
-                     'priority' => 50,
+                    'priority' => 50,
                 ],
             ],
             'crudConfig' => [
