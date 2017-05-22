@@ -43,13 +43,16 @@ return [
                     'displayName' => 'Fecha',
                     'type' => 'date',
                     'format' => 'Y-m-d',
+                    'priority' => 80,
                 ],
                 'nota' => [
                     'displayName' => 'Nota',
+                    'priority' => 85,
                 ],
                 'responsable' => [
                     'type' => 'relational',
-                    'multiSearchProperty' => "username"
+                    'multiSearchProperty' => "username",
+                    'priority' => 90,
                 ]
             ],
             'crudConfig' => [

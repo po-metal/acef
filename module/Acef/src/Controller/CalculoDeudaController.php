@@ -13,14 +13,11 @@ use Zend\Mvc\Controller\AbstractActionController;
  * @license Creative Commons
  * @link https://github.com/zf-metal
  */
-class CalculoDeudaController extends AbstractActionController
-{
+class CalculoDeudaController extends AbstractActionController {
 
-    public function simuladorAction()
-    {
-        return [];
+    public function simuladorAction() {
+        $form = new \Acef\Form\SimulacionActualizacion();
+        return ["form" => $form];
     }
 
-
 }
-
