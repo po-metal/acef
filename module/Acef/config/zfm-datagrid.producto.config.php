@@ -32,16 +32,16 @@ return [
                     'hidden' => true
                 ],
                 'nombre' => [
-                    'displayName' => 'Tipo',
+                    'displayName' => 'TIPO',
                     'type' => 'relational',
                     'multiSearchProperty' => "nombre",
                     'priority' => 80,
                 ],
                 'numero' => [
-                    'displayName' => 'Numero',
+                    'displayName' => 'NÚMERO',
                 ],
                 'cliente' => [
-                    'displayName' => 'Cliente',
+                    'displayName' => 'CLIENTE',
                     'type' => 'relational',
                 ],
             ],

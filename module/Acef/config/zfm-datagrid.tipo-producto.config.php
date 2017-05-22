@@ -32,9 +32,10 @@ return [
                     'hidden' => true,
                 ],
                 'nombre' => [
-                    'displayName' => 'Nombre',
+                    'displayName' => 'NOMBRE',
                     'priority' => 80,
                 ],
+                 
             ],
             'crudConfig' => [
                 'enable' => true,
