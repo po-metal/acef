@@ -283,6 +283,28 @@ return [
                                     ],
                                 ],
                             ],
+                            'Refinanciacion' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/refinanciacion',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\CalculoDeudaController::CLASS,
+                                        'action' => 'refinanciacion',
+                                    ],
+                                ],
+                            ],
+                            'Actualizacion' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/actualizacion',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\CalculoDeudaController::CLASS,
+                                        'action' => 'actualizacion',
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                 ],

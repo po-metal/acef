@@ -37,7 +37,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         $this->add(array(
             'name' => 'fecha_mora_desde',
             'attributes' => array(
-                'type' => 'text',
+                'type' => 'date',
                 'class' => 'form-control ',
             ),
             'options' => array(
@@ -48,7 +48,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         $this->add(array(
             'name' => 'fecha_calculo_hasta',
             'attributes' => array(
-                'type' => 'text',
+                'type' => 'date',
                 'class' => 'form-control ',
             ),
             'options' => array(
@@ -63,7 +63,6 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'type' => 'text',
                 'class' => 'form-control formula',
                 'disabled' => 'disabled',
-                'value' => '52'
             ),
             'options' => array(
                 'label' => 'Días de Mora',
@@ -86,7 +85,8 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
-            ),
+                'disabled' => 'disabled',
+                ),
             'options' => array(
                 'label' => 'Compensa',
             )
@@ -97,6 +97,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
+                'disabled' => 'disabled',
             ),
             'options' => array(
                 'label' => 'Total Intereses',
@@ -108,6 +109,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
+                'disabled' => 'disabled',
             ),
             'options' => array(
                 'label' => 'Total de Deuda Actualizada',
@@ -118,7 +120,8 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'name' => 'quita_intereses_total_deuda_actualizada',
             'attributes' => array(
                 'type' => 'text',
-                'class' => 'form-control ',
+                'class' => 'form-control formula',
+                'disabled' => 'disabled',
             ),
             'options' => array(
                 'label' => 'Quita de interes sobre total deuda',
@@ -129,7 +132,8 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'name' => 'quita_de_capital',
             'attributes' => array(
                 'type' => 'text',
-                'class' => 'form-control ',
+                'class' => 'form-control formula',
+                'disabled' => 'disabled',
             ),
             'options' => array(
                 'label' => 'Quita de capital',
@@ -142,6 +146,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
+                'disabled' => 'disabled',
             ),
             'options' => array(
                 'label' => 'Total de Deuda con Quita',
