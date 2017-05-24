@@ -22,6 +22,15 @@ return [
                     'entityManager' => 'doctrine.entitymanager.orm_default',
                 ],
             ],
+            "flashMessagesConfig" => [
+                'enable' => true,
+                'add_ok' => "Registro creado con exito",
+                'add_fail' => "Formulario invalido, por favor verificar",
+                'edit_ok' => "Registro actualizado con exito",
+                'edit_fail' => "Formulario invalido, por favor verificar",
+                'delete_ok' => "Registro eliminado",
+                'delete_fail' => "Falla al intentar eliminar el registro, el producto se encuentra asociado a otros clientes.",
+            ],
             'formConfig' => [
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
@@ -39,7 +48,6 @@ return [
                     'type' => "text",
                     'length' => 30,
                 ]
-                 
             ],
             'crudConfig' => [
                 'enable' => true,
