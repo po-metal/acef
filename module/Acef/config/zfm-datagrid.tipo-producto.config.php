@@ -35,6 +35,10 @@ return [
                     'displayName' => 'NOMBRE',
                     'priority' => 80,
                 ],
+                'descripcion' => [
+                    'type' => "text",
+                    'length' => 30,
+                ]
                  
             ],
             'crudConfig' => [
