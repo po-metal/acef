@@ -16,8 +16,21 @@ use Zend\Mvc\Controller\AbstractActionController;
 class CalculoDeudaController extends AbstractActionController {
 
     public function simuladorAction() {
-        $form = new \Acef\Form\SimulacionActualizacion();
-        return ["form" => $form];
+        $formActualizacion = new \Acef\Form\SimulacionActualizacion();
+        $formRefinanciacion = new \Acef\Form\SimulacionRefinanciacion();
+        return ["formActualizacion" => $formActualizacion, "formRefinanciacion" => $formRefinanciacion];
+    }
+
+    public function actualizacionAction() {
+        $formActualizacion = new \Acef\Form\SimulacionActualizacion();
+
+        return ["formActualizacion" => $formActualizacion];
+    }
+
+    public function refinanciacionAction() {
+
+        $formRefinanciacion = new \Acef\Form\SimulacionRefinanciacion();
+        return ["formRefinanciacion" => $formRefinanciacion];
     }
 
 }

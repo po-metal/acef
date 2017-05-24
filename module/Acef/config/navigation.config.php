@@ -56,6 +56,22 @@ return [
                         'detail' => '',
                         'icon' => 'fa fa-pencil-square-o',
                         'route' => 'Acef/CalculoDeuda/Simulador',
+                        'pages' => [
+                            [
+                                'label' => 'Refinanciacion',
+                                'detail' => '',
+                                'icon' => '',
+                                'permission' => 'general-editar',
+                                'route' => 'Acef/CalculoDeuda/Refinanciacion',
+                            ],
+                            [
+                                'label' => 'Actualización',
+                                'detail' => '',
+                                'icon' => '',
+                                'permission' => 'general-editar',
+                                'route' => 'Acef/CalculoDeuda/Actualizacion',
+                            ],
+                        ],
                     ],
                 ],
                 'route' => 'Acef/Inicio/Main',
