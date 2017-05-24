@@ -44,6 +44,8 @@ return [
                 'nota' => [
                     'displayName' => 'Nota',
                     'priority' => 85,
+                    'type' => 'text',
+                    'length' => 30
                 ],
                 'responsable' => [
                     'type' => 'relational',
