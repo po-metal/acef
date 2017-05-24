@@ -34,6 +34,10 @@ return [
                 'nombre' => [
                     'displayName' => 'Nombre',
                     'priority' => 80,
+                ],
+                'descripcion' => [
+                    'type' => "text",
+                    'length' => 30,
                 ]
             ],
             'crudConfig' => [
@@ -48,7 +52,7 @@ return [
                     'value' => 'Agregar Estado',
                 ],
                 'view' => [
-                    'enable' => true,
+                    'enable' => false,
                     'class' => ' table-link',
                     'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-search-plus fa-stack-1x fa-inverse"></i></span>',
                 ],

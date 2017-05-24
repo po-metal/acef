@@ -11,6 +11,15 @@ return [
                 "enable" => false,
                 "properties_disabled" => []
             ],
+            "flashMessagesConfig" => [
+                'enable' => true,
+                'add_ok' => "Registro creado con exito",
+                'add_fail' => "Formulario invalido, por favor verificar",
+                'edit_ok' => "Registro actualizado con exito",
+                'edit_fail' => "Formulario invalido, por favor verificar",
+                'delete_ok' => "Registro eliminado",
+                'delete_fail' => "Falla al intentar eliminar el registro",
+            ],
             "multi_search_config" => [
                 "enable" => true,
                 "properties_enabled" => ['numero', 'nombre']

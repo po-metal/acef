@@ -62,6 +62,8 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
+                'disabled' => 'disabled',
+                'value' => '52'
             ),
             'options' => array(
                 'label' => 'Días de Mora',
