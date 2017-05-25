@@ -19,9 +19,21 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => '% de Quita sobre intereses',
+                'label' => 'Porcentaje de Quita sobre intereses',
             )
         ));
+        
+         $this->add(array(
+            'name' => 'porcentaje_quita_capital',
+            'attributes' => array(
+                'type' => 'text',
+                'class' => 'form-control ',
+            ),
+            'options' => array(
+                'label' => 'Porcentaje de Quita sobre capital ',
+            )
+        ));
+
 
         $this->add(array(
             'name' => 'tasa',

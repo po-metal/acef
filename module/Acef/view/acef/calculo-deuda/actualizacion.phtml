@@ -13,32 +13,32 @@
                 $groups = [
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
-                        'id' => 'first',
-                        'title' => 'first',
+                        'id' => 'Porcentajes',
+                        'title' => 'Porcentajes',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_FOUR,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['porcentaje_quita_intereses',]
+                        'fields' => ['porcentaje_quita_intereses','porcentaje_quita_capital','tasa']
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
-                        'id' => 'second',
-                        'title' => 'second',
+                        'id' => 'Tiempo',
+                        'title' => 'Tiempo',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_FOUR,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['tasa', 'fecha_mora_desde', 'fecha_calculo_hasta', 'dias_de_mora',]
+                        'fields' => [ 'fecha_mora_desde', 'fecha_calculo_hasta', 'dias_de_mora',]
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
-                        'id' => 'third',
-                        'title' => 'third',
+                        'id' => 'Preliminares',
+                        'title' => 'Preliminares',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_FOUR,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                         'fields' => ['capital', 'compensa', 'total_intereses']
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
-                        'id' => 'fourth',
-                        'title' => 'fourth',
+                        'id' => 'Finales',
+                        'title' => 'Finales',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_FOUR,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                         'fields' => ['total_deuda_actualizada', 'quita_intereses_total_deuda_actualizada', 'quita_de_capital', 'total_deuda_con_quita']
