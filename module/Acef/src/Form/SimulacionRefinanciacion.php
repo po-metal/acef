@@ -36,7 +36,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'monto_a_refinanciar',
+            'name' => 'monto_refinanciar',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -78,6 +78,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
             ),
             'options' => array(
                 'label' => 'Cuota por año',
+                'required' => true,
             )
         ));
 
@@ -108,7 +109,8 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
             'name' => 'tasa',
             'attributes' => array(
                 'type' => 'text',
-                'class' => 'form-control ',
+                'class' => 'form-control formula',
+                'disabled' => 'disabled'
             ),
             'options' => array(
                 'label' => 'Tasa',
