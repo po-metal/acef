@@ -22,8 +22,8 @@ class SimulacionRefinanciacion extends InputFilter {
                 ),
             ),
         ));
-        
-          $this->add(array(
+
+        $this->add(array(
             'name' => 'interes',
             'required' => true,
             'validators' => array(
@@ -32,9 +32,9 @@ class SimulacionRefinanciacion extends InputFilter {
                 ),
             ),
         ));
-          
-          
-              $this->add(array(
+
+
+        $this->add(array(
             'name' => 'meses_cuentas',
             'required' => true,
             'validators' => array(
@@ -43,7 +43,6 @@ class SimulacionRefinanciacion extends InputFilter {
                 ),
             ),
         ));
-          
     }
 
 }

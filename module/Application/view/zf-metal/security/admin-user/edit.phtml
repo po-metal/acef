@@ -13,7 +13,7 @@
             [
                 'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
                 'id' => 'User',
-                'title' => "User",
+                'title' => "Usuario",
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                 'fields' => ['name', 'username', 'email', 'password']
@@ -54,6 +54,15 @@
                     'label' => 'Cancelar',
                 )
             ));
+            
+            $this->form->get('name')
+                    ->setAttribute('placeholder', 'Nombre')
+                    ->setLabel('Nombre');
+            $this->form->get('username')
+                    ->setAttribute('placeholder', 'Usuario')
+                    ->setLabel('Usuario');
+            $this->form->get('active')
+                    ->setLabel('Activo');
 
             echo $this->renderForm($this->form, \ZfMetal\Commons\Consts::STYLE_VERTICAL, \ZfMetal\Commons\Consts::COLUMNS_TWO, $groups);
             ?>
