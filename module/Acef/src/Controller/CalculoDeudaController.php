@@ -46,9 +46,6 @@ class CalculoDeudaController extends AbstractActionController {
         $formRefinanciacion = new \Acef\Form\SimulacionRefinanciacion();
         $formRefinanciacion->setInputFilter(new \Acef\Form\Filter\SimulacionRefinanciacion());
 
-
-
-
         if ($this->getRequest()->isPost()) {
             $serviceRefinanciacion = new \Acef\Service\SimuladorRefinanciacion();
             $formRefinanciacion->setHydrator(new \Zend\Hydrator\ClassMethods());

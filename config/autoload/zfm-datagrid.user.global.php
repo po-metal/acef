@@ -79,8 +79,8 @@ return [
                 ],
                 'active' => [
                     'type' => "boolean",
-                    'valueWhenTrue' => "<i class='text-success glyphicon glyphicon-ok'></i>",
-                    'valueWhenFalse' => "<i class='text-danger glyphicon glyphicon-remove'></i>"
+                    'valueWhenTrue' => "<span class=\"label label-success\">Activo</span>",
+                    'valueWhenFalse' => "<span class=\"label label-default\">Inactivo</span>"
                 ],
                 'password' => [
                     'displayName' => 'Password',
