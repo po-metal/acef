@@ -33,14 +33,22 @@ class SimulacionRefinanciacion extends InputFilter {
             ),
         ));
 
-
+        new \Zend\Validator\GreaterThan();
         $this->add(array(
             'name' => 'meses_cuentas',
             'required' => true,
             'validators' => array(
-                array(
+                [
                     'name' => 'Zend\Validator\Digits'
-                ),
+                ],
+                [
+                    'name' => 'Zend\Validator\GreaterThan',
+                    'options' => [
+                        'min' => 0,
+                        "messages" => 
+                        ["notGreaterThan" => "El valor debe ser mayor a '%min%'"]
+                    ]
+                ]
             ),
         ));
     }
