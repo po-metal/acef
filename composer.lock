@@ -3537,12 +3537,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/datagrid.git",
-                "reference": "678ea8202c7c3f7a37f7bf1399b5bf43a8889fc9"
+                "reference": "073c5f17f9db0344814152122dc198caf89f0bf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/678ea8202c7c3f7a37f7bf1399b5bf43a8889fc9",
-                "reference": "678ea8202c7c3f7a37f7bf1399b5bf43a8889fc9",
+                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/073c5f17f9db0344814152122dc198caf89f0bf3",
+                "reference": "073c5f17f9db0344814152122dc198caf89f0bf3",
                 "shasum": ""
             },
             "require": {
@@ -3605,7 +3605,7 @@
                 "zf2",
                 "zf3"
             ],
-            "time": "2017-05-26 20:55:33"
+            "time": "2017-05-28 00:38:02"
         },
         {
             "name": "zf-metal/generator",
@@ -3773,12 +3773,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/Security.git",
-                "reference": "1550decb9d5058de1fd12f57371741832413f3ec"
+                "reference": "0aef8beef3f74d5fcaa3fe4f6008fe9838e4c059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/Security/zipball/1550decb9d5058de1fd12f57371741832413f3ec",
-                "reference": "1550decb9d5058de1fd12f57371741832413f3ec",
+                "url": "https://api.github.com/repos/zf-metal/Security/zipball/0aef8beef3f74d5fcaa3fe4f6008fe9838e4c059",
+                "reference": "0aef8beef3f74d5fcaa3fe4f6008fe9838e4c059",
                 "shasum": ""
             },
             "require": {
@@ -3823,7 +3823,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-05-26 18:12:22"
+            "time": "2017-05-27 20:34:47"
         },
         {
             "name": "zf-metal/security-social",
