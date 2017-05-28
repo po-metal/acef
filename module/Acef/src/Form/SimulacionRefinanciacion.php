@@ -123,10 +123,24 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
             'type' => 'Zend\Form\Element\Submit',
             'attributes' => array(
                 'value' => "Calcular",
-                'class' => 'btn btnCustom',
+                'class' => 'btn btnCustom pull-right',
+                'style' => 'margin-left: 2px'
             ),
             'options' => array(
                 'label' => 'Submit',
+            )
+        ));
+
+        $this->add(array(
+            'name' => 'borrar',
+            'type' => 'Zend\Form\Element\Button',
+            'attributes' => array(
+                'value' => "Borrar",
+                'class' => 'pull-right btn btnCancelCustom',
+                'onclick' => 'this.form.reset()',
+            ),
+            'options' => array(
+                'label' => 'Cancelar',
             )
         ));
     }
