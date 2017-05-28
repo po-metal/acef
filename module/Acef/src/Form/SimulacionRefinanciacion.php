@@ -19,7 +19,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'Total de Deuda con Quita',
+                'label' => 'Total de deuda con quita',
             )
         ));
 
@@ -30,8 +30,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'ANTICIPO
-',
+                'label' => 'Anticipo',
             )
         ));
 
@@ -43,7 +42,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'disabled' => 'disabled'
             ),
             'options' => array(
-                'label' => 'Monto a Refinanciar',
+                'label' => 'Monto a refinanciar',
             )
         ));
 
@@ -54,7 +53,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => '% INTERES',
+                'label' => '% Interes',
             )
         ));
 
@@ -66,7 +65,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'CANT.CUOTAS',
+                'label' => 'Cant. Cuotas',
             )
         ));
 
@@ -90,7 +89,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'disabled' => 'disabled'
             ),
             'options' => array(
-                'label' => 'MONTO DE CUOTA:',
+                'label' => 'Monto de Cuota',
             )
         ));
 
@@ -101,7 +100,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'MESES CTAS.',
+                'label' => 'Meses Ctas.',
             )
         ));
 

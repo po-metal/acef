@@ -19,7 +19,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'Porcentaje de Quita sobre intereses',
+                'label' => 'Porcentaje de quita sobre intereses',
             )
         ));
 
@@ -30,7 +30,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'Porcentaje de Quita sobre capital ',
+                'label' => 'Porcentaje de quita sobre capital ',
             )
         ));
 
@@ -53,7 +53,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'Fecha de Mora (Desde)',
+                'label' => 'Fecha de mora (Desde)',
             )
         ));
 
@@ -64,7 +64,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'class' => 'form-control ',
             ),
             'options' => array(
-                'label' => 'Fecha de Cálculo (hasta)',
+                'label' => 'Fecha de cálculo (Hasta)',
             )
         ));
 
@@ -112,7 +112,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'disabled' => 'disabled',
             ),
             'options' => array(
-                'label' => 'Total Intereses',
+                'label' => 'Total intereses',
             )
         ));
 
@@ -124,7 +124,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'disabled' => 'disabled',
             ),
             'options' => array(
-                'label' => 'Total de Deuda Actualizada',
+                'label' => 'Total de deuda actualizada',
             )
         ));
 
@@ -161,7 +161,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'disabled' => 'disabled',
             ),
             'options' => array(
-                'label' => 'Total de Deuda con Quita',
+                'label' => 'Total de deuda con quita',
             )
         ));
 
