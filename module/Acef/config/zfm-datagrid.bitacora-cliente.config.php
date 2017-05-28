@@ -1,12 +1,54 @@
 <?php
 
 return [
+    'zf-metal-datagrid.exports' => [
+        'export-acef-entity-bitacoracliente' => [
+            'fileName' => 'Historial',
+            'columnsConfig' => [
+                'id' => [
+                    'displayName' => 'ID',
+                    "hidden" => true
+                ],
+                'cliente' => [
+                    'displayName' => 'Cliente',
+                    'type' => 'relational',
+                      'priority' => 10,
+                ],
+                'fecha' => [
+                    'displayName' => 'Fecha',
+                    'type' => 'date',
+                    'format' => 'Y-m-d H:i:s',
+                    'priority' => 80,
+                ],
+                'nota' => [
+                    'displayName' => 'Nota',
+                    'priority' => 85,
+                    'type' => 'text',
+                    'length' => 30
+                ],
+                'responsable' => [
+                    'type' => 'relational',
+                    'multiSearchProperty' => "username",
+                    'priority' => 90,
+                ]
+            ]
+        ]
+    ],
     'zf-metal-datagrid.custom' => [
         'acef-entity-bitacoracliente' => [
             'gridId' => 'zfmdg_BitacoraCliente',
             'title' => "Historial",
             'title_add' => "Nueva Nota",
             'title_edit' => "Editar Nota",
+            'export_config' => [
+                'export_to_excel' => [
+                    'enable' => true,
+                    'key' => 'export-acef-entity-bitacoracliente',
+                    'btn_class' => 'btn btnCustom fa fa-file-excel-o',
+                    'btn_value' => 'Excel',
+                    'btn_tag' => 'button',
+                ],
+            ],
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

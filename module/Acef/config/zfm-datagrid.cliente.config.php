@@ -1,12 +1,84 @@
 <?php
 
 return [
+    'zf-metal-datagrid.exports' => [
+        'export-acef-entity-cliente' => [
+            'fileName' => 'Clientes',
+            'columnsConfig' => [
+                'id' => [
+                    'displayName' => 'ID',
+                ],
+                'razonSocial' => [
+                    'displayName' => 'Razón Social',
+                    'priority' => 10,
+                ],
+                'cuit' => [
+                    'displayName' => 'Cuit',
+                    'priority' => 20,
+                ],
+                'deuda' => [
+                    'priority' => 30,
+                ],
+                'domicilio' => [
+                    'displayName' => 'Domicilio',
+                ],
+                'localidad' => [
+                    'displayName' => 'Localidad',
+                ],
+                'telefono' => [
+                    'displayName' => 'Télefono',
+                ],
+                'telefonoAlternativo' => [
+                    'displayName' => 'Teléfono Alternativo',
+                ],
+                'email' => [
+                    'displayName' => 'Email',
+                ],
+                'fechaAsignacion' => [
+                    'displayName' => 'Fecha Asignación',
+                    'type' => 'datetime',
+                    'format' => 'd/m/Y'
+                ],
+                'fechaRetencion' => [
+                    'displayName' => 'Fecha de Retencion',
+                    'type' => 'datetime',
+                    'format' => 'd/m/Y'
+                ],
+                'fechaActualizacion' => [
+                    'displayName' => 'Fecha',
+                    'type' => 'datetime',
+                    'format' => 'd/m/Y'
+                ],
+                'responsable' => [
+                    'displayName' => 'Responsable',
+                    'type' => 'relational',
+                    'field' => 'name',
+                    'priority' => 40,
+                ],
+                'estado' => [
+                    'displayName' => 'Estado',
+                    'type' => 'relational',
+                    'field' => 'nombre',
+                    'priority' => 50,
+                ],
+            ],
+        ]
+    ],
     'zf-metal-datagrid.custom' => [
         'acef-entity-cliente' => [
             'gridId' => 'zfmdg_Cliente',
             'title' => "Clientes",
             'title_add' => "Nuevo Cliente",
             'title_edit' => "Editar Cliente",
+            'export_config' => [
+                'export_to_excel' => [
+                    'enable' => true,
+                    'key' => 'export-acef-entity-cliente',
+                    'btn_class' => 'btn btnCustom fa fa-file-excel-o',
+                    'btn_value' => 'Excel',
+                    'btn_tag' => 'button',
+                ],
+            ],
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []
@@ -40,7 +112,7 @@ return [
                         'title' => null,
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => [ 'fechaAsignacion', 'fechaRetencion', 'fechaActualizacion']
+                        'fields' => ['fechaAsignacion', 'fechaRetencion', 'fechaActualizacion']
                     ],
                 ]
             ],

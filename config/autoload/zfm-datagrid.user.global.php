@@ -1,12 +1,78 @@
 <?php
 
 return [
+    'zf-metal-datagrid.exports' => [
+        'export-zf-metal-security-entity-usuario' => [
+            'fileName' => 'Usuarios',
+            'columnsConfig' => [
+               'id' => [
+                    'displayName' => 'ID',
+                ],
+                'name' => [
+                    'displayName' => 'Nombre',
+                    'priority' => 10,
+                ],
+                'username' => [
+                    'displayName' => 'Usuario',
+                    'priority' => 20,
+                ],
+                'email' => [
+                    'displayName' => 'Email',
+                    'priority' => 30,
+                ],
+                'active' => [
+                    'type' => "boolean",
+                    'valueWhenTrue' => "Activo",
+                    'valueWhenFalse' => "Inactivo"
+                ],
+                'password' => [
+                    'displayName' => 'Password',
+                    'hidden' => true,
+                ],
+                'img' => [
+                    'displayName' => 'Img',
+                    'hidden' => true,
+                ],
+                'roles' => [
+                    'displayName' => 'Roles',
+                    'hidden' => true,
+                    'type' => "relational",
+                    'multiSearchProperty' => "name"
+                ],
+                'groups' => [
+                    'displayName' => 'Grupos',
+                    'hidden' => true,
+                    'type' => "relational",
+                ],
+                'createdAt' => [
+                    'displayName' => 'Creado en Fecha',
+                    'type' => "datetime",
+                    'format' => 'Y-m-d H:i:s',
+                ],
+                'updatedAt' => [
+                    'displayName' => 'Ultima Actualización',
+                    'type' => "datetime",
+                    'format' => 'Y-m-d H:i:s',
+
+                ],
+            ]
+        ]
+    ],
     'zf-metal-datagrid.custom' => [
         'zf-metal-security-entity-usuario' => [
             'gridId' => 'zfmdg_usuario',
             'title' => "Usuarios",
             'title_add' => "Nuevo Usuario",
             'title_edit' => "Edición de Usuario",
+             'export_config' => [
+                'export_to_excel' => [
+                    'enable' => true,
+                    'key' => 'export-zf-metal-security-entity-usuario',
+                    'btn_class' => 'btn btnCustom fa fa-file-excel-o',
+                    'btn_value' => 'Excel',
+                    'btn_tag' => 'button',
+                ],
+            ],
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

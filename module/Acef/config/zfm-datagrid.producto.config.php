@@ -1,12 +1,46 @@
 <?php
 
 return [
+    'zf-metal-datagrid.exports' => [
+        'export-acef-entity-producto' => [
+            'fileName' => 'Producto',
+            'columnsConfig' => [
+                'id' => [
+                    'displayName' => 'ID',
+                ],
+                'nombre' => [
+                    'displayName' => 'TIPO',
+                    'type' => 'relational',
+                    'multiSearchProperty' => "nombre",
+                    'priority' => 80,
+                ],
+                'numero' => [
+                    'displayName' => 'NÚMERO',
+                ],
+                'cliente' => [
+                    'displayName' => 'CLIENTE',
+                    'type' => 'relational',
+                    'field' => "razonSocial",
+                     'priority' => 10,
+                ],
+            ]
+        ]
+    ],
     'zf-metal-datagrid.custom' => [
         'acef-entity-producto' => [
             'gridId' => 'zfmdg_Producto',
             'title' => "Productos",
             'title_add' => "Nuevo Producto",
             'title_edit' => "Editar Producto",
+            'export_config' => [
+                'export_to_excel' => [
+                    'enable' => true,
+                    'key' => 'export-acef-entity-producto',
+                    'btn_class' => 'btn btnCustom fa fa-file-excel-o',
+                    'btn_value' => 'Excel',
+                    'btn_tag' => 'button',
+                ],
+            ],
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []
