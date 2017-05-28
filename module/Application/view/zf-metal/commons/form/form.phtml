@@ -15,7 +15,7 @@ $elementsReady = array();
             <div id="form-group-<?php echo $groupConfig->getId(); ?>">
 
                 <?php if ($groupConfig->getTitle()): ?>
-                    <legend><?php echo $this->translate($groupConfig->getTitle()); ?></legend>
+                    <legend style="font-weight: 300; border-bottom: none; margin-top: 20px;"><?php echo $this->translate($groupConfig->getTitle()); ?></legend>
                 <?php endif; ?>
 
                 <?php foreach ($groupConfig->getFields() as $item): ?>
@@ -39,7 +39,7 @@ $elementsReady = array();
                 <div id="form-group-<?php echo $groupConfig->getId(); ?>">
 
                     <?php if ($groupConfig->getTitle()): ?>
-                        <legend><?php echo $this->translate($groupConfig->getTitle()); ?></legend>
+                        <legend style="font-weight: 300; border-bottom: none; margin-top: 20px;"><?php echo $this->translate($groupConfig->getTitle()); ?></legend>
                     <?php endif; ?>
 
                     <?php foreach ($groupConfig->getFields() as $item): ?>
