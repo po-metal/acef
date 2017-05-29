@@ -7,10 +7,12 @@
             <?php if ($this->grid->getOptions()->getTitle()): ?>
                 <h2 class="pull-left"> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
             <?php endif; ?>
+            <div style="margin-right: 25px">
+                <?php echo $this->partial($this->partialExports, array("grid" => $this->grid)); ?>
 
-            <?php echo $this->partial($this->partialExports, array("grid" => $this->grid)); ?>
+            </div>
 
-            <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 25px">
+            <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 10px">
 
 
                 <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
