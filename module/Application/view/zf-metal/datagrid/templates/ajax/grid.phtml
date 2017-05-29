@@ -7,9 +7,11 @@
             <?php if ($this->grid->getOptions()->getTitle()): ?>
                 <h2 class="pull-left"> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
             <?php endif; ?>
+
+            <?php echo $this->partial($this->partialExports, array("grid" => $this->grid)); ?>
+
             <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 10px">
-                
-                <?php echo $this->partial($this->partialExports, array("grid" => $this->grid)); ?>
+
 
                 <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
                     <?php echo $this->partial($this->partialSearch, array("grid" => $this->grid)); ?>
@@ -58,7 +60,7 @@
                                     </th>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                  
+
                         </tr>
                     </thead>
                     <tbody>

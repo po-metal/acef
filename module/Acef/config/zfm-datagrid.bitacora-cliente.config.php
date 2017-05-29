@@ -44,9 +44,9 @@ return [
                 'export_to_excel' => [
                     'enable' => true,
                     'key' => 'export-acef-entity-bitacoracliente',
-                    'btn_class' => 'btn btnCustom fa fa-file-excel-o',
-                    'btn_value' => 'Excel',
-                    'btn_tag' => 'button',
+//                    'btn_class' => 'btn btnCustom fa fa-file-excel-o',
+//                    'btn_value' => 'Excel',
+//                    'btn_tag' => 'button',
                 ],
             ],
             'multi_filter_config' => [

@@ -10,13 +10,18 @@
                 <?php if ($this->grid->getOptions()->getTitle()): ?>
                     <h2 class="main-box-header-custom pull-left"> <?php echo $this->grid->getOptions()->getTitle(); ?></h2>
                 <?php endif; ?>
-                <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 10px">
                     
-                    <?php echo $this->partial($this->partialExports, array("grid" => $this->grid)); ?>
+                <?php echo $this->partial($this->partialExports, array("grid" => $this->grid)); ?>
+
+                <div class="filter-block pull-right" style="margin-top: 0px; margin-right: 10px">
+
 
                     <?php if ($this->grid->getOptions()->getMultiSearchConfig()->getEnable()): ?>     
                         <?php echo $this->partial($this->partialSearch, array("grid" => $this->grid)); ?>
-                    <?php endif; ?>     
+                    <?php endif; ?>  
+
+
+
 
                     <?php if ($this->grid->getOptions()->getMultiFilterConfig()->getEnable()): ?>
                         <?php echo $this->partial($this->partialFilter, array("grid" => $this->grid)); ?>
