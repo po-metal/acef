@@ -36,5 +36,12 @@ return array(
                 'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-cog fa-stack-1x fa-inverse"></i></span>',
             ],
         ],
+        'export_config' => [
+                'export_to_excel' => [
+                    'btn_class' => 'btn btnCustom fa fa-download',
+                    'btn_value' => '',
+                    'btn_tag' => 'button',
+                ],
+            ],
     )
 );

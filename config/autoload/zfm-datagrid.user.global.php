@@ -5,7 +5,7 @@ return [
         'export-zf-metal-security-entity-usuario' => [
             'fileName' => 'Usuarios',
             'columnsConfig' => [
-               'id' => [
+                'id' => [
                     'displayName' => 'ID',
                 ],
                 'name' => [
@@ -53,7 +53,6 @@ return [
                     'displayName' => 'Ultima Actualización',
                     'type' => "datetime",
                     'format' => 'Y-m-d H:i:s',
-
                 ],
             ]
         ]
@@ -64,12 +63,12 @@ return [
             'title' => "Usuarios",
             'title_add' => "Nuevo Usuario",
             'title_edit' => "Edición de Usuario",
-             'export_config' => [
+            'export_config' => [
                 'export_to_excel' => [
                     'enable' => true,
                     'key' => 'export-zf-metal-security-entity-usuario',
-                    'btn_class' => 'btn btnCustom fa fa-file-excel-o',
-                    'btn_value' => 'Excel',
+                    'btn_class' => 'btn btnCustom fa fa-download',
+                    'btn_value' => '',
                     'btn_tag' => 'button',
                 ],
             ],
@@ -79,7 +78,7 @@ return [
             ],
             "multi_search_config" => [
                 "enable" => true,
-               // "properties_enabled" => ['name', 'username', 'email', 'roles', 'groups']
+            // "properties_enabled" => ['name', 'username', 'email', 'roles', 'groups']
             ],
             'sourceConfig' => [
                 'type' => 'doctrine',
@@ -200,8 +199,8 @@ return [
                 ],
                 'del' => [
                     'enable' => true,
-                     'class' => ' table-link danger',
-                'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse"></i></span>',
+                    'class' => ' table-link danger',
+                    'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse"></i></span>',
                 ],
                 'view' => [
                     'enable' => false,
