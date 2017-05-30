@@ -197,19 +197,19 @@ return [
                 ],
                 'edit' => [
                     'enable' => true,
-                    'class' => ' table-link',
-                    'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>',
+                    'class' => ' ',
+                    'value' => '<span class="fa-stack btnCircle btn btnBlue"></i><i class="fa fa-pencil fa-stack-1x"></i></span>',
                 ],
-                'del' => [
+                'del' => [ 
                     'enable' => true,
-                    'class' => ' table-link danger',
-                    'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse"></i></span>',
+                    'class' => '',
+                    'value' => '<span class="fa-stack btnCircle btn btnRed"></i><i class="fa fa-trash-o fa-stack-1x"></i></span>',
                 ],
                 'manager' => [
                     'enable' => true,
                     'action' => 'href="/acef/manager-cliente/main/{{id}}"',
-                    'class' => ' table-link success',
-                    'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-cog fa-stack-1x fa-inverse"></i></span>',
+                    'class' => '',
+                    'value' => '<span class="fa-stack btnCircle btn btnBlue"></i><i class="fa fa-cog fa-stack-1x"></i></span>',
                 ],
             ],
         ],
