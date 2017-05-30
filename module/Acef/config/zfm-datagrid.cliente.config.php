@@ -169,7 +169,7 @@ return [
                 'responsable' => [
                     'displayName' => 'Responsable',
                     'type' => 'relational',
-                    'multiSearchProperty' => "username",
+                    'multiSearchProperty' => "name",
                     'priority' => 40,
                 ],
                 'estado' => [
