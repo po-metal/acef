@@ -119,3 +119,7 @@ div.main-box.clearfix{
     background-color: #F1C40F;
     color: #fff; 
 }
+
+.select2-container{
+    min-width: 100% !important;
+}
