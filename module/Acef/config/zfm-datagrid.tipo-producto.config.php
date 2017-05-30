@@ -62,18 +62,18 @@ return [
                 ],
                 'view' => [
                     'enable' => false,
-                    'class' => ' table-link',
-                    'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-search-plus fa-stack-1x fa-inverse"></i></span>',
+                    'class' => '',
+                    'value' => '<span class="fa-stack btnCircle btn btnBlue"></i><i class="fa fa-search-plus fa-stack-1x"></i></span>',
                 ],
                 'edit' => [
                     'enable' => true,
-                    'class' => ' table-link',
-                    'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>',
+                    'class' => ' ',
+                    'value' => '<span class="fa-stack btnCircle btn btnBlue"></i><i class="fa fa-pencil fa-stack-1x"></i></span>',
                 ],
-                'del' => [
+                'del' => [ 
                     'enable' => true,
-                    'class' => ' table-link danger',
-                    'value' => '<span class="fa-stack"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-trash-o fa-stack-1x fa-inverse"></i></span>',
+                    'class' => '',
+                    'value' => '<span class="fa-stack btnCircle btn btnRed"></i><i class="fa fa-trash-o fa-stack-1x"></i></span>',
                 ],
             ],
         ],
