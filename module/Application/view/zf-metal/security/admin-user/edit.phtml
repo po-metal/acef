@@ -1,4 +1,9 @@
+<?php
+$this->headLink()
+        ->appendStylesheet($this->basePath() . '/shared/centaurus/libraries/select2/select2.css');
+$this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries/select2/select2.min.js');
 
+?>
 <div class="row ">
     <div class="main-box  clearfix">
 
@@ -10,34 +15,44 @@
         <div class="main-box-body clearfix">
             <?php
             $groups = [
-            [
-                'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
-                'id' => 'User',
-                'title' => "Usuario",
-                'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
-                'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                'fields' => ['name', 'username', 'email', 'password']
-            ],
-            [
-                'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
-                'id' => 'enableUser',
-                'title' => null,
-                'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
-                'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                'fields' => ['active']
-            ],
-            [
-                'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
-                'id' => 'Roles',
-                'title' => 'Roles',
-                'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
-                'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                'fields' => ['roles']
-            ],
-        ];
-            
-             $this->form->remove('groups');
-            
+                    [
+                    'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
+                    'id' => 'User',
+                    'title' => "Usuario",
+                    'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
+                    'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                    'fields' => ['name', 'username', 'email', 'password']
+                ],
+                    [
+                    'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
+                    'id' => 'enableUser',
+                    'title' => null,
+                    'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
+                    'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                    'fields' => ['active','roles']
+                ],
+
+            ];
+
+
+            $this->form->add([
+                'type' => 'DoctrineModule\Form\Element\ObjectSelect',
+                'name' => 'roles',
+                'attributes' => array(
+                    'multiple' => 'multiple',
+                    'id' => 'multiSelectRoles',
+                    'class' => '',
+                ),
+                'options' => [
+                    'object_manager' => $this->form->getEm(),
+                    'target_class' => 'ZfMetal\Security\Entity\Role',
+                    'property' => 'name',
+                    'label' => 'Roles',
+                ],
+            ]);
+
+            $this->form->remove('groups');
+
             $this->form->get('submit')->setAttribute('value', 'Enviar')
                     ->setAttribute('class', 'pull-right btn btnCustom')
                     ->setAttribute('style', 'margin-left: 2px');
@@ -55,6 +70,8 @@
                 )
             ));
             
+            $this->form->bind($this->form->getObject());
+
             $this->form->get('name')
                     ->setAttribute('placeholder', 'Nombre')
                     ->setLabel('Nombre');
@@ -78,3 +95,10 @@
     }
 
 </style>
+
+<script type="text/javascript">
+    $('#multiSelectRoles').select2({
+        placeholder: 'Selecciones los roles',
+        allowClear: true
+    });
+</script>
