@@ -57,3 +57,65 @@ div.main-box.clearfix{
     background-color: #7f8c8d;
     color: #fff; 
 }
+
+.btnCircle{
+    border-radius: 25px;
+    border: 1px solid transparent;
+    font-size: 1.5em;
+    margin: 2px;
+}
+
+.btnBlue{
+    border-color: #337ab7;
+    background-color: #fff;
+    color: #337ab7;
+}
+
+.btnBlue:hover{
+    background-color: #337ab7;
+    color: #fff; 
+}
+
+.btnGreen{
+    border-color: #2ECC71;
+    background-color: #fff;
+    color: #2ECC71;
+}
+
+.btnGreen:hover{
+    background-color: #2ECC71;
+    color: #fff; 
+}
+
+.btnGray{
+    border-color: #95A5A6;
+    background-color: #fff;
+    color: #95A5A6;
+}
+
+.btnGray:hover{
+    background-color: #95A5A6;
+    color: #fff; 
+}
+
+.btnRed{
+    border-color: #e74c3c;
+    background-color: #fff;
+    color: #e74c3c;
+}
+
+.btnRed:hover{
+    background-color: #e74c3c;
+    color: #fff; 
+}
+
+.btnYellow{
+    border-color: #F1C40F;
+    background-color: #fff;
+    color: #F1C40F;
+}
+
+.btnYellow:hover{
+    background-color: #F1C40F;
+    color: #fff; 
+}
