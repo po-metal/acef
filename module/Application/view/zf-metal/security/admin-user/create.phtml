@@ -82,7 +82,7 @@ $this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries
             $this->form->get('active')
                     ->setLabel('Activo');
 
-            echo $this->renderForm($this->form, \ZfMetal\Commons\Consts::STYLE_VERTICAL, \ZfMetal\Commons\Consts::COLUMNS_TWO, $groups);
+            echo $this->renderForm($this->form, 'vertical-select2', \ZfMetal\Commons\Consts::COLUMNS_TWO, $groups);
             ?>
         </div>
 

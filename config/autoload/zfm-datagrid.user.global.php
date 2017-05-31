@@ -194,8 +194,8 @@ return [
                 'edit' => [
                     'enable' => true,
                     'action' => 'href="/admin/users/edit/{{id}}"',
-                    'class' => ' table-link',
-                    'value' => '<span class="fa-stack btnCircle btn btnBlue"></i><i class="fa fa-search-plus fa-stack-1x"></i></span>',
+                    'class' => '',
+                    'value' => '<span class="fa-stack btnCircle btn btnBlue"></i><i class="fa fa-pencil fa-stack-1x"></i></span>',
                 ],
                 'del' => [ 
                     'enable' => true,
