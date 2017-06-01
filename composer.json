@@ -30,7 +30,9 @@
         "zf-metal/security-social": "dev-master",
         "zf-metal/commons": "dev-master",
         "zf-metal/datagrid": "dev-master",
-        "zf-metal/generator": "dev-master"
+        "zf-metal/generator": "dev-master",
+        "zendframework/zend-mvc-i18n": "^1.0",
+        "zendframework/zend-i18n-resources": "^2.5"
     },
     "autoload": {
         "psr-4": {

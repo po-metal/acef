@@ -5,6 +5,7 @@ return [
     //ZF
     'Zend\Mvc\Plugin\Identity',
     'Zend\I18n',
+    'Zend\Mvc\I18n',
     'Zend\Mail',
     'Zend\Cache',
     'Zend\Paginator',
