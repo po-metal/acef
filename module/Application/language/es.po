@@ -1,0 +1,175 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-06-01 22:21-0300\n"
+"PO-Revision-Date: 2017-06-01 22:29-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ../../module\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Acef/view/acef/clientes/grid.phtml:1
+msgid "Hello"
+msgstr "Hola"
+
+#: Acef/view/acef/manager-cliente/bkp/main_bkp.phtml:31
+msgid "Cliente"
+msgstr ""
+
+#: Application/view/zf-metal/datagrid/templates/ajax/pagination.phtml:8
+#: Application/view/zf-metal/datagrid/templates/default/pagination.phtml:8
+msgid "Records"
+msgstr ""
+
+#: Application/view/zf-metal/datagrid/templates/ajax/pagination.phtml:8
+#: Application/view/zf-metal/datagrid/templates/default/pagination.phtml:8
+msgid "Range"
+msgstr ""
+
+#: Application/view/zf-metal/datagrid/templates/ajax/view.phtml:7
+#: Application/view/zf-metal/datagrid/templates/default/view.phtml:7
+msgid "Record Detail"
+msgstr ""
+
+#: Application/view/zf-metal/datagrid/templates/ajax/view.phtml:10
+#: Application/view/zf-metal/datagrid/templates/default/view.phtml:9
+msgid "Listar"
+msgstr ""
+
+#: Application/view/zf-metal/datagrid/templates/ajax/view.phtml:13
+#: Application/view/zf-metal/datagrid/templates/default/view.phtml:11
+msgid "Editar"
+msgstr ""
+
+#: Application/view/zf-metal/datagrid/templates/ajax/view.phtml:31
+#: Application/view/zf-metal/datagrid/templates/default/view.phtml:29
+msgid " Items"
+msgstr ""
+
+#: Application/view/zf-metal/security/admin-group/abm.phtml:2
+msgid "Gestion de Grupos"
+msgstr ""
+
+#: Application/view/zf-metal/security/admin-group/abm.phtml:2
+#: Application/view/zf-metal/security/admin-role/abm.phtml:2
+msgid "Alta, baja y modiciación."
+msgstr ""
+
+#: Application/view/zf-metal/security/admin-group/abm.phtml:11
+#: Application/view/zf-metal/security/admin-role/abm.phtml:11
+msgid "Agregar"
+msgstr ""
+
+#: Application/view/zf-metal/security/admin-group/edit.phtml:1
+#: Application/view/zf-metal/security/admin-group/view.phtml:1
+msgid "Admin Groups"
+msgstr ""
+
+#: Application/view/zf-metal/security/admin-group/view.phtml:20
+#: Application/view/zf-metal/security/menu/menu_original.phtml:48
+msgid "Usuarios"
+msgstr ""
+
+#: Application/view/zf-metal/security/admin-role/abm.phtml:2
+msgid "Gestion de Roles"
+msgstr ""
+
+#: Application/view/zf-metal/security/data-grid/paginator.phtml:7
+msgid "Registros Total"
+msgstr ""
+
+#: Application/view/zf-metal/security/data-grid/paginator.phtml:7
+msgid "Rango"
+msgstr ""
+
+#: Application/view/zf-metal/security/login/login.phtml:81
+msgid "Recuperar Password"
+msgstr ""
+
+#: Application/view/zf-metal/security/login/login.phtml:120
+msgid "Tienes una cuenta?"
+msgstr ""
+
+#: Application/view/zf-metal/security/login/login.phtml:122
+msgid "Regístrate"
+msgstr ""
+
+#: Application/view/zf-metal/security/menu/menu.phtml:30
+#: Application/view/zf-metal/security/menu/menu_original.phtml:30
+msgid "Perfil"
+msgstr ""
+
+#: Application/view/zf-metal/security/menu/menu.phtml:35
+#: Application/view/zf-metal/security/menu/menu_original.phtml:35
+msgid "Cerrar Sesión"
+msgstr ""
+
+#: Application/view/zf-metal/security/menu/menu.phtml:43
+#: Application/view/zf-metal/security/menu/menu_original.phtml:63
+msgid "Iniciar Sesión"
+msgstr ""
+
+#: Application/view/zf-metal/security/menu/menu_original.phtml:51
+msgid "Roles"
+msgstr ""
+
+#: Application/view/zf-metal/security/menu/menu_original.phtml:54
+msgid "Grupos"
+msgstr ""
+
+#: Application/view/zf-metal/security/profile/profile.phtml:58
+#: Application/view/zf-metal/security/profile/reset-password.phtml:9
+msgid "Modificar Password"
+msgstr ""
+
+#: Application/view/zf-metal/security/profile/profile.phtml:75
+msgid "Miembro desde"
+msgstr ""
+
+#: Application/view/zf-metal/security/recovery/recovery.phtml:15
+msgid "Olvidaste tu clave?"
+msgstr ""
+
+#: Application/view/zf-metal/security/recovery/recovery.phtml:17
+msgid "Ingresa tu casilla de Email para recuperar tu clave."
+msgstr ""
+
+#: Application/view/zf-metal/security/recovery/recovery.phtml:51
+msgid "Enviar"
+msgstr ""
+
+#: Application/view/zf-metal/security/recovery/recovery.phtml:56
+#: Application/view/zf-metal/security/register/register.phtml:56
+msgid "Volver a Login"
+msgstr ""
+
+#: Application/view/zf-metal/security/register/register.phtml:19
+msgid "Nombre Completo"
+msgstr ""
+
+#: Application/view/zf-metal/security/register/register.phtml:24
+msgid "Email"
+msgstr ""
+
+#: Application/view/zf-metal/security/register/register.phtml:29
+msgid "Usuario"
+msgstr ""
+
+#: Application/view/zf-metal/security/register/register.phtml:34
+msgid "Clave"
+msgstr ""
+
+#: Application/view/zf-metal/security/register/register.phtml:52
+msgid "Registrar"
+msgstr ""
+
+#~ msgid "Value is required and can't be empty"
+#~ msgstr "El valor es requerido y no puede estar vacio."

@@ -6,7 +6,8 @@ include "basic.config.php",
 include "controller.config.php",
 include "plugins.config.php",
 include "services.config.php",
-include "view-helper.config.php"
+include "view-helper.config.php",
+include "language.config.php"
 );
 
 return $setting;
