@@ -21,7 +21,12 @@ $this->flashCurrent();
                             <i class="fa fa-circle"></i> Online
                         </div>
 
+                        <?php if(!$user->getImg()) : ?>
+                        <img src="<?= $this->basePath('shared/centaurus/img/logo.gif'); ?>" alt="" class="profile-img img-responsive center-block" />
+                        <?php else : ?>
                         <img src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $user->getImg(); ?>" alt="" class="profile-img img-responsive center-block" />
+                        <?php endif ; ?>
+                        
 
 
 
