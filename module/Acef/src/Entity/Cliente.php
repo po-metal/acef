@@ -46,8 +46,8 @@ class Cliente {
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"CUIT", "description":"", "allowEmpty": false, "addon":"fa fa-male"})
      * @Annotation\Validator({"name":"CuitValidator"})
-     * @Annotation\Validator({"name":"Zend\Validator\NotEmpty", "options":{"messages": {"isEmpty" : "El Cuit es requerido y no puede estar vacio"}} })
-     * @Annotation\Validator({"name":"Zend\Validator\Regex", "options":{"pattern":"/^\d{2}(-)?\d{8}(-)?\d{1}$/", "messages":{"regexNotMatch":"El formato del cuit no es valido.", "regexInvalid": "El patrón es inválido", "regexErrorous":"El patrón tiene errores"}}})
+     * @Annotation\Validator({"name":"Zend\Validator\NotEmpty", "options":{"messages": {"isEmpty" : "El CUIT es requerido y no puede estar vacio"}} })
+     * @Annotation\Validator({"name":"Zend\Validator\Regex", "options":{"pattern":"/^\d{2}(-)?\d{8}(-)?\d{1}$/", "messages":{"regexNotMatch":"El formato del CUIT no es valido.", "regexInvalid": "El patrón es inválido", "regexErrorous":"El patrón tiene errores"}}})
      * @ORM\Column(type="string", length=200, unique=true, nullable=false, name="cuit")
      */
     public $cuit = null;
