@@ -128,3 +128,7 @@ div.main-box.clearfix{
 .select2-container{
     min-width: 100% !important;
 }
+
+.removeCursorCustom{
+    cursor: default !important;
+}
