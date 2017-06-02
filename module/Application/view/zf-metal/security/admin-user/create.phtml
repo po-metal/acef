@@ -52,6 +52,24 @@ $this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries
                 ],
             ]);
 
+            $this->form->remove('active');
+
+            $this->form->add(array(
+                'type' => 'Zend\Form\Element\Select',
+                'name' => 'active',
+                'options' => array(
+                    'label' => 'Estado',
+                    'value_options' => array(
+                        '1' => 'Activo',
+                        '0' => 'Inactivo',
+                    ),
+                ),
+                'attributes' => array(
+                    'placeholder' => 'Estado',
+                ),
+            )
+            );
+
             $this->form->remove('groups');
 
             $this->form->get('submit')->setAttribute('value', 'Enviar')
@@ -79,8 +97,6 @@ $this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries
                     ->setLabel('Usuario');
             $this->form->get('email')
                     ->setAttribute('value', '');
-            $this->form->get('active')
-                    ->setLabel('Activo');
 
             echo $this->renderForm($this->form, 'vertical-select2', \ZfMetal\Commons\Consts::COLUMNS_TWO, $groups);
             ?>

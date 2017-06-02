@@ -18,7 +18,7 @@ $this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries
                     [
                     'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
                     'id' => 'User',
-                    'title' => "Usuario",
+                    'title' => "",
                     'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                     'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                     'fields' => ['name', 'username', 'email', 'password']
@@ -51,6 +51,24 @@ $this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries
                 ],
             ]);
 
+            $this->form->remove('active');
+
+            $this->form->add(array(
+                'type' => 'Zend\Form\Element\Select',
+                'name' => 'active',
+                'options' => array(
+                    'label' => 'Estado',
+                    'value_options' => array(
+                        '1' => 'Activo',
+                        '0' => 'Inactivo',
+                    ),
+                ),
+                'attributes' => array(
+                    'placeholder' => 'Estado',
+                ),
+            )
+            );
+
             $this->form->remove('groups');
 
             $this->form->get('submit')->setAttribute('value', 'Enviar')
@@ -78,8 +96,6 @@ $this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries
             $this->form->get('username')
                     ->setAttribute('placeholder', 'Usuario')
                     ->setLabel('Usuario');
-            $this->form->get('active')
-                    ->setLabel('Activo');
 
             echo $this->renderForm($this->form, 'vertical-select2', \ZfMetal\Commons\Consts::COLUMNS_TWO, $groups);
             ?>

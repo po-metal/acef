@@ -67,7 +67,7 @@ $this->flashCurrent();
 
                                         $date = $user->getCreateAt();
 
-                                        echo $this->translate('Miembro desde') ?>: <?= strftime("%d de %B del %Y", $date->getTimestamp()); 
+                                        echo $this->translate('Miembro desde') ?>: <?= strftime("%e de %B del %Y", $date->getTimestamp()); 
 
                                         ?>
                                     </div>
