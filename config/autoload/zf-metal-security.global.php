@@ -6,9 +6,10 @@ return[
         'email_confirmation_require' => true,
         'user_state_default' => true,
         'password_recovery' => true,
-        'bcrypt_cost'=> 12,
+        'bcrypt_cost' => 12,
         'profile_picture_path' => __DIR__ . '/../../public/img/profile/',
         'profile_picture_path_relative' => '/img/profile/',
+        'saved_user_redirect_route' => 'zf-metal.admin/users',
         'redirect_strategy' => [
             'redirect_when_connected' => true,
             'redirect_to_route_connected' => 'home',
@@ -16,6 +17,6 @@ return[
             'append_previous_uri' => true,
             'previous_uri_query_key' => 'redirect',
         ],
-        'remember_me' => true, 
+        'remember_me' => true,
     ]
 ];
