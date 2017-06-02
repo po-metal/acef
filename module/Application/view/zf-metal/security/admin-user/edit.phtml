@@ -48,6 +48,12 @@ $this->headScript()->appendFile($this->basePath() . '/shared/centaurus/libraries
                     'target_class' => 'ZfMetal\Security\Entity\Role',
                     'property' => 'name',
                     'label' => 'Roles',
+                    'find_method' => [
+                    'name' => 'getAssignableRoles',
+                    'params' => [
+                        'name' => 'invitado',
+                    ],
+                    ],
                 ],
             ]);
 
