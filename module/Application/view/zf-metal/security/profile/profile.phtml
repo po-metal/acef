@@ -63,20 +63,26 @@ $this->flashCurrent();
                                 <?php if ($user->getCreateAt()): ?>
 
                                     <div class="profile-box-content gray">
-                                        <?= $this->translate('Miembro desde') ?>: <?= $user->getCreateAt()->format('jS F Y'); ?>
+                                        <?php 
+
+                                        $date = $user->getCreateAt();
+
+                                        echo $this->translate('Miembro desde') ?>: <?= strftime("%d de %B del %Y", $date->getTimestamp()); 
+
+                                        ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
                             <div class="profile-box-content clearfix">
                                 <ul class="menu-items">
                                     <li>
-                                        <a href="#" class="clearfix">
+                                        <a href="#" class="clearfix removeCursorCustom">
                                             <i class="fa fa-envelope fa-lg"></i> Email:
                                             <span class=""><?= $user->getEmail(); ?></span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="clearfix">
+                                        <a href="#" class="clearfix removeCursorCustom">
                                             <i class="fa fa-cubes fa-lg"></i> Roles: 
 
                                             <?php foreach ($user->getRoles() as $rol) : ?>
@@ -85,7 +91,7 @@ $this->flashCurrent();
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="clearfix">
+                                        <a href="#" class="clearfix removeCursorCustom">
                                             <i class="fa fa-calendar fa-lg"></i> Permisos:
                                             <?php foreach ($user->getRoles() as $rol) : ?>
                                                 <?php foreach ($rol->getPermissions() as $permission) : ?>
