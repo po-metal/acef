@@ -22,30 +22,22 @@ $this->flashCurrent();
                         </div>
 
                         <?php if(!$user->getImg()) : ?>
-                        <img src="<?= $this->basePath('shared/centaurus/img/logo.gif'); ?>" alt="" class="profile-img img-responsive center-block" />
+                            <img src="<?= $this->basePath('shared/centaurus/img/logo.gif'); ?>" alt="" class="profile-img img-responsive center-block" />
                         <?php else : ?>
-                        <img src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $user->getImg(); ?>" alt="" class="profile-img img-responsive center-block" />
+                            <img src="<?= $this->basePath($this->getSecurityOptions()->getProfilePicturePathRelative()) . $user->getImg(); ?>" alt="" class="profile-img img-responsive center-block" />
                         <?php endif ; ?>
                         
 
-
-
                         <?php echo $this->form()->openTag($formImg) ?>
-                        <div class="row">
-                            <div class="col-lg-4 text-center">
-
-                                <label class="btn btn-default fa fa-upload">
-                                    <?php echo $this->formFile($formImg->get('img')->setAttribute('class', 'hidden')); ?>
+                        <div>
+                            <div class="profile-message-btn center-block text-center" >
+                                <label class="btn btn-default fa fa-upload btn btn-default btn-block">
+                                <?php echo $this->formFile($formImg->get('img')->setAttribute('class', 'hidden')->setAttribute('id', 'btnpicture')); ?>
                                 </label>
-
-                            </div>
-                            <div class="col-lg-8 text-center">
-                                <?php echo $this->formElement($formImg->get('submitbtn')); ?>
                             </div>
                         </div>
 
                         <?php echo $this->form()->closeTag($formImg); ?>
-
 
                         <hr>
                         <div class="profile-message-btn center-block text-center">
@@ -120,3 +112,11 @@ $this->flashCurrent();
     </div>
 </div>
 
+<script>
+    $(document).on('ready', function(){
+       $('#btnpicture').change(function () {
+        console.log('oks');
+        $("#image").submit();
+    });
+   });
+</script>
