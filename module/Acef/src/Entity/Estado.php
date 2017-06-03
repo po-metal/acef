@@ -35,6 +35,7 @@ class Estado
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Validator({"name":"EstadoValidator"})
      * @Annotation\Options({"label":"Nombre", "description":"", "addon":""})
      * @ORM\Column(type="string", length=30, unique=true, nullable=false,
      * name="nombre")

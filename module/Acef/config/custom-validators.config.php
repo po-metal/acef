@@ -42,6 +42,19 @@ return [
                 ));
                 return $uniqueObject;
             },
+            'EstadoValidator' =>
+            function ($container) {
+                $uniqueObject = new \DoctrineModule\Validator\UniqueObject(array(
+                    'use_context' => true,
+                    'fields' => ['nombre'],
+                    'object_repository' => $container->get('doctrine.entitymanager.orm_default')->getRepository('Acef\Entity\Estado'),
+                    'object_manager' => $container->get('doctrine.entitymanager.orm_default'),
+                    'messages' => [
+                        'objectNotUnique' => 'El estado ingresado ya existe en otro registro.'
+                    ]
+                ));
+                return $uniqueObject;
+            },
         ]
     ],
 ];

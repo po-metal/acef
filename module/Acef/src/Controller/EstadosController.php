@@ -56,6 +56,11 @@ class EstadosController extends AbstractActionController
 
     public function gridAction()
     {
+        $this->grid->getSource()->getEventManager()->attach('buildCrudForm', function($e) {
+            $form = $e->getParam('form');
+            $form->add(new \Zend\Form\Element\Hidden("id"));
+        });
+        
         $this->grid->prepare();
         return array("grid" => $this->grid);
     }
