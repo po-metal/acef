@@ -7,11 +7,6 @@ H2.main-box-header-custom{
     padding: 5px;    
 }
 
-div.main-box.clearfix{
-    padding-top: 15px;    
-}
-
-
 .search-btn{
     font-size: 12px !important;
     height: 34px !important;
@@ -131,4 +126,8 @@ div.main-box.clearfix{
 
 .removeCursorCustom{
     cursor: default !important;
+}
+
+.addPaddingTopCustom{
+    padding-top: 25px !important;    
 }
