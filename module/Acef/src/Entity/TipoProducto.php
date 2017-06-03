@@ -36,6 +36,7 @@ class TipoProducto
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Nombre", "description":"", "addon":""})
+     * @Annotation\Validator({"name":"TipoProductoValidator"}) 
      * @ORM\Column(type="string", length=60, unique=true, nullable=false,
      * name="nombre")
      */

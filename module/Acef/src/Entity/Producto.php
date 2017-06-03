@@ -43,7 +43,7 @@ class Producto
     /**
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Número", "description":""})
-     * @ORM\Column(type="integer", length=20, unique=false, nullable=true,
+     * @ORM\Column(type="string", length=20, unique=false, nullable=true,
      * name="numero")
      */
     public $numero = null;
