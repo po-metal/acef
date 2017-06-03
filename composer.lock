@@ -593,16 +593,16 @@
         },
         {
             "name": "doctrine/doctrine-orm-module",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineORMModule.git",
-                "reference": "928a65786c2cc6e0e4004b3760823f5fa9c8f320"
+                "reference": "ee71743c5950d6d39a55007de1ad2e205ffccec3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/928a65786c2cc6e0e4004b3760823f5fa9c8f320",
-                "reference": "928a65786c2cc6e0e4004b3760823f5fa9c8f320",
+                "url": "https://api.github.com/repos/doctrine/DoctrineORMModule/zipball/ee71743c5950d6d39a55007de1ad2e205ffccec3",
+                "reference": "ee71743c5950d6d39a55007de1ad2e205ffccec3",
                 "shasum": ""
             },
             "require": {
@@ -620,7 +620,7 @@
                 "doctrine/data-fixtures": "^1.2.1",
                 "doctrine/migrations": "^1.4.1",
                 "phpunit/phpunit": "^5.6.0",
-                "squizlabs/php_codesniffer": "^2.6.2",
+                "squizlabs/php_codesniffer": "^2.7",
                 "zendframework/zend-console": "^2.6",
                 "zendframework/zend-developer-tools": "^1.1",
                 "zendframework/zend-i18n": "^2.7.3",
@@ -677,7 +677,7 @@
                 "orm",
                 "zf"
             ],
-            "time": "2017-01-17 17:45:54"
+            "time": "2017-06-02 19:51:27"
         },
         {
             "name": "doctrine/inflector",
@@ -3593,12 +3593,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/commons.git",
-                "reference": "725d67d354c631079738fab9a9a49befb81efc44"
+                "reference": "20941e30223b132d46371c63c680f7ced738e6b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/commons/zipball/725d67d354c631079738fab9a9a49befb81efc44",
-                "reference": "725d67d354c631079738fab9a9a49befb81efc44",
+                "url": "https://api.github.com/repos/zf-metal/commons/zipball/20941e30223b132d46371c63c680f7ced738e6b2",
+                "reference": "20941e30223b132d46371c63c680f7ced738e6b2",
                 "shasum": ""
             },
             "require": {
@@ -3633,7 +3633,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-05-24 02:35:38"
+            "time": "2017-06-02 03:12:10"
         },
         {
             "name": "zf-metal/datagrid",
@@ -3877,12 +3877,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/Security.git",
-                "reference": "1cba3ce1a18ce5639a94441a860a286b4d8658c8"
+                "reference": "9034a1d82c5e6e4264d94c63322b6db8d7659113"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/Security/zipball/1cba3ce1a18ce5639a94441a860a286b4d8658c8",
-                "reference": "1cba3ce1a18ce5639a94441a860a286b4d8658c8",
+                "url": "https://api.github.com/repos/zf-metal/Security/zipball/9034a1d82c5e6e4264d94c63322b6db8d7659113",
+                "reference": "9034a1d82c5e6e4264d94c63322b6db8d7659113",
                 "shasum": ""
             },
             "require": {
@@ -3927,7 +3927,7 @@
             "keywords": [
                 "zf3"
             ],
-            "time": "2017-05-30 17:55:36"
+            "time": "2017-06-02 20:58:44"
         },
         {
             "name": "zf-metal/security-social",
