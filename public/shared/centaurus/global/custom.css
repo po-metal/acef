@@ -131,3 +131,7 @@ H2.main-box-header-custom{
 .addPaddingTopCustom{
     padding-top: 25px !important;    
 }
+
+.form-control{
+    font-size: 12px;
+}
