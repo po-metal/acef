@@ -38,6 +38,7 @@ return [
                 'descripcion' => [
                     'type' => "text",
                     'length' => 30,
+                    'tooltip' => true
                 ]
             ],
             'crudConfig' => [
@@ -61,7 +62,7 @@ return [
                     'class' => ' ',
                     'value' => '<span class="fa-stack btnCircle btn btnBlue"></i><i class="fa fa-pencil fa-stack-1x"></i></span>',
                 ],
-                'del' => [ 
+                'del' => [
                     'enable' => true,
                     'class' => '',
                     'value' => '<span class="fa-stack btnCircle btn btnRed"></i><i class="fa fa-trash-o fa-stack-1x"></i></span>',

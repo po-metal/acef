@@ -87,7 +87,8 @@ return [
                     'displayName' => 'Nota',
                     'priority' => 85,
                     'type' => 'text',
-                    'length' => 30
+                    'length' => 30,
+                    'tooltip' => true
                 ],
                 'responsable' => [
                     'type' => 'relational',
