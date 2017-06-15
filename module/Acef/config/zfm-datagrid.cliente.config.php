@@ -104,7 +104,7 @@ return [
                         'title' => null,
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
+                        'fields' => ['tipoCliente','razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
@@ -177,6 +177,12 @@ return [
                     'type' => 'relational',
                     'multiSearchProperty' => "nombre",
                     'priority' => 50,
+                ],
+                'tipoCliente' => [
+                    'displayName' => 'Tipo',
+                    'type' => 'relational',
+                    'multiSearchProperty' => "nombre",
+                    'priority' => 15,
                 ],
             ],
             'crudConfig' => [

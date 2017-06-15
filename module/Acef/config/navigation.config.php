@@ -33,6 +33,12 @@ return [
                                 'icon' => '',
                                 'route' => 'Acef/TipoProducto/Grid',
                             ],
+                            [
+                                'label' => 'Tipo de Cliente',
+                                'detail' => '',
+                                'icon' => '',
+                                'route' => 'Acef/TipoClientes/Grid',
+                            ],
                         ],
                     ],
                     [
@@ -58,18 +64,18 @@ return [
                         'route' => 'Acef/CalculoDeuda/Simulador',
                         'pages' => [
                             [
-                                'label' => 'Actualización',
-                                'detail' => '',
-                                'icon' => '',
-                                'permission' => 'general-editar',
-                                'route' => 'Acef/CalculoDeuda/Actualizacion',
-                            ],
-                            [
                                 'label' => 'Refinanciacion',
                                 'detail' => '',
                                 'icon' => '',
                                 'permission' => 'general-editar',
                                 'route' => 'Acef/CalculoDeuda/Refinanciacion',
+                            ],
+                            [
+                                'label' => 'Actualización',
+                                'detail' => '',
+                                'icon' => '',
+                                'permission' => 'general-editar',
+                                'route' => 'Acef/CalculoDeuda/Actualizacion',
                             ],
                         ],
                     ],
