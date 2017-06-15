@@ -16,6 +16,11 @@ class Module implements ConfigProviderInterface {
         /* @var $translator \Zend\Mvc\I18n\Translator */
         $translator = $e->getApplication()->getServiceManager()->get(\Zend\Mvc\I18n\Translator::class);
         \Zend\Validator\AbstractValidator::setDefaultTranslator($translator);
+
+        /** @var $em \Doctrine\ORM\EntityManager */
+        $em = $e->getApplication()->getServiceManager()->get('doctrine.entitymanager.orm_default');
+		$platform = $em->getConnection()->getDatabasePlatform();
+		$platform->registerDoctrineTypeMapping('enum', 'string');
     }
 
 }

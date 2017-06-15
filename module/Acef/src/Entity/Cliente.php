@@ -36,6 +36,7 @@ class Cliente
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Razón Social", "description":"", "addon":""})
+     * @Annotation\Validator({"name":"RazonSocialValidator"})
      * @ORM\Column(type="string", length=200, unique=true, nullable=false,
      * name="razon_social")
      */
@@ -44,7 +45,7 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Cuit", "description":"", "addon":"fa fa-male"})
+     * @Annotation\Options({"label":"N° de documento", "description":"", "addon":"fa fa-male"})
      * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
      */
     public $cuit = null;
@@ -94,6 +95,7 @@ class Cliente
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Email", "description":"", "addon":"fa
      * fa-envelope"})
+     * @Annotation\Validator({"name":"Zend\Validator\EmailAddress", "options":{"messages":{"emailAddressInvalidFormat": "El formato de email es inválido."}}})
      * @ORM\Column(type="string", length=30, unique=false, nullable=true, name="email")
      */
     public $email = null;
@@ -155,13 +157,21 @@ class Cliente
 
     /**
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
-     * @Annotation\Options({"label":"Tipo","empty_option": "",
+     * @Annotation\Options({"label":"Tipo Cliente","empty_option": "",
      * "target_class":"\Acef\Entity\TipoCliente", "description":""})
      * @ORM\ManyToOne(targetEntity="\Acef\Entity\TipoCliente")
      * @ORM\JoinColumn(name="tipo_cliente_id", referencedColumnName="id",
      * nullable=true)
      */
     public $tipoCliente = null;
+
+    /**
+     * @Annotation\Type("Zend\Form\Element\Select")
+     * @Annotation\Options({"label":"Tipo DNI", "description":"", "addon":""})
+     * @Annotation\Attributes({"options":{"CUIT/CUIL":"CUIT/CUIL","DNI":"DNI","LC":"LC","LE":"LE"}})
+     * @ORM\Column(type="string", unique=false, nullable=false, columnDefinition="ENUM('CUIT/CUIL','DNI','LC','LE')", name="tipo_dni")
+     */
+    public $tipoDni = null;
 
     public function getId()
     {
@@ -311,6 +321,16 @@ class Cliente
     public function setTipoCliente($tipoCliente)
     {
         $this->tipoCliente = $tipoCliente;
+    }
+
+    public function getTipoDni()
+    {
+        return $this->tipoDni;
+    }
+
+    public function setTipoDni($tipoDni)
+    {
+        $this->tipoDni = $tipoDni;
     }
 
     public function __toString()
