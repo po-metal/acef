@@ -42,8 +42,8 @@ class BitacoraCliente
     public $cliente = null;
 
     /**
-     * @Annotation\Exclude()
-     * @Gedmo\Timestampable(on="create")
+     * @Annotation\Type("\Zend\Form\Element\Date")
+     * @Annotation\Options({"label":"Fecha", "description":"", "addon":""})
      * @ORM\Column(type="datetime", unique=false, nullable=false, name="fecha")
      */
     public $fecha = null;
@@ -116,9 +116,11 @@ class BitacoraCliente
 
     public function __toString()
     {
-return;
+        return;
     }
-
+    public function __construct(){
+        $this->fecha = new \Datetime(date('Y-m-d'));
+    }
 
 }
 
