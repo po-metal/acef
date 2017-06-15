@@ -12,6 +12,10 @@ return [
                     'displayName' => 'Razón Social',
                     'priority' => 10,
                 ],
+                'tipoDni' => [
+                    'displayName' => 'Tipo DNI',
+                    'priority' => 15,
+                ],
                 'cuit' => [
                     'displayName' => 'Cuit',
                     'priority' => 20,
@@ -85,7 +89,7 @@ return [
             ],
             "multi_search_config" => [
                 "enable" => true,
-                "properties_enabled" => ['razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
+                "properties_enabled" => ['razonSocial','cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
             ],
             'sourceConfig' => [
                 'type' => 'doctrine',
@@ -104,7 +108,7 @@ return [
                         'title' => null,
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['tipoCliente','razonSocial', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
+                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
@@ -125,8 +129,12 @@ return [
                     'displayName' => 'Razón Social',
                     'priority' => 10,
                 ],
+                'tipoDni' => [
+                    'displayName' => 'Tipo DNI',
+                    'priority' => 15,
+                ],
                 'cuit' => [
-                    'displayName' => 'Cuit',
+                    'displayName' => 'DNI',
                     'priority' => 20,
                 ],
                 'deuda' => [
@@ -154,7 +162,7 @@ return [
                 ],
                 'fechaAsignacion' => [
                     'displayName' => 'Fecha Asignación',
-                    'hidden' => true,
+                    'hidden' => false,
                 ],
                 'fechaRetencion' => [
                     'displayName' => 'Fecha de Retencion',
@@ -179,10 +187,10 @@ return [
                     'priority' => 50,
                 ],
                 'tipoCliente' => [
-                    'displayName' => 'Tipo',
+                    'displayName' => 'Tipo Cliente',
                     'type' => 'relational',
                     'multiSearchProperty' => "nombre",
-                    'priority' => 15,
+                    'priority' => 11,
                 ],
             ],
             'crudConfig' => [
