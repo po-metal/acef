@@ -14,7 +14,7 @@
  		<li class="item-header">Hay <?= count($this->clientes); ?> <?= count($this->clientes)==1?'alerta':'alertas'; ?></li>
  		<?php foreach ($this->clientes as $cliente) :?>
  		<li class="item">	
- 			<a href="#">
+ 			<a href="/acef/manager-cliente/main/<?= $cliente['id'] ?>">
  				<i class="fa fa-eye"></i>
  				<span class="content"><?= $cliente['razonSocial'] ?></span>
  				<span class="time"><i class="fa fa-clock-o"></i><?= $this->diasDeDiferencia($cliente['fechaRetencion']);?></span>
