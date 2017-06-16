@@ -167,9 +167,9 @@ class Cliente
 
     /**
      * @Annotation\Type("Zend\Form\Element\Select")
-     * @Annotation\Options({"label":"Tipo DNI", "description":"", "addon":""})
+     * @Annotation\Options({"label":"Tipo DNI", "description":"", "addon":"","empty_option": ""})
      * @Annotation\Attributes({"options":{"CUIT/CUIL":"CUIT/CUIL","DNI":"DNI","LC":"LC","LE":"LE"}})
-     * @ORM\Column(type="string", unique=false, nullable=false, columnDefinition="ENUM('CUIT/CUIL','DNI','LC','LE')", name="tipo_dni")
+     * @ORM\Column(type="string", unique=false, nullable=true, columnDefinition="ENUM('CUIT/CUIL','DNI','LC','LE')", name="tipo_dni")
      */
     public $tipoDni = null;
 
