@@ -1,0 +1,25 @@
+ <li class="dropdown hidden-xs">
+ 	<a <?= $this->conditionalClasses(['btn dropdown-toggle', 'disabled'=>!count($this->clientes)]);?> data-toggle="dropdown">
+ 		<i class="fa fa-warning"></i>
+ 	<?php if(count($this->clientes)) :?>
+ 		<span class="count"><?= count($this->clientes) ?></span>
+ 	<?php endif; ?>
+ 	</a>
+ 	<ul class="dropdown-menu notifications-list">
+ 		<li class="pointer">
+ 			<div class="pointer-inner">
+ 				<div class="arrow"></div>
+ 			</div>
+ 		</li>
+ 		<li class="item-header">Hay <?= count($this->clientes); ?> <?= count($this->clientes)==1?'alerta':'alertas'; ?></li>
+ 		<?php foreach ($this->clientes as $cliente) :?>
+ 		<li class="item">	
+ 			<a href="#">
+ 				<i class="fa fa-eye"></i>
+ 				<span class="content"><?= $cliente['razonSocial'] ?></span>
+ 				<span class="time"><i class="fa fa-clock-o"></i><?= $this->diasDeDiferencia($cliente['fechaRetencion']);?></span>
+ 			</a>
+ 		</li>
+ 	<?php endforeach; ?>
+ 	</ul>
+ </li>
