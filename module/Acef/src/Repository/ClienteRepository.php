@@ -40,6 +40,16 @@ class ClienteRepository extends EntityRepository
                         ->getQuery()->getArrayResult();
     }
 
+    public function getClientesPorRetencion(\Datetime $inicio, \Datetime $fin){
+        return $this->getEntityManager()->createQueryBuilder()
+                        ->select("u.id,u.razonSocial, u.fechaRetencion")
+                        ->from(self::ENTITY, "u")
+                        ->where("u.fechaRetencion between :inicio and :fin ")
+                        ->orderBy('u.fechaRetencion', 'ASC')
+                        ->setParameter('inicio',$inicio->format('Y-m-d'))
+                        ->setParameter('fin',$fin->format('Y-m-d'))
+                        ->getQuery()->getArrayResult();
+    }
 
 }
 
