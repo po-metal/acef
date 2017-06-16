@@ -163,6 +163,7 @@ return [
                 'fechaAsignacion' => [
                     'displayName' => 'Fecha Asignación',
                     'hidden' => false,
+                    'type' => 'datetime',
                     'format' => 'd/m/Y'
                 ],
                 'fechaRetencion' => [
