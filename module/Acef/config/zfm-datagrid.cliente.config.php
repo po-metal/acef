@@ -132,9 +132,10 @@ return [
                 'tipoDni' => [
                     'displayName' => 'Tipo DNI',
                     'priority' => 15,
+                    'hidden'=> true,
                 ],
                 'cuit' => [
-                    'displayName' => 'DNI',
+                    'displayName' => 'Documento',
                     'priority' => 20,
                 ],
                 'deuda' => [
@@ -161,7 +162,7 @@ return [
                     'hidden' => true,
                 ],
                 'fechaAsignacion' => [
-                    'displayName' => 'Fecha Asignación',
+                    'displayName' => 'Asignación',
                     'hidden' => false,
                     'type' => 'datetime',
                     'format' => 'd/m/Y'
