@@ -13,7 +13,7 @@ return [
                     'priority' => 10,
                 ],
                 'tipoDni' => [
-                    'displayName' => 'Tipo DNI',
+                    'displayName' => 'Tipo Documento',
                     'priority' => 15,
                 ],
                 'cuit' => [
