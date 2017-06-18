@@ -13,7 +13,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         $this->setAttribute('role', "form");
 
         $this->add(array(
-            'name' => 'porcentaje_quita_intereses',
+            'name' => 'porcentajeQuitaIntereses',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
@@ -24,7 +24,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'porcentaje_quita_capital',
+            'name' => 'porcentajeQuitaCapital',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
@@ -47,7 +47,8 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'fecha_mora_desde',
+            'type' => 'Date',
+            'name' => 'fechaMoraDesde',
             'attributes' => array(
                 'type' => 'date',
                 'class' => 'form-control ',
@@ -58,7 +59,8 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'fecha_calculo_hasta',
+            'type' => 'Date',
+            'name' => 'fechaCalculoHasta',
             'attributes' => array(
                 'type' => 'date',
                 'class' => 'form-control ',
@@ -70,7 +72,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
 
 
         $this->add(array(
-            'name' => 'dias_de_mora',
+            'name' => 'diasDeMora',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -105,7 +107,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'total_intereses',
+            'name' => 'totalIntereses',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -117,7 +119,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'total_deuda_actualizada',
+            'name' => 'totalDeudaActualizada',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -129,7 +131,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'quita_intereses_total_deuda_actualizada',
+            'name' => 'quitaInteresesTotalDeudaActualizada',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -141,7 +143,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'quita_de_capital',
+            'name' => 'quitaDeCapital',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -154,7 +156,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
 
 
         $this->add(array(
-            'name' => 'total_deuda_con_quita',
+            'name' => 'totalDeudaConQuita',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',

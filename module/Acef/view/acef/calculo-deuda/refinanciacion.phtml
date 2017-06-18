@@ -11,22 +11,22 @@
             <div class="main-box-body clearfix">
                 
                  <?php
-                $groups = [
+               $groups = [
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
                         'id' => 'Parametros',
                         'title' => 'Parametros',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['total_deuda_con_quita','anticipo','meses_cuentas']
+                        'fields' => ['totalDeudaConQuita', 'anticipo', 'mesesCuentas']
                     ],
-                     [
+                    [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
                         'id' => 'Parametros 2',
                         'title' => '<br>',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['interes','cantidad_cuotas','cuota_por_anio']
+                        'fields' => ['interes', 'cantidadCuotas', 'cuotaPorAnio']
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
@@ -34,9 +34,8 @@
                         'title' => 'Totales',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => [ 'tasa', 'monto_refinanciar', 'monto_de_cuota',]
+                        'fields' => ['tasa', 'montoRefinanciar', 'montoDeCuota',]
                     ],
-                   
                 ];
                 ?>
                 

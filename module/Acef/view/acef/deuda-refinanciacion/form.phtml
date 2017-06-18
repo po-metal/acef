@@ -1,0 +1,66 @@
+<div class="row ">
+
+    <div class="col-lg-12">
+        <div class="main-box  clearfix">
+
+            <div class="main-box-header clearfix addPaddingTopCustom">
+                <h2 style="padding: 7px; font-weight: normal; border-bottom: 1px solid #e5e5e5;">Refinanciación</h2>
+            </div>
+
+
+            <div class="main-box-body clearfix">
+
+                <?php
+                $groups = [
+                    [
+                        'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
+                        'id' => 'Parametros',
+                        'title' => 'Parametros',
+                        'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
+                        'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                        'fields' => ['totalDeudaConQuita', 'anticipo', 'mesesCuentas']
+                    ],
+                    [
+                        'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
+                        'id' => 'Parametros 2',
+                        'title' => '<br>',
+                        'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
+                        'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                        'fields' => ['interes', 'cantidadCuotas', 'cuotaPorAnio']
+                    ],
+                    [
+                        'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
+                        'id' => 'Final',
+                        'title' => 'Totales',
+                        'columns' => \ZfMetal\Commons\Consts::COLUMNS_THREE,
+                        'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                        'fields' => ['tasa', 'montoRefinanciar', 'montoDeCuota',]
+                    ],
+                ];
+                ?>
+
+                <?php
+                echo $this->renderForm($this->formRefinanciacion, \ZfMetal\Commons\Consts::STYLE_VERTICAL, \ZfMetal\Commons\Consts::COLUMNS_FOUR, $groups);
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $("#simulacion_refinanciacion").submit(function (e) {
+        var url = '/acef/deuda-refinanciacion/form/' + '<?php echo $this->clienteId ?>';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#simulacion_refinanciacion").serialize(),
+            success: function (data)
+            {
+                $("#formRefinanciacion").html(data);
+            }
+        });
+
+        e.preventDefault();
+    });
+</script>

@@ -23,7 +23,7 @@ class CalculoDeudaController extends AbstractActionController {
 
     public function actualizacionAction() {
         $formActualizacion = new \Acef\Form\SimulacionActualizacion();
-        $formActualizacion->setHydrator(new \Zend\Hydrator\ClassMethods());
+        $formActualizacion->setHydrator(new \Zend\Hydrator\ClassMethods(false));
 
 
         if ($this->getRequest()->isPost()) {
@@ -48,7 +48,7 @@ class CalculoDeudaController extends AbstractActionController {
 
         if ($this->getRequest()->isPost()) {
             $serviceRefinanciacion = new \Acef\Service\SimuladorRefinanciacion();
-            $formRefinanciacion->setHydrator(new \Zend\Hydrator\ClassMethods());
+            $formRefinanciacion->setHydrator(new \Zend\Hydrator\ClassMethods(false));
             $formRefinanciacion->bind($serviceRefinanciacion);
             $formRefinanciacion->setData($this->getRequest()->getPost());
             

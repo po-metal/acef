@@ -331,6 +331,54 @@ return [
                             ],
                         ],
                     ],
+                    'DeudaRefinanciacion' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/deuda-refinanciacion',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\DeudaRefinanciacionController::CLASS,
+                                'action' => 'form',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Form' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/form/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\DeudaRefinanciacionController::CLASS,
+                                        'action' => 'form',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'DeudaActualizacion' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/deuda-actualizacion',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\DeudaActualizacionController::CLASS,
+                                'action' => 'form',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Form' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/form/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\DeudaActualizacionController::CLASS,
+                                        'action' => 'form',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],
