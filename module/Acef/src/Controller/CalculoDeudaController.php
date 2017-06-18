@@ -51,7 +51,7 @@ class CalculoDeudaController extends AbstractActionController {
             $formRefinanciacion->setHydrator(new \Zend\Hydrator\ClassMethods());
             $formRefinanciacion->bind($serviceRefinanciacion);
             $formRefinanciacion->setData($this->getRequest()->getPost());
-
+            
             if ($formRefinanciacion->isValid()) {
                 $serviceRefinanciacion->simular();
                $formRefinanciacion->bind($serviceRefinanciacion);
