@@ -17,7 +17,7 @@
                         'title' => 'Porcentajes',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_FOUR,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['porcentajeQuitaIntereses','porcentajeQuitaCapital','tasa']
+                        'fields' => ['porcentajeQuitaIntereses', 'porcentajeQuitaCapital', 'tasa']
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
@@ -25,7 +25,7 @@
                         'title' => 'Mora',
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_FOUR,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => [ 'fechaMoraDesde', 'fechaCalculoHasta', 'diasDeMora',]
+                        'fields' => ['fechaMoraDesde', 'fechaCalculoHasta', 'diasDeMora',]
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,
@@ -54,3 +54,24 @@
         </div>
     </div> 
 </div>
+
+
+<script>
+    $("#simulacion_actualizacion").submit(function (e) {
+        var url = '/acef/deuda-actualizacion/form/' + '<?php echo $this->clienteId ?>';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#simulacion_actualizacion").serialize(),
+            success: function (data)
+            {
+                $("#formActualizacion").html(data);
+                $.get("/acef/deuda-refinanciacion/form/" + '<?php echo $this->clienteId ?>').done(function (data) {
+                    $("#formRefinanciacion").html(data);
+                });
+            }
+        });
+
+        e.preventDefault();
+    });
+</script>

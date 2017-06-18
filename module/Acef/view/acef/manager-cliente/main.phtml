@@ -11,49 +11,69 @@
 
             <div class="main-box clearfix" style="padding: 0;">
 
-<!--                <div class="main-box-header clearfix">
-                    <h2 class="pull-left"> Gestión de Cliente</h2>
-                </div>-->
+                <!--                <div class="main-box-header clearfix">
+                                    <h2 class="pull-left"> Gestión de Cliente</h2>
+                                </div>-->
 
-<!--                <div class="main-box-body clearfix">-->
-                    <div class="tabs-wrapper profile-tabs">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#clienteTab" data-toggle="tab" >Cliente</a>
-                            </li>
-                            <li class=""><a href="#productosTab" data-toggle="tab" >Productos</a>
-                            </li>
-                            <li class=""><a href="#bitacoraTab" data-toggle="tab" >Historial</a>
-                            </li>
-
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="tab-pane fade active in" id="clienteTab">
-                                <div id="cliente-content">
+                <!--                <div class="main-box-body clearfix">-->
+                <div class="tabs-wrapper profile-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#clienteTab" data-toggle="tab" >Cliente</a>
+                        </li>
+                        <li class=""><a href="#productosTab" data-toggle="tab" >Productos</a>
+                        </li>
+                        <li class=""><a href="#bitacoraTab" data-toggle="tab" >Historial</a>
+                        </li>
+                        <li class=""><a href="#actualizacionTab" data-toggle="tab" >Actualización</a>
+                        </li>
+                        <li class=""><a href="#refinanciacionTab" data-toggle="tab" >Refinanciación</a>
+                        </li>
 
 
-                                    <?php echo $this->partial("acef/manager-cliente/ver-cliente", ["cliente" => $this->cliente]); ?>
 
-                                </div>
+                    </ul>
 
-                            </div>
-                            <div class="tab-pane fade" id="productosTab">                           
-                                <div id="gridProductos">
-                                    <i class="glyphicon glyphicon-transfer"> Cargando...</i>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="bitacoraTab">
-                                <div id="gridBitacoras">
-                                    <i class="glyphicon glyphicon-transfer"> Cargando...</i>
-                                </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="clienteTab">
+                            <div id="cliente-content">
+
+
+                                <?php echo $this->partial("acef/manager-cliente/ver-cliente", ["cliente" => $this->cliente]); ?>
+
                             </div>
 
                         </div>
+                        <div class="tab-pane fade" id="productosTab">                           
+                            <div id="gridProductos">
+                                <i class="glyphicon glyphicon-transfer"> Cargando...</i>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="bitacoraTab">
+                            <div id="gridBitacoras">
+                                <i class="glyphicon glyphicon-transfer"> Cargando...</i>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="actualizacionTab">
+                            <div id="formActualizacion">
+                                <i class="glyphicon glyphicon-transfer"> Cargando...</i>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="refinanciacionTab">
+                            <div id="formRefinanciacion">
+                                <i class="glyphicon glyphicon-transfer"> Cargando...</i>
+                            </div>
+                        </div>
+
+
 
                     </div>
 
-
                 </div>
+
+
+            </div>
             <!--</div>-->
         <?php endif; ?>
 

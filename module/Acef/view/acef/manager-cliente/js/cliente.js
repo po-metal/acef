@@ -9,6 +9,14 @@
             $.get("/acef/manager-cliente/bitacoras/" + clienteId).done(function (data) {
                 $("#gridBitacoras").html(data);
             });
+            
+             $.get("/acef/deuda-refinanciacion/form/" + clienteId).done(function (data) {
+                $("#formRefinanciacion").html(data);
+            });
+            
+             $.get("/acef/deuda-actualizacion/form/" + clienteId).done(function (data) {
+                $("#formActualizacion").html(data);
+            });
         }
         $('#btn-search-clientes').click(function (e) {
             $('#input-text-search').slideToggle(100);

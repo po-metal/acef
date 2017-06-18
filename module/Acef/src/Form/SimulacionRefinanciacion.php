@@ -13,7 +13,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
         $this->setAttribute('role', "form");
 
         $this->add(array(
-            'name' => 'total_deuda_con_quita',
+            'name' => 'totalDeudaConQuita',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
@@ -35,7 +35,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'monto_refinanciar',
+            'name' => 'montoRefinanciar',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -59,7 +59,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
 
 
         $this->add(array(
-            'name' => 'cantidad_cuotas',
+            'name' => 'cantidadCuotas',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
@@ -70,7 +70,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'cuota_por_anio',
+            'name' => 'cuotaPorAnio',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
@@ -84,7 +84,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'monto_de_cuota',
+            'name' => 'montoDeCuota',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control formula',
@@ -96,7 +96,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
         ));
 
         $this->add(array(
-            'name' => 'meses_cuentas',
+            'name' => 'mesesCuentas',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
