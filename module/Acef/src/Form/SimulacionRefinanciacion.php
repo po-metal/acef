@@ -74,6 +74,8 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
+                'readonly' => 'readonly',
+                'value'=>12
             ),
             'options' => array(
                 'label' => 'Cuota por año',
@@ -98,6 +100,8 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control ',
+                'readonly' => 'readonly',
+                'value'=> 1
             ),
             'options' => array(
                 'label' => 'Meses Ctas.',
