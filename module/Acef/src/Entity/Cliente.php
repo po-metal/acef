@@ -102,7 +102,7 @@ class Cliente
 
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
-     * @Annotation\Attributes({"type":"date"})
+     * @Annotation\Attributes({"type":"date","id":"fechaAsignacion"})
      * @Annotation\Options({"label":"Fecha Asignación", "description":"", "addon":"fa
      * fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_asignacion")
@@ -111,7 +111,7 @@ class Cliente
 
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
-     * @Annotation\Attributes({"type":"date"})
+     * @Annotation\Attributes({"type":"date", "readonly":"readonly","id":"fechaRetencion"})
      * @Annotation\Options({"label":"Fecha de Retencion", "description":"", "addon":"fa
      * fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_retencion")
