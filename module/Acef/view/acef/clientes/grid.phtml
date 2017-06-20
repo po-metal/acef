@@ -10,9 +10,6 @@
 		});
 
 		function validarFecha(fecha){
-			 //Funcion validarFecha 
-			 //Escrita por Buzu feb 18 2010. (FELIZ CUMPLE BUZU!!!
-			 //valida fecha en formato aaaa-mm-dd
 			 var fechaArr = fecha.split('-');
 			 var aho = fechaArr[0];
 			 var mes = fechaArr[1];
@@ -21,9 +18,9 @@
 			 var plantilla = new Date(aho, mes - 1, dia);//mes empieza de cero Enero = 0
 
 			 if(!plantilla || plantilla.getFullYear() == aho && plantilla.getMonth() == mes -1 && plantilla.getDate() == dia){
-			 return true;
+				return true;
 			 }else{
-			 return false;
+			 	return false;
 			 }
 		}
 
@@ -41,7 +38,5 @@
     		}
     		return curr_year + "-" + curr_month + "-" +  curr_date;
 		}
-});
-
-
+	});
 </script>
