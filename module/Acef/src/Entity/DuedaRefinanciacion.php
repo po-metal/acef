@@ -102,7 +102,7 @@ class DuedaRefinanciacion
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text", "disabled":"disabled" })
      * @Annotation\Options({"label":"Tasa", "description":"", "addon":""})
-     * @ORM\Column(type="integer", length=5, unique=false, nullable=true, name="tasa")
+     * @ORM\Column(type="decimal", scale=2, precision=11,  unique=false, nullable=true, name="tasa")
      */
     public $tasa = null;
 
@@ -257,7 +257,7 @@ class DuedaRefinanciacion
     {
         if ($this->getInteres() and $this->getCuotaPorAnio()) {
             $r = $this->getInteres() / $this->getCuotaPorAnio() / 100;
-            $this->setTasa($r);
+            $this->setTasa(number_format($r,2,".",""));
         }
     }
 
