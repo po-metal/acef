@@ -241,14 +241,15 @@ class DuedaRefinanciacion
     public function calcularMontoRefinanciar()
     {
         $r = $this->getTotalDeudaConQuita() - $this->getAnticipo();
-                $this->setMontoRefinanciar($r);
+                $this->setMontoRefinanciar(number_format($r,2,".",""));
+
     }
 
     public function calcularMontoCuota()
     {
         if ($this->tasa) {
             $r = $this->getMontoRefinanciar() * ($this->tasa * $this->getMesesCuentas()) / (1 - pow((1 + $this->tasa * $this->getMesesCuentas()), -$this->getCantidadCuotas()));
-            $this->setMontoDeCuota($r);
+            $this->setMontoDeCuota(number_format($r,2,".",""));
         }
     }
 
