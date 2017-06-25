@@ -53,7 +53,7 @@ class DuedaRefinanciacion
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Attributes({"type":"text", "disabled":"disabled"})
      * @Annotation\Options({"label":"Monto a refinanciar", "description":"",
      * "addon":""})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
@@ -72,7 +72,7 @@ class DuedaRefinanciacion
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Attributes({"type":"text", "disabled":"disabled"})
      * @Annotation\Options({"label":"Cuota por año", "description":"", "addon":""})
      * @ORM\Column(type="integer", length=3, unique=false, nullable=true,
      * name="cuota_por_anio")
@@ -81,7 +81,7 @@ class DuedaRefinanciacion
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Attributes({"type":"text", "disabled":"disabled"})
      * @Annotation\Options({"label":"Monto de Cuota", "description":"", "addon":""})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="monto_de_cuota")
@@ -90,8 +90,9 @@ class DuedaRefinanciacion
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Attributes({"type":"text", "disabled":"disabled"})
      * @Annotation\Options({"label":"Meses Ctas.", "description":"", "addon":""})
+     * @Annotation\AllowEmpty({"allowempty":"true"})
      * @ORM\Column(type="integer", length=3, unique=false, nullable=true,
      * name="meses_cuentas")
      */
@@ -99,7 +100,7 @@ class DuedaRefinanciacion
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Attributes({"type":"text", "disabled":"disabled" })
      * @Annotation\Options({"label":"Tasa", "description":"", "addon":""})
      * @ORM\Column(type="integer", length=5, unique=false, nullable=true, name="tasa")
      */
@@ -109,7 +110,7 @@ class DuedaRefinanciacion
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
      * @Annotation\Options({"label":"Cliente","empty_option": "",
      * "target_class":"\Acef\Entity\Cliente", "description":""})
-     * @ORM\OneToOne(targetEntity="\Acef\Entity\Cliente")
+     * @ORM\ManyToOne(targetEntity="\Acef\Entity\Cliente")
      * @ORM\JoinColumn(name="cliente_id", referencedColumnName="id", nullable=true)
      */
     public $cliente = null;
@@ -122,6 +123,13 @@ class DuedaRefinanciacion
      * name="cantidad_cuotas")
      */
     public $cantidadCuotas = null;
+
+    /**
+     * @Annotation\Exclude()
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime", unique=false, nullable=true, name="fecha_creacion")
+     */
+    public $fechaCreacion = null;
 
     public function getId()
     {
@@ -260,6 +268,16 @@ class DuedaRefinanciacion
     public function setCantidadCuotas($cantidadCuotas)
     {
         $this->cantidadCuotas = $cantidadCuotas;
+    }
+
+    public function getFechaCreacion()
+    {
+        return $this->fechaCreacion;
+    }
+
+    public function setFechaCreacion($fechaCreacion)
+    {
+        $this->fechaCreacion = $fechaCreacion;
     }
 
     public function __toString()

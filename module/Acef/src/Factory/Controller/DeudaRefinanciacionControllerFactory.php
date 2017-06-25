@@ -21,7 +21,9 @@ class DeudaRefinanciacionControllerFactory implements FactoryInterface
     {
         /* @var $em \Doctrine\ORM\EntityManager */
         $em = $container->get("doctrine.entitymanager.orm_default");
-        return new \Acef\Controller\DeudaRefinanciacionController($em);
+        /* @var $grid \ZfMetal\Datagrid\Grid */
+        $grid = $container->build("zf-metal-datagrid", ["customKey" => "acef-entity-duedarefinanciacion"]);
+        return new \Acef\Controller\DeudaRefinanciacionController($em,$grid);
     }
 
 

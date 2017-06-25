@@ -15,7 +15,7 @@ class SimulacionRefinanciacion extends InputFilter {
 
         $this->add(array(
             'name' => 'cuotaPorAnio',
-            'required' => true,
+            'required' => false,
             'validators' => array(
                 array(
                     'name' => 'Zend\Validator\Digits'
@@ -36,7 +36,7 @@ class SimulacionRefinanciacion extends InputFilter {
         new \Zend\Validator\GreaterThan();
         $this->add(array(
             'name' => 'mesesCuentas',
-            'required' => true,
+            'required' => false,
             'validators' => array(
                 [
                     'name' => 'Zend\Validator\Digits'
