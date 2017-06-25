@@ -50,12 +50,12 @@
                                             <!--SORT-->
                                             <?php if ($this->grid->getSort() && $this->grid->getSort()->getBy() == $column->getName()): ?>
                                                 <?php if ($this->grid->getSort()->getDirection() == "DESC"): ?>
-                                                    <a class="sorting_desc" onclick="cdiOrder_<?php echo $this->grid->getId(); ?>('<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "ASC") + $this->routeParams), true); ?>')"></a>
+                                                    <a class="sorting_desc" onclick="<?php echo \ZfMetal\Datagrid\C::F_SORT . $this->grid->getId(); ?>('<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "ASC") + $this->routeParams), true); ?>')"></a>
                                                 <?php elseif ($this->grid->getSort()->getDirection() == "ASC"): ?>
-                                                    <a class="sorting_asc" onclick="cdiOrder_<?php echo $this->grid->getId(); ?>('<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>')"></a>
+                                                    <a class="sorting_asc" onclick="<?php echo \ZfMetal\Datagrid\C::F_SORT . $this->grid->getId(); ?>('<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>')"></a>
                                                 <?php endif; ?>
                                             <?php else: ?>
-                                                <a class="sorting" onclick="cdiOrder_<?php echo $this->grid->getId(); ?>('<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>')"></a>
+                                                <a class="sorting" onclick="<?php echo \ZfMetal\Datagrid\C::F_SORT . $this->grid->getId(); ?>('<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>')"></a>
                                             <?php endif; ?>
 
                                         <?php endif; ?>
