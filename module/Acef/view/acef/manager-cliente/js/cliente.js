@@ -10,7 +10,7 @@
                 $("#gridBitacoras").html(data);
             });
             
-             $.get("/acef/deuda-refinanciacion/form/" + clienteId).done(function (data) {
+             $.get("/acef/manager-cliente/refinanciacion/" + clienteId).done(function (data) {
                 $("#formRefinanciacion").html(data);
             });
             

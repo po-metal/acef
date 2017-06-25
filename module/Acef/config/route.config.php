@@ -187,6 +187,17 @@ return [
                                     ],
                                 ],
                             ],
+                            'Refinanciacion' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/refinanciacion/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'refinanciacion',
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                     'Inicio' => [
@@ -350,6 +361,17 @@ return [
                                     'defaults' => [
                                         'controller' => \Acef\Controller\DeudaRefinanciacionController::CLASS,
                                         'action' => 'form',
+                                    ],
+                                ],
+                            ],
+                            'Grid' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/grid',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\DeudaRefinanciacionController::CLASS,
+                                        'action' => 'grid',
                                     ],
                                 ],
                             ],

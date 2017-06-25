@@ -15,6 +15,8 @@ use Zend\Mvc\Controller\AbstractActionController;
  */
 class ManagerClienteController extends AbstractActionController {
 
+    const ENTITY = '\\Acef\\Entity\\Cliente';
+
     /**
      * @var \Doctrine\ORM\EntityManager
      */
@@ -34,6 +36,10 @@ class ManagerClienteController extends AbstractActionController {
 
     private function getClienteRepository() {
         return $this->getEm()->getRepository(\Acef\Entity\Cliente::class);
+    }
+
+    public function getDeudaActualizacionRepository() {
+        return $this->getEm()->getRepository('\\Acef\\Entity\\DeudaActualizacion');
     }
 
     public function mainAction() {
@@ -127,9 +133,9 @@ class ManagerClienteController extends AbstractActionController {
         $form->bind($cliente);
         $form->setAttribute('action', 'javascript:submitFormCliente(' . $cliente->getId() . ')');
         $formProcess = $this->formProcess($this->getEm(), $form, TRUE);
-        
-        if($formProcess->getStatus()){
-        return $this->forward()->dispatch("Acef\Controller\ManagerClienteController", ["action" => "ver-cliente", "clienteId" => $clienteId]);
+
+        if ($formProcess->getStatus()) {
+            return $this->forward()->dispatch("Acef\Controller\ManagerClienteController", ["action" => "ver-cliente", "clienteId" => $clienteId]);
         }
 
         $view = new \Zend\View\Model\ViewModel(array('form' => $form));
@@ -152,11 +158,64 @@ class ManagerClienteController extends AbstractActionController {
     }
 
     public function getClientesAction() {
-
         $nombreCliente = $this->params('nombreCliente');
 
         $clientes = $this->getClienteRepository()->getClienteByRazonSocial($nombreCliente);
         return new \Zend\View\Model\JsonModel($clientes);
+    }
+
+    public function getEntityRepository() {
+        return $this->getEm()->getRepository(self::ENTITY);
+    }
+
+    public function refinanciacionAction() {
+        $clienteId = $this->params('clienteId');
+        /* @var $grid \ZfMetal\Datagrid\Grid */
+        $grid = $this->gridBuilder('acef-entity-duedarefinanciacion', 'cliente', $clienteId);
+
+        $grid->setTemplate('ajax');
+        $grid->setId('gridRefinanciacion');
+
+        // Elimina el cliente del Formulario
+        $grid->getCrudForm()->remove('cliente');
+
+        //Special Input Filter
+        $grid->getCrudForm()->setInputFilter(new \Acef\Form\Filter\SimulacionRefinanciacion());
+
+        //TotalDeudaConQuita 
+        $deudaActualizacion = $this->getDeudaActualizacionRepository()->findOneBy(['cliente' => $clienteId]);
+
+        if ($deudaActualizacion) {
+            $grid->getCrudForm()->getObject()->setTotalDeudaConQuita($deudaActualizacion->getTotalDeudaConQuita());
+            $grid->getCrudForm()->get('totalDeudaConQuita')->setValue($deudaActualizacion->getTotalDeudaConQuita());
+        }
+
+
+        // Elimina el cliente del Filtro
+        $grid->getForm()->remove('cliente');
+
+        // Elimina la columna cliente del datagrid
+        $grid->setColumnsConfig(array_merge_recursive($grid->getColumnsConfig(), ['cliente' => ['hidden' => true]]));
+
+        $cliente = $this->getClienteRepository()->find($clienteId);
+        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente) {
+            $record = $e->getParam('record');
+            $record->setCliente($cliente);
+            $record->simular();
+        });
+        
+         $grid->getSource()->getEventManager()->attach('updateRecord_before', function($e) use ($cliente) {
+            $record = $e->getParam('record');
+            $record->simular();
+        });
+
+        $grid->prepare();
+
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid));
+
+        $view->setTerminal(TRUE);
+
+        return $view;
     }
 
 }
