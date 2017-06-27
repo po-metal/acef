@@ -48,6 +48,11 @@ H2.main-box-header-custom{
     font-size: 12px;
     margin-top: 2px;
 }
+
+.btnAjaxCustom{
+    margin-left: 2px ! important;
+}
+
 .btnCancelCustom:hover{
     background-color: #7f8c8d;
     color: #fff; 

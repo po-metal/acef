@@ -1,40 +1,26 @@
 <?php $this->flashCurrent(); ?>
 <div class="row">
     <div class="main-box  clearfix ">
-        
-            <div class="main-box-header clearfix addPaddingTopCustom">
-                <h2 style="padding: 7px;"> <?php echo $this->grid->get_title_form(); ?></h2>
-            </div>
 
-        
+        <div class="main-box-header clearfix addPaddingTopCustom">
+            <h2 style="padding: 7px;"> <?php echo $this->grid->get_title_form(); ?></h2>
+        </div>
+
+
         <div class="main-box-body clearfix">
 
             <?php
             $form = $this->grid->getCrudForm();
-            $form->setAttribute('onsubmit',"submit.disabled=true; return true;");
+            $form->setAttribute('onsubmit', "submit.disabled=true; return true;");
             $formConfig = $this->grid->getOptions()->getFormConfig();
 
-            $form->get('submit')->setAttribute('value', 'Enviar')
-                    ->setAttribute('class', 'pull-right btn btnCustom')
-                    ->setAttribute('style', 'margin-left: 2px');
-            
-            $form->add(array(
-                'name' => 'cancel',
-                'type' => 'Zend\Form\Element\Button',
-                'attributes' => array(
-                    'value' => "Cancelar",
-                    'class' => 'pull-right btn btnCancelCustom',
-                    'onclick' => 'window.location.href="' . $this->url($this->route, array(), array('query' => $this->routeParams), true) . '"',
-                ),
-                'options' => array(
-                    'label' => 'Cancelar',
-                )
-            ));
+            $form->get('submit')->setAttribute('style', 'margin-left: 2px');
             ?>
             <?php
-            echo $this->renderForm($form, $formConfig->getStyle(), $formConfig->getColumns(),$formConfig->getGroups());
+            echo $this->renderForm($form, $formConfig->getStyle(), $formConfig->getColumns(), $formConfig->getGroups());
             ?>
         </div>
     </div>
 </div>
 
+<?php echo $this->GridCrudModal($this->grid->getId()); ?>

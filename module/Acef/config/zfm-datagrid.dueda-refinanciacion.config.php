@@ -22,6 +22,24 @@ return [
             'formConfig' => [
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
+                     'submit' => [
+                'enable' => true,
+                'value' => 'Calcular y Guardar',
+                'class' => 'pull-right btn btnCustom',
+                'priority' => 100,
+            ],
+            'cancel' => [
+                'enable' => true,
+                'value' => 'Volver',
+                'class' => 'pull-right btn btnCancelCustom',
+                'priority' => 30,
+            ],
+            'clean' => [
+                'enable' => true,
+                'value' => 'Limpiar',
+                'class' => 'pull-right btn btnCancelCustom btnAjaxCustom',
+                'priority' => 50,
+            ],
                 'groups' => [
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_VERTICAL,

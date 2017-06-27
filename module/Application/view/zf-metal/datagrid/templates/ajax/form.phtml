@@ -8,22 +8,8 @@
     $form->setAttribute("action", "javascript:".\ZfMetal\Datagrid\C::F_FORM. $this->grid->getId() . "('" . $form->getName() . "')");
     $formConfig = $this->grid->getOptions()->getFormConfig();
 
-    $form->get('submit')->setAttribute('value', 'Enviar')
-            ->setAttribute('class', 'pull-right btn btnCustom')
-            ->setAttribute('style', 'margin-left: 2px');    
+    $form->get('submit')->setAttribute('style', 'margin-left: 2px');    
 
-    $form->add(array(
-        'name' => 'cancel',
-        'type' => 'Zend\Form\Element\Button',
-        'attributes' => array(
-            'value' => "Cancelar",
-            'class' => 'pull-right btn btnCancelCustom',
-            'onclick' => \ZfMetal\Datagrid\C::F_LIST. $this->grid->getId() . '()',
-        ),
-        'options' => array(
-            'label' => 'Cancel',
-        )
-    ));
     ?>
 
     <?php
@@ -33,7 +19,7 @@
 </div>
 
 
-<?php echo $this->GridCrudAjax($this->grid->getId(), $this->url($this->route, array(), array(), true)); ?>
+<?php echo $this->GridCrudAjaxModal($this->grid->getId(), $this->url($this->route, array(), array(), true)); ?>
 
 
 <?php if ($file): ?>

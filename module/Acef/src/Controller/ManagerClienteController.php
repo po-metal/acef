@@ -56,7 +56,7 @@ class ManagerClienteController extends AbstractActionController {
         $grid = $this->gridBuilder('acef-entity-producto', 'cliente', $clienteId);
 
         $grid->setTemplate('ajax');
-        $grid->setId('gridProductos');
+      //  $grid->setId('gridProductos');
 
         // Elimina el cliente del Formulario
         $grid->getCrudForm()->remove('cliente');
@@ -88,7 +88,7 @@ class ManagerClienteController extends AbstractActionController {
         $grid = $this->gridBuilder('acef-entity-bitacoracliente', 'cliente', $clienteId);
 
         $grid->setTemplate('ajax');
-        $grid->setId('gridBitacoras');
+      //  $grid->setId('gridBitacoras');
 
         // Elimina el cliente del Formulario
         $grid->getCrudForm()->remove('cliente');
@@ -174,7 +174,7 @@ class ManagerClienteController extends AbstractActionController {
         $grid = $this->gridBuilder('acef-entity-duedarefinanciacion', 'cliente', $clienteId);
 
         $grid->setTemplate('ajax');
-        $grid->setId('gridRefinanciacion');
+        //$grid->setId('gridRefinanciacion');
 
         // Elimina el cliente del Formulario
         $grid->getCrudForm()->remove('cliente');
@@ -198,19 +198,27 @@ class ManagerClienteController extends AbstractActionController {
         $grid->setColumnsConfig(array_merge_recursive($grid->getColumnsConfig(), ['cliente' => ['hidden' => true]]));
 
         $cliente = $this->getClienteRepository()->find($clienteId);
-        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente) {
+        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente,$grid) {
             $record = $e->getParam('record');
             $record->setCliente($cliente);
             $record->simular();
+            $grid->getCrudForm()->bind($record);
         });
         
-         $grid->getSource()->getEventManager()->attach('updateRecord_before', function($e) use ($cliente) {
+         $grid->getSource()->getEventManager()->attach('updateRecord_before', function($e) use ($cliente,$grid) {
             $record = $e->getParam('record');
             $record->simular();
+            $grid->getCrudForm()->bind($record);
         });
 
         $grid->prepare();
-
+        
+        //Mantengo la instancia Form al hacer el submit
+        $action = $this->getRequest()->getPost(\ZfMetal\Datagrid\Crud::inputAction);
+        if($action == 'editSubmit' || $action == 'addSubmit'){
+         $grid->setInstance(\ZfMetal\Datagrid\Grid::INSTANCE_FORM);
+        }
+        
         $view = new \Zend\View\Model\ViewModel(array('grid' => $grid));
 
         $view->setTerminal(TRUE);
