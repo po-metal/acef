@@ -139,3 +139,8 @@ H2.main-box-header-custom{
 .nav-tabs > li > a{
     font-size: 14px !important;
 }
+
+.deleteModalCustom{
+    margin-top: -10px;
+    padding-bottom: 10px;
+}
