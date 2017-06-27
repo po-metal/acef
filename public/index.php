@@ -3,8 +3,8 @@
 use Zend\Mvc\Application;
 use Zend\Stdlib\ArrayUtils;
 setlocale(LC_ALL,"es_ES.utf8");
-error_reporting(E_ALL|E_STRICT);
-ini_set('display_errors', 'on');
+error_reporting(E_ERROR|E_STRICT);
+ini_set('display_errors', 'off');
   
 
 /**

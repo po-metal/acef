@@ -30,10 +30,9 @@ class CalculoDeudaController extends AbstractActionController {
             $serviceActualizacion = new \Acef\Service\SimuladorActualizacion();
             $formActualizacion->bind($serviceActualizacion);
             $formActualizacion->setData($this->getRequest()->getPost());
-
+            
             if ($formActualizacion->isValid()) {
-
-                $serviceActualizacion->simular();
+                $serviceActualizacion->simular();   
                 $formActualizacion->bind($serviceActualizacion);
             }
         }

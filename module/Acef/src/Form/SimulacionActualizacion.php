@@ -31,7 +31,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             ),
             'options' => array(
                 'label' => 'Porcentaje de quita sobre capital ',
-            )
+            ),
         ));
 
 
@@ -194,6 +194,13 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                 'label' => 'Cancelar',
             )
         ));
+
+        $this->getInputFilter()->add([
+            'name' => 'porcentajeQuitaIntereses',
+            'validators'=>[
+               new \Zend\Validator\Digits()
+            ]
+        ]);
     }
 
 }
