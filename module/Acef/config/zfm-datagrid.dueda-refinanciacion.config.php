@@ -95,8 +95,9 @@ return [
                        'priority' => 30
                 ],
                 'fechaCreacion' => [
+                    'displayName' => 'Fecha Creacion',
                     'type' => 'date',
-                    'format' => 'Y-m-d H:i:s',
+                    'format' => 'Y-m-d',
                        'priority' => 20
                 ],
             ],
