@@ -33,6 +33,36 @@ class SimulacionRefinanciacion extends InputFilter {
             ),
         ));
 
+        $this->add(array(
+            'name' => 'cantidadCuotas',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'Zend\Validator\Digits'
+                ),
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'totalDeudaConQuita',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'Zend\I18n\Validator\IsFloat'
+                ),
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'anticipo',
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => 'Zend\I18n\Validator\IsFloat'
+                ),
+            ),
+        ));
+
         new \Zend\Validator\GreaterThan();
         $this->add(array(
             'name' => 'mesesCuentas',
