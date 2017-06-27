@@ -18,7 +18,12 @@ class SimulacionRefinanciacion extends InputFilter {
             'required' => false,
             'validators' => array(
                 array(
-                    'name' => 'Zend\Validator\Digits'
+                    'name' => 'Zend\Validator\Digits',
+                    'options'=>[
+                         'messages'=>[
+                             \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
+                         ]
+                    ]
                 ),
             ),
         ));
@@ -28,7 +33,12 @@ class SimulacionRefinanciacion extends InputFilter {
             'required' => true,
             'validators' => array(
                 array(
-                    'name' => 'Zend\Validator\Digits'
+                    'name' => 'Zend\Validator\Digits',
+                    'options'=>[
+                         'messages'=>[
+                             \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
+                         ]
+                    ]
                 ),
             ),
         ));
@@ -38,7 +48,12 @@ class SimulacionRefinanciacion extends InputFilter {
             'required' => true,
             'validators' => array(
                 array(
-                    'name' => 'Zend\Validator\Digits'
+                    'name' => 'Zend\Validator\Digits',
+                    'options'=>[
+                        'messages'=>[
+                            \Zend\Validator\Digits::INVALID => 'El valor ingresado no es numérico',
+                        ]
+                   ]
                 ),
             ),
         ));
@@ -48,7 +63,12 @@ class SimulacionRefinanciacion extends InputFilter {
             'required' => true,
             'validators' => array(
                 array(
-                    'name' => 'Zend\I18n\Validator\IsFloat'
+                    'name' => 'Zend\I18n\Validator\IsFloat',
+                    'options'=>[
+                        'messages'=>[
+                            \Zend\I18n\Validator\IsFloat::NOT_FLOAT => 'El valor ingresado no es numérico',
+                        ],
+                   ],
                 ),
             ),
         ));
@@ -58,7 +78,12 @@ class SimulacionRefinanciacion extends InputFilter {
             'required' => true,
             'validators' => array(
                 array(
-                    'name' => 'Zend\I18n\Validator\IsFloat'
+                    'name' => 'Zend\I18n\Validator\IsFloat',
+                    'options'=>[
+                        'messages'=>[
+                            \Zend\I18n\Validator\IsFloat::NOT_FLOAT => 'El valor ingresado no es numérico',
+                        ],
+                   ],
                 ),
             ),
         ));
@@ -69,7 +94,12 @@ class SimulacionRefinanciacion extends InputFilter {
             'required' => false,
             'validators' => array(
                 [
-                    'name' => 'Zend\Validator\Digits'
+                    'name' => 'Zend\Validator\Digits',
+                    'options'=>[
+                         'messages'=>[
+                             \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
+                         ]
+                    ]
                 ],
                 [
                     'name' => 'Zend\Validator\GreaterThan',

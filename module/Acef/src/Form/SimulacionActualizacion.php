@@ -198,28 +198,56 @@ class SimulacionActualizacion extends \Zend\Form\Form {
         $this->getInputFilter()->add([
             'name' => 'porcentajeQuitaIntereses',
             'validators'=>[
-               new \Zend\Validator\Digits()
+                [
+                   'name'=> '\Zend\Validator\Digits',
+                   'options'=>[
+                        'messages'=>[
+                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
+                        ]
+                   ]
+               ]
             ]
         ]);
 
         $this->getInputFilter()->add([
             'name' => 'porcentajeQuitaCapital',
             'validators'=>[
-               new \Zend\Validator\Digits()
+                [
+                   'name'=> '\Zend\Validator\Digits',
+                   'options'=>[
+                        'messages'=>[
+                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
+                        ]
+                   ]
+               ]
             ]
         ]);
 
         $this->getInputFilter()->add([
             'name' => 'tasa',
             'validators'=>[
-               new \Zend\Validator\Digits()
+                [
+                   'name'=> '\Zend\Validator\Digits',
+                   'options'=>[
+                        'messages'=>[
+                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
+                        ]
+                   ]
+               ]
             ]
         ]);
 
         $this->getInputFilter()->add([
             'name' => 'capital',
             'validators'=>[
-               new \Zend\Validator\Digits()
+                [
+                   'name'=> '\Zend\Validator\Digits',
+                   'options'=>[
+                        'messages'=>[
+                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
+                        ]
+                   ]
+               ]
             ]
         ]);
     }
