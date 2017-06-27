@@ -3644,12 +3644,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zf-metal/datagrid.git",
-                "reference": "6827a50fb4422fdef8e5e50f8bddd7749daf739f"
+                "reference": "4a54a3e425a8f281e0d275a4ef603a5e5b64b010"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/6827a50fb4422fdef8e5e50f8bddd7749daf739f",
-                "reference": "6827a50fb4422fdef8e5e50f8bddd7749daf739f",
+                "url": "https://api.github.com/repos/zf-metal/datagrid/zipball/4a54a3e425a8f281e0d275a4ef603a5e5b64b010",
+                "reference": "4a54a3e425a8f281e0d275a4ef603a5e5b64b010",
                 "shasum": ""
             },
             "require": {
@@ -3712,7 +3712,7 @@
                 "zf2",
                 "zf3"
             ],
-            "time": "2017-06-26 02:13:10"
+            "time": "2017-06-27 16:06:33"
         },
         {
             "name": "zf-metal/generator",

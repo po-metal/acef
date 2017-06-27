@@ -5,6 +5,28 @@ return array(
     'zf-metal-datagrid.options' => array(
         'recordsPerPage' => 10,
         'template_default' => 'default',
+        "formConfig" => [
+            'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
+            'style' => \ZfMetal\Commons\Consts::STYLE_MENU_VERTICAL,
+            'submit' => [
+                'enable' => true,
+                'value' => 'Enviar',
+                'class' => 'pull-right btn btnCustom ',
+                'priority' => 100,
+            ],
+            'cancel' => [
+                'enable' => true,
+                'value' => 'Cancelar',
+                'class' => 'pull-right btn btnCancelCustom',
+                'priority' => 30,
+            ],
+            'clean' => [
+                'enable' => false,
+                'value' => 'Limpiar',
+                'class' => 'pull-right btn btnCancelCustom',
+                'priority' => 50,
+            ],
+        ],
         "crudConfig" => [
             "enable" => true,
             'side' => "left",
@@ -37,11 +59,11 @@ return array(
             ],
         ],
         'export_config' => [
-                'export_to_excel' => [
-                    'btn_class' => 'btn btnCustom fa fa-download',
-                    'btn_value' => '',
-                    'btn_tag' => 'button',
-                ],
+            'export_to_excel' => [
+                'btn_class' => 'btn btnCustom fa fa-download',
+                'btn_value' => '',
+                'btn_tag' => 'button',
             ],
+        ],
     )
 );

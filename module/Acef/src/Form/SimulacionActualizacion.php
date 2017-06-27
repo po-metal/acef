@@ -188,7 +188,7 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'attributes' => array(
                 'value' => "Borrar",
                 'class' => 'pull-right btn btnCancelCustom',
-                'onclick' => 'this.form.reset()',
+                'onclick' => 'cleanActualizacion()',
             ),
             'options' => array(
                 'label' => 'Cancelar',

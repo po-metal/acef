@@ -66,12 +66,20 @@
             success: function (data)
             {
                 $("#formActualizacion").html(data);
-                $.get("/acef/deuda-refinanciacion/form/" + '<?php echo $this->clienteId ?>').done(function (data) {
-                    $("#formRefinanciacion").html(data);
-                });
+                ZfMetal_Grid_List_zfmdg_DuedaRefinanciacion();
             }
         });
 
         e.preventDefault();
     });
+    
+    
+      function cleanActualizacion() {
+        $(':input', '#simulacion_actualizacion')
+                .not(':button, :submit, :reset, :hidden')
+                .val('')
+                .removeAttr('checked')
+                .removeAttr('selected');
+
+    }
 </script>
