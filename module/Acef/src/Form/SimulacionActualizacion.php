@@ -201,6 +201,27 @@ class SimulacionActualizacion extends \Zend\Form\Form {
                new \Zend\Validator\Digits()
             ]
         ]);
+
+        $this->getInputFilter()->add([
+            'name' => 'porcentajeQuitaCapital',
+            'validators'=>[
+               new \Zend\Validator\Digits()
+            ]
+        ]);
+
+        $this->getInputFilter()->add([
+            'name' => 'tasa',
+            'validators'=>[
+               new \Zend\Validator\Digits()
+            ]
+        ]);
+
+        $this->getInputFilter()->add([
+            'name' => 'capital',
+            'validators'=>[
+               new \Zend\Validator\Digits()
+            ]
+        ]);
     }
 
 }
