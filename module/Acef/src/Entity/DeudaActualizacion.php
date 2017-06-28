@@ -313,7 +313,8 @@ class DeudaActualizacion extends \Zend\Hydrator\ArraySerializable implements \Ze
     }
 
     function calcularDeudaActualizada() {
-        $this->setTotalDeudaActualizada($this->getCapital() + $this->getTotalIntereses());
+        $r = $this->getCapital() + $this->getTotalIntereses();
+        $this->setTotalDeudaActualizada(number_format($r, 2, ".", ""));
     }
 
     function calcularQuitaInteresesTotalDeuda() {
