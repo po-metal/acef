@@ -45,7 +45,7 @@ class DeudaActualizacion extends \Zend\Hydrator\ArraySerializable implements \Ze
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Porcentaje de quita sobre intereses",
      * "description":"", "addon":""})
-     * @ORM\Column(type="integer", length=5, unique=false, nullable=true,
+     * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="porcentaje_quita_intereses")
      */
     public $porcentajeQuitaIntereses = null;
@@ -55,7 +55,7 @@ class DeudaActualizacion extends \Zend\Hydrator\ArraySerializable implements \Ze
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Porcentaje de quita sobre capital",
      * "description":"", "addon":""})
-     * @ORM\Column(type="integer", length=5, unique=false, nullable=true,
+     * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="porcentaje_quita_capital")
      */
     public $porcentajeQuitaCapital = null;
@@ -64,7 +64,7 @@ class DeudaActualizacion extends \Zend\Hydrator\ArraySerializable implements \Ze
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Tasa", "description":"", "addon":""})
-     * @ORM\Column(type="integer", length=5, unique=false, nullable=true, name="tasa")
+     * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true, name="tasa")
      */
     public $tasa = null;
 
