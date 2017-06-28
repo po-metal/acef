@@ -65,7 +65,7 @@ class DuedaRefinanciacion
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"% Interes", "description":"", "addon":""})
-     * @ORM\Column(type="integer", length=5, unique=false, nullable=true,
+     * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="interes")
      */
     public $interes = null;

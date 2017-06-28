@@ -199,12 +199,13 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'name' => 'porcentajeQuitaIntereses',
             'validators'=>[
                 [
-                   'name'=> '\Zend\Validator\Digits',
-                   'options'=>[
+                   'name' => 'Zend\I18n\Validator\IsFloat',
+                    'options'=>[
                         'messages'=>[
-                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
-                        ]
-                   ]
+                            \Zend\I18n\Validator\IsFloat::NOT_FLOAT => 'El valor ingresado no es numérico',
+                        ],
+                        'locale' => 'en'
+                   ],
                ]
             ]
         ]);
@@ -213,12 +214,13 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'name' => 'porcentajeQuitaCapital',
             'validators'=>[
                 [
-                   'name'=> '\Zend\Validator\Digits',
-                   'options'=>[
+                   'name' => 'Zend\I18n\Validator\IsFloat',
+                    'options'=>[
                         'messages'=>[
-                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
-                        ]
-                   ]
+                            \Zend\I18n\Validator\IsFloat::NOT_FLOAT => 'El valor ingresado no es numérico',
+                        ],
+                        'locale' => 'en'
+                   ],
                ]
             ]
         ]);
@@ -227,12 +229,13 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'name' => 'tasa',
             'validators'=>[
                 [
-                   'name'=> '\Zend\Validator\Digits',
-                   'options'=>[
+                   'name' => 'Zend\I18n\Validator\IsFloat',
+                    'options'=>[
                         'messages'=>[
-                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
-                        ]
-                   ]
+                            \Zend\I18n\Validator\IsFloat::NOT_FLOAT => 'El valor ingresado no es numérico',
+                        ],
+                        'locale' => 'en'
+                   ],
                ]
             ]
         ]);
@@ -241,12 +244,13 @@ class SimulacionActualizacion extends \Zend\Form\Form {
             'name' => 'capital',
             'validators'=>[
                 [
-                   'name'=> '\Zend\Validator\Digits',
-                   'options'=>[
+                   'name' => 'Zend\I18n\Validator\IsFloat',
+                    'options'=>[
                         'messages'=>[
-                            \Zend\Validator\Digits::NOT_DIGITS => 'El valor ingresado no es numérico',
-                        ]
-                   ]
+                            \Zend\I18n\Validator\IsFloat::NOT_FLOAT => 'El valor ingresado no es numérico',
+                        ],
+                        'locale' => 'en'
+                   ],
                ]
             ]
         ]);
