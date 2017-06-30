@@ -149,3 +149,6 @@ H2.main-box-header-custom{
     margin-top: -10px;
     padding-bottom: 10px;
 }
+body{
+    zoom: 90%;
+}
