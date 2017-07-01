@@ -52,22 +52,16 @@
                                 <tr>
                                     <?php foreach ($this->grid->getColumns() as $column): ?>
                                         <?php if (!$column->getHidden()): ?>
-                                            <th class="<?php echo $column->getThClass(); ?>">                                    
-                                                <?php echo $this->translate((string) $column); ?>
+                                            <th class="<?php echo $column->getThClass(); ?>">
                                                 <?php if ($column->getType() != "extra" && $column->getType() != "crud"): ?>
-
-
-                                                    <!--SORT-->
                                                     <?php if ($this->grid->getSort() && $this->grid->getSort()->getBy() == $column->getName()): ?>
-                                                        <?php if ($this->grid->getSort()->getDirection() == "DESC"): ?>
-                                                            <a class="sorting_desc" href="<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "ASC") + $this->routeParams), true); ?>"></a>
-                                                        <?php elseif ($this->grid->getSort()->getDirection() == "ASC"): ?>
-                                                            <a class="sorting_asc" href="<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>"></a>
-                                                        <?php endif; ?>
+                                                        <a class="linkCustom sorting_<?= strtolower($this->grid->getSort()->getDirection())?>" href="<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => $this->grid->getSort()->getDirection()=='DESC'?'ASC':'DESC') + $this->routeParams), true); ?>">
                                                     <?php else: ?>
-                                                        <a class="sorting" href="<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>"></a>
-                                                    <?php endif; ?>   
-
+                                                        <a class="linkCustom sorting" href="<?php echo $this->url($this->route, array(), array('query' => array('sortBy' => $column->getName(), "sortDirection" => "DESC") + $this->routeParams), true); ?>">
+                                                    <?php endif; ?>
+                                                    <?php echo $this->translate((string) $column); ?> </a>
+                                                <?php else: ?>
+                                                    <?php echo $this->translate((string) $column); ?>   
                                                 <?php endif; ?>
                                             </th>
                                         <?php endif; ?>
