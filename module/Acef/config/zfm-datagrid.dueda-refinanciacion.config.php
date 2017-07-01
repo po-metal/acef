@@ -83,6 +83,7 @@ return [
                 ],
                 'montoRefinanciar' => [
                     'displayName' => 'Monto a refinanciar',
+                    'priority' => 30
                 ],
                 'interes' => [
                     'displayName' => '% Interes',
@@ -94,7 +95,7 @@ return [
                 ],
                 'montoDeCuota' => [
                     'displayName' => 'Monto de Cuota',
-                       'priority' => 40
+                       'priority' => 50
                 ],
                 'mesesCuentas' => [
                     'displayName' => 'Meses Ctas.',
@@ -110,10 +111,10 @@ return [
                 ],
                 'cantidadCuotas' => [
                     'displayName' => 'Cant. Cuotas',
-                       'priority' => 30
+                       'priority' => 40
                 ],
                 'fechaCreacion' => [
-                    'displayName' => 'Fecha Creacion',
+                    'displayName' => 'Fecha',
                     'type' => 'date',
                     'format' => 'Y-m-d',
                        'priority' => 20
