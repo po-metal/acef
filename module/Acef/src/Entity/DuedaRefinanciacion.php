@@ -257,7 +257,7 @@ class DuedaRefinanciacion
     {
         if ($this->getInteres() and $this->getCuotaPorAnio()) {
             $r = $this->getInteres() / $this->getCuotaPorAnio() / 100;
-            $this->setTasa(number_format($r,2,".",""));
+            $this->setTasa(number_format($r,5,".",""));
         }
     }
 
