@@ -149,7 +149,7 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Deuda", "description":"", "addon":""})
+     * @Annotation\Options({"label":"Deuda", "description":"", "addon":"fa fa-money"})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda")
      */

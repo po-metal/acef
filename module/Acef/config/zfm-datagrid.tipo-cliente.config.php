@@ -4,7 +4,7 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-tipocliente' => [
             'gridId' => 'zfmdg_TipoCliente',
-            'title' => "Tipo de cliente",
+            'title' => "Tipo Cliente",
             'title_add' => "Nuevo tipo de cliente",
             'title_edit' => "Editar tipo de cliente",
             'sourceConfig' => [
