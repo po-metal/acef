@@ -152,3 +152,11 @@ H2.main-box-header-custom{
 body{
     zoom: 90%;
 }
+
+.linkCustom{
+    color: #344644;
+     cursor: pointer;
+}
+.linkCustom:hover{
+    cursor: pointer;
+}
