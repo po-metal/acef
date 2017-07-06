@@ -72,7 +72,7 @@ class DuedaRefinanciacion
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text", "disabled":"disabled"})
+     * @Annotation\Attributes({"type":"text", "disabled":"disabled", "class":"noClean"})
      * @Annotation\Options({"label":"Cuota por año", "description":"", "addon":""})
      * @ORM\Column(type="integer", length=3, unique=false, nullable=true,
      * name="cuota_por_anio")
@@ -90,7 +90,7 @@ class DuedaRefinanciacion
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text", "disabled":"disabled"})
+     * @Annotation\Attributes({"type":"text", "disabled":"disabled","class":"noClean"})
      * @Annotation\Options({"label":"Meses Ctas.", "description":"", "addon":""})
      * @Annotation\AllowEmpty({"allowempty":"true"})
      * @ORM\Column(type="integer", length=3, unique=false, nullable=true,
