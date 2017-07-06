@@ -73,7 +73,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
             'name' => 'cuotaPorAnio',
             'attributes' => array(
                 'type' => 'text',
-                'class' => 'form-control ',
+                'class' => 'form-control noClean',
                 'readonly' => 'readonly',
                 'value'=>12
             ),
@@ -99,7 +99,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
             'name' => 'mesesCuentas',
             'attributes' => array(
                 'type' => 'text',
-                'class' => 'form-control ',
+                'class' => 'form-control noClean',
                 'readonly' => 'readonly',
                 'value'=> 1
             ),
