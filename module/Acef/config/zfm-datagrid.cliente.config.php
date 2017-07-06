@@ -108,7 +108,7 @@ return [
                         'title' => null,
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
+                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit','domicilio', 'localidad', 'telefono', 'telefonoAlternativo',  'email', 'deuda','responsable',  'estado',]
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
