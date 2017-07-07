@@ -27,7 +27,7 @@ class ClientesControllerFactory implements FactoryInterface
 
 		$role = $authService->getIdentity()->getRoles()->filter(
 			function($entry) {
-				return $entry->getName() == 'superUser'?true:false;
+				return $entry->getName() == 'superUsuario'?true:false;
 			}
 		);
 
