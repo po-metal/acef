@@ -17,15 +17,35 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 class ClientesControllerFactory implements FactoryInterface
 {
 
-    public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
-    {
-        /* @var $em \Doctrine\ORM\EntityManager */
-        $em = $container->get("doctrine.entitymanager.orm_default");
-        /* @var $grid \ZfMetal\Datagrid\Grid */
-        $grid = $container->build("zf-metal-datagrid", ["customKey" => "acef-entity-cliente"]);
-        return new \Acef\Controller\ClientesController($em,$grid);
-    }
+	public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
+	{
+		$authService = $container->get('zf-metal-security.authservice');
+		/* @var $em \Doctrine\ORM\EntityManager */
+		$em = $container->get("doctrine.entitymanager.orm_default");
+		/* @var $grid \ZfMetal\Datagrid\Grid */
 
+
+		$role = $authService->getIdentity()->getRoles()->filter(
+			function($entry) {
+				return $entry->getName() == 'superUsuario'?true:false;
+			}
+		);
+
+		$mainEntityField = null;
+		$mainEntity = null;
+		
+		if(!$role->count()){
+			$usuario = $em->getRepository('ZfMetal\Security\Entity\User')->find($authService->getIdentity()->getId());
+			$mainEntityField = 'responsable';
+			$mainEntity = $usuario;
+		}
+
+		$builder = $container->build('zf-metal-datagrid-grid-builder',['container'=>$container]);
+
+		$grid = $builder->build( "acef-entity-cliente",$mainEntityField, $mainEntity );
+
+		return new \Acef\Controller\ClientesController($em,$grid);
+	}
 
 }
 
