@@ -126,6 +126,8 @@ return [
                 'displayName' => 'Acciones',
                 'tdClass' => 'action_column',
                 'thClass' => 'action_column',
+                'onAdd' => \ZfMetal\Datagrid\Options\CrudConfig::ON_ADD_EDIT,
+                'onEdit' => \ZfMetal\Datagrid\Options\CrudConfig::ON_EDIT_EDIT,
                 'add' => [
                     'enable' => true,
                     'class' => ' glyphicon glyphicon-plus cursor-pointer',
