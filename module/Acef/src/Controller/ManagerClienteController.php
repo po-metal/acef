@@ -213,12 +213,6 @@ class ManagerClienteController extends AbstractActionController {
 
         $grid->prepare();
         
-        //Mantengo la instancia Form al hacer el submit
-        $action = $this->getRequest()->getPost(\ZfMetal\Datagrid\Crud::inputAction);
-        if($action == 'editSubmit' || $action == 'addSubmit'){
-         $grid->setInstance(\ZfMetal\Datagrid\Grid::INSTANCE_FORM);
-        }
-        
         $view = new \Zend\View\Model\ViewModel(array('grid' => $grid));
 
         $view->setTerminal(TRUE);
