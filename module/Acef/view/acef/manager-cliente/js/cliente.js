@@ -9,12 +9,20 @@
             $.get("/acef/manager-cliente/bitacoras/" + clienteId).done(function (data) {
                 $("#gridBitacoras").html(data);
             });
-            
-             $.get("/acef/manager-cliente/refinanciacion/" + clienteId).done(function (data) {
+
+            $.get("/acef/manager-cliente/refinanciacion/" + clienteId).done(function (data) {
                 $("#formRefinanciacion").html(data);
             });
-            
-             $.get("/acef/deuda-actualizacion/form/" + clienteId).done(function (data) {
+
+            $.get("/acef/manager-cliente/pagos/" + clienteId).done(function (data) {
+                $("#formPagos").html(data);
+            });
+
+            $.get("/acef/manager-cliente/deuda/" + clienteId).done(function (data) {
+                $("#formDeuda").html(data);
+            });
+
+            $.get("/acef/deuda-actualizacion/form/" + clienteId).done(function (data) {
                 $("#formActualizacion").html(data);
             });
         }

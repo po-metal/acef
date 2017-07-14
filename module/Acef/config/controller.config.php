@@ -16,6 +16,7 @@ return array(
             \Acef\Controller\TipoClientesController::class => \Acef\Factory\Controller\TipoClientesControllerFactory::class,
             \Acef\Controller\DeudaRefinanciacionController::class => \Acef\Factory\Controller\DeudaRefinanciacionControllerFactory::class,
             \Acef\Controller\DeudaActualizacionController::class => \Acef\Factory\Controller\DeudaActualizacionControllerFactory::class,
+            \Acef\Controller\PagoController::class => \Acef\Factory\Controller\PagoControllerFactory::class,
         ),
     ),
 );

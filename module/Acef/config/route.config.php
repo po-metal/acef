@@ -198,6 +198,28 @@ return [
                                     ],
                                 ],
                             ],
+                            'Pagos' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/pagos/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'pagos',
+                                    ],
+                                ],
+                            ],
+                            'Deuda' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/deuda/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'deuda',
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                     'Inicio' => [
@@ -396,6 +418,30 @@ return [
                                     'defaults' => [
                                         'controller' => \Acef\Controller\DeudaActualizacionController::CLASS,
                                         'action' => 'form',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Pago' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/pago',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\PagoController::CLASS,
+                                'action' => 'grid',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Grid' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/grid',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\PagoController::CLASS,
+                                        'action' => 'grid',
                                     ],
                                 ],
                             ],

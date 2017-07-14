@@ -1,0 +1,41 @@
+<?php echo $this->flashCurrent(); ?>
+<div class="clearfix" style="margin-top:10px;">
+    
+    <?php
+    $form = $this->form;
+    $form->prepare();
+    $elementsReady = array();
+    ?>
+    <?php echo $this->form()->openTag($form); ?>
+    <?php echo $this->formElement($form->get('id')); ?>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <?php echo $this->formElement($form->get('deuda')); ?>
+        
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <?php echo $this->formElement($form->get('submit')); ?>
+    </div>
+
+
+
+
+    <?php echo $this->form()->closeTag($form); ?>
+</div>
+
+<script>
+    $("#DeudaCliente").submit(function (e) {
+        var url = '/acef/manager-cliente/deuda/' + '<?php echo $this->clienteId ?>';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $("#DeudaCliente").serialize(),
+            success: function (data)
+            {
+                $("#formDeuda").html(data);
+            }
+        });
+
+        e.preventDefault();
+    });
+    
+    </script>
