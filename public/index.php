@@ -5,6 +5,9 @@ use Zend\Stdlib\ArrayUtils;
 setlocale(LC_ALL,"es_ES.utf8");
 error_reporting(E_ERROR|E_STRICT);
 ini_set('display_errors', 'off');
+
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
   
 
 /**

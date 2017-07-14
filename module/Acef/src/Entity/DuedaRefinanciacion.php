@@ -35,7 +35,7 @@ class DuedaRefinanciacion
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Total de deuda con quita", "description":"",
+     * @Annotation\Options({"label":"Total de deuda", "description":"",
      * "addon":""})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="total_deuda_con_quita")

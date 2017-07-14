@@ -148,12 +148,12 @@ class Cliente
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Attributes({"type":"text", "readonly":"readonly"})
      * @Annotation\Options({"label":"Deuda", "description":"", "addon":"fa fa-money"})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda")
      */
-    public $deuda = null;
+    public $deuda = 0;
 
     /**
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
