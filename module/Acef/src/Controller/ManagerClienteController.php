@@ -113,6 +113,8 @@ class ManagerClienteController extends AbstractActionController {
             $record->setResponsable($responsable);
         });
 
+        $grid->getOptions()->setTitle($grid->getOptions()->getTitle() . ' - ' . $cliente->getRazonSocial() );
+
         $grid->prepare();
 
         $view = new \Zend\View\Model\ViewModel(array('grid' => $grid));
