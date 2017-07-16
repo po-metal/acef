@@ -55,6 +55,21 @@ class ClientesController extends AbstractActionController {
             $form->add(new \Zend\Form\Element\Hidden("id"));
         });
 
+        if($this->grid->getCrud()->getAction() == 'edit'){
+            $this->grid->getCrud()->getCrudForm()->add(array(
+                'name' => 'detalle',
+                'type' => 'Zend\Form\Element\Button',
+                'attributes' => array(
+                    'value' => 'Detalle',
+                    'class' => 'btn btnCancelCustom pull-right btnDetalleEdit',
+                    'onclick' => 'window.location.href="/acef/manager-cliente/main/'.$this->grid->getCrud()->getCrudForm()->getObject()->getId().'"',
+                    ), 
+                ), array(
+                'priority' => '1'
+                )
+                );
+        }
+
 
         $this->grid->prepare();
         return array("grid" => $this->grid);

@@ -160,3 +160,7 @@ body{
 .linkCustom:hover{
     cursor: pointer;
 }
+
+.btnDetalleEdit{
+    margin-right: 2px;
+}
