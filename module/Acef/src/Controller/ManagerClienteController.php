@@ -13,7 +13,8 @@ use Zend\Mvc\Controller\AbstractActionController;
  * @license Creative Commons
  * @link https://github.com/zf-metal
  */
-class ManagerClienteController extends AbstractActionController {
+class ManagerClienteController extends AbstractActionController
+{
 
     const ENTITY = '\\Acef\\Entity\\Cliente';
 
@@ -22,27 +23,33 @@ class ManagerClienteController extends AbstractActionController {
      */
     public $em = null;
 
-    public function getEm() {
+    public function getEm()
+    {
         return $this->em;
     }
 
-    public function setEm(\Doctrine\ORM\EntityManager $em) {
+    public function setEm(\Doctrine\ORM\EntityManager $em)
+    {
         $this->em = $em;
     }
 
-    public function __construct(\Doctrine\ORM\EntityManager $em) {
+    public function __construct(\Doctrine\ORM\EntityManager $em)
+    {
         $this->em = $em;
     }
 
-    private function getClienteRepository() {
+    private function getClienteRepository()
+    {
         return $this->getEm()->getRepository(\Acef\Entity\Cliente::class);
     }
 
-    public function getDeudaActualizacionRepository() {
+    public function getDeudaActualizacionRepository()
+    {
         return $this->getEm()->getRepository('\\Acef\\Entity\\DeudaActualizacion');
     }
 
-    public function mainAction() {
+    public function mainAction()
+    {
         $clienteId = $this->params('clienteId');
 
         $cliente = $this->getClienteRepository()->find($clienteId);
@@ -50,7 +57,8 @@ class ManagerClienteController extends AbstractActionController {
         return ['cliente' => $cliente];
     }
 
-    public function productosAction() {
+    public function productosAction()
+    {
         $clienteId = $this->params('clienteId');
         /* @var $grid \ZfMetal\Datagrid\Grid */
         $grid = $this->gridBuilder('acef-entity-producto', 'cliente', $clienteId);
@@ -81,7 +89,8 @@ class ManagerClienteController extends AbstractActionController {
         return $view;
     }
 
-    public function bitacorasAction() {
+    public function bitacorasAction()
+    {
         $clienteId = $this->params('clienteId');
         /* @var $grid \ZfMetal\Datagrid\Grid */
         $grid = $this->gridBuilder('acef-entity-bitacoracliente', 'cliente', $clienteId);
@@ -124,7 +133,8 @@ class ManagerClienteController extends AbstractActionController {
         return $view;
     }
 
-    public function editarClienteAction() {
+    public function editarClienteAction()
+    {
         $clienteId = $this->params('clienteId');
         $cliente = $this->getClienteRepository()->find($clienteId);
 
@@ -145,7 +155,8 @@ class ManagerClienteController extends AbstractActionController {
         return $view;
     }
 
-    public function verClienteAction() {
+    public function verClienteAction()
+    {
         $clienteId = $this->params('clienteId');
 
         $cliente = $this->getClienteRepository()->find($clienteId);
@@ -157,18 +168,21 @@ class ManagerClienteController extends AbstractActionController {
         return $view;
     }
 
-    public function getClientesAction() {
+    public function getClientesAction()
+    {
         $nombreCliente = $this->params('nombreCliente');
 
         $clientes = $this->getClienteRepository()->getClienteByRazonSocial($nombreCliente);
         return new \Zend\View\Model\JsonModel($clientes);
     }
 
-    public function getEntityRepository() {
+    public function getEntityRepository()
+    {
         return $this->getEm()->getRepository(self::ENTITY);
     }
 
-    public function refinanciacionAction() {
+    public function refinanciacionAction()
+    {
         $clienteId = $this->params('clienteId');
         /* @var $grid \ZfMetal\Datagrid\Grid */
         $grid = $this->gridBuilder('acef-entity-duedarefinanciacion', 'cliente', $clienteId);
@@ -217,7 +231,8 @@ class ManagerClienteController extends AbstractActionController {
         return $view;
     }
 
-    public function pagosAction() {
+    public function pagosAction()
+    {
         $clienteId = $this->params('clienteId');
         $cliente = $this->getClienteRepository()->find($clienteId);
         /* @var $grid \ZfMetal\Datagrid\Grid */
@@ -226,8 +241,12 @@ class ManagerClienteController extends AbstractActionController {
         $grid->setTemplate('ajax');
 
         $em = $this->getEm();
-        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente, $em) {
+        $identity = $this->identity();
+
+        $responsable = $this->getEm()->getRepository("ZfMetal\Security\Entity\User")->find($identity->getId());
+        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente, $em, $responsable) {
             $record = $e->getParam('record');
+            $record->setResponsable($responsable);
             $deudaActualizada = $cliente->getDeuda() - $record->getPago();
             $cliente->setDeuda($deudaActualizada);
             $record->setDeudaActualizada($deudaActualizada);
@@ -243,7 +262,8 @@ class ManagerClienteController extends AbstractActionController {
         return $view;
     }
 
-    public function deudaAction() {
+    public function deudaAction()
+    {
         $clienteId = $this->params('clienteId');
         $cliente = $this->getClienteRepository()->find($clienteId);
 
@@ -261,4 +281,38 @@ class ManagerClienteController extends AbstractActionController {
         return $view;
     }
 
+    public function deudasAction()
+    {
+        $clienteId = $this->params('clienteId');
+
+        $cliente = $this->getClienteRepository()->find($clienteId);
+        /* @var $grid \ZfMetal\Datagrid\Grid */
+        $grid = $this->gridBuilder('acef-entity-deuda', 'cliente', $cliente);
+
+        $grid->setTemplate('ajax');
+
+        $em = $this->getEm();
+
+        $identity = $this->identity();
+        $responsable = $this->getEm()->getRepository("ZfMetal\Security\Entity\User")->find($identity->getId());
+        $grid->getSource()->getEventManager()->attach('saveRecord_before', function($e) use ($cliente, $em, $responsable) {
+            $record = $e->getParam('record');
+            $record->setResponsable($responsable);
+            $deudaActualizada = $cliente->getDeuda() + $record->getMonto();
+            $cliente->setDeuda($deudaActualizada);
+            $record->setDeudaActualizada($deudaActualizada);
+            $em->persist($cliente);
+        });
+
+        $grid->prepare();
+        
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid));
+
+        $view->setTerminal(TRUE);
+
+        return $view;
+    }
+
+
 }
+

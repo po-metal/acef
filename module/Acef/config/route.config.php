@@ -220,6 +220,17 @@ return [
                                     ],
                                 ],
                             ],
+                            'Deudas' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/deudas/:clienteId',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\ManagerClienteController::CLASS,
+                                        'action' => 'deudas',
+                                    ],
+                                ],
+                            ],
                         ],
                     ],
                     'Inicio' => [
@@ -441,6 +452,30 @@ return [
                                     'route' => '/grid',
                                     'defaults' => [
                                         'controller' => \Acef\Controller\PagoController::CLASS,
+                                        'action' => 'grid',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'Deuda' => [
+                        'type' => 'Literal',
+                        'mayTerminate' => false,
+                        'options' => [
+                            'route' => '/deuda',
+                            'defaults' => [
+                                'controller' => \Acef\Controller\DeudaController::CLASS,
+                                'action' => 'grid',
+                            ],
+                        ],
+                        'child_routes' => [
+                            'Grid' => [
+                                'type' => 'Segment',
+                                'mayTerminate' => true,
+                                'options' => [
+                                    'route' => '/grid',
+                                    'defaults' => [
+                                        'controller' => \Acef\Controller\DeudaController::CLASS,
                                         'action' => 'grid',
                                     ],
                                 ],

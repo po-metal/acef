@@ -9,17 +9,17 @@ use Doctrine\ORM\Mapping\UniqueConstraint as UniqueConstraint;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Pago
+ * Deuda
  *
  *
  *
  * @author ZfMetal Team
  * @license Creative Commons
  * @link https://github.com/zf-metal
- * @ORM\Table(name="acef_pago")
- * @ORM\Entity(repositoryClass="Acef\Repository\PagoRepository")
+ * @ORM\Table(name="acef_deudas")
+ * @ORM\Entity(repositoryClass="Acef\Repository\DeudaRepository")
  */
-class Pago
+class Deuda
 {
 
     /**
@@ -33,9 +33,7 @@ class Pago
     public $id = null;
 
     /**
-     * @Annotation\Type("Zend\Form\Element\Hidden")
-     * @Annotation\Attributes({"type":"hidden"})
-     * @Annotation\Type("Zend\Form\Element\Hidden")
+     * @Annotation\Exclude()
      * @ORM\ManyToOne(targetEntity="\Acef\Entity\Cliente")
      * @ORM\JoinColumn(name="cliente_id", referencedColumnName="id", nullable=true)
      */
@@ -52,11 +50,11 @@ class Pago
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Pago", "description":"", "addon":""})
+     * @Annotation\Options({"label":"Monto", "description":"", "addon":""})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
-     * name="pago")
+     * name="monto")
      */
-    public $pago = null;
+    public $monto = null;
 
     /**
      * @Annotation\Exclude()
@@ -111,14 +109,14 @@ class Pago
         $this->fecha = $fecha;
     }
 
-    public function getPago()
+    public function getMonto()
     {
-        return $this->pago;
+        return $this->monto;
     }
 
-    public function setPago($pago)
+    public function setMonto($monto)
     {
-        $this->pago = $pago;
+        $this->monto = $monto;
     }
 
     public function getDeudaActualizada()
@@ -153,7 +151,7 @@ class Pago
 
     public function __toString()
     {
-return;
+        return  $this->monto;
     }
 
 
