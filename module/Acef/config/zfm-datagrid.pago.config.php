@@ -63,7 +63,7 @@ return [
                 'add' => [
                     'enable' => true,
                     'class' => '',
-                    'value' => 'Agregar Estado',
+                    'value' => 'Agregar Pago',
                 ],
                 'view' => [
                     'enable' => false,

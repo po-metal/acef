@@ -71,7 +71,7 @@ return [
                 'add' => [
                     'enable' => true,
                     'class' => '',
-                    'value' => 'Agregar Estado',
+                    'value' => 'Agregar Deuda',
                 ],
                 'view' => [
                     'enable' => false,
