@@ -18,8 +18,16 @@
                 $("#formPagos").html(data);
             });
 
+            $.get("/acef/manager-cliente/deudas/" + clienteId).done(function (data) {
+                $("#formDeudas").html(data);
+            });
+
             $.get("/acef/manager-cliente/deuda/" + clienteId).done(function (data) {
-                $("#formDeuda").html(data);
+                $("#formDeuda1").html(data);
+            });
+
+            $.get("/acef/manager-cliente/deuda/" + clienteId).done(function (data) {
+                $("#formDeuda2").html(data);
             });
 
             $.get("/acef/deuda-actualizacion/form/" + clienteId).done(function (data) {

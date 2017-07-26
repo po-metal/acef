@@ -2,8 +2,8 @@
 
 return [
     'zf-metal-datagrid.custom' => [
-        'acef-entity-pago' => [
-            'gridId' => 'zfmdg_Pago',
+        'acef-entity-deuda' => [
+            'gridId' => 'zfmdg_Deuda',
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []
@@ -24,7 +24,7 @@ return [
             'sourceConfig' => [
                 'type' => 'doctrine',
                 'doctrineOptions' => [
-                    'entityName' => \Acef\Entity\Pago::class,
+                    'entityName' => \Acef\Entity\Deuda::class,
                     'entityManager' => 'doctrine.entitymanager.orm_default',
                 ],
             ],
@@ -32,6 +32,7 @@ return [
                 'columns' => \ZfMetal\Commons\Consts::COLUMNS_ONE,
                 'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                 'groups' => [
+                    
                 ],
             ],
             'columnsConfig' => [
@@ -40,18 +41,25 @@ return [
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
-                    'hidden' => true,
+                    'type' => 'relational',
                 ],
                 'fecha' => [
                     'displayName' => 'Fecha',
                     'type' => 'date',
                     'format' => 'Y-m-d H:i:s',
                 ],
-                'pago' => [
-                    'displayName' => 'Pago',
+                'monto' => [
+                    'displayName' => 'Monto',
                 ],
                 'deudaActualizada' => [
                     'displayName' => 'Deuda Actualizada',
+                ],
+                'detalle' => [
+                    'displayName' => 'Detalle',
+                ],
+                'responsable' => [
+                    'displayName' => 'Responsable',
+                    'type' => 'relational',
                 ],
             ],
             'crudConfig' => [

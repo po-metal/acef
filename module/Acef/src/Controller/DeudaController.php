@@ -5,7 +5,7 @@ namespace Acef\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 
 /**
- * PagoController
+ * DeudaController
  *
  *
  *
@@ -13,10 +13,10 @@ use Zend\Mvc\Controller\AbstractActionController;
  * @license Creative Commons
  * @link https://github.com/zf-metal
  */
-class PagoController extends AbstractActionController
+class DeudaController extends AbstractActionController
 {
 
-    const ENTITY = '\\Acef\\Entity\\Pago';
+    const ENTITY = '\\Acef\\Entity\\Deuda';
 
     /**
      * @var \Doctrine\ORM\EntityManager

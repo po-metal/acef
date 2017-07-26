@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
- * ManagerClienteControllerFactory
+ * DeudaControllerFactory
  *
  *
  *
@@ -14,14 +14,16 @@ use Zend\ServiceManager\Factory\FactoryInterface;
  * @license Creative Commons
  * @link https://github.com/zf-metal
  */
-class ManagerClienteControllerFactory implements FactoryInterface
+class DeudaControllerFactory implements FactoryInterface
 {
 
     public function __invoke(\Interop\Container\ContainerInterface $container, $requestedName, array $options = null)
     {
         /* @var $em \Doctrine\ORM\EntityManager */
         $em = $container->get("doctrine.entitymanager.orm_default");
-        return new \Acef\Controller\ManagerClienteController($em);
+        /* @var $grid \ZfMetal\Datagrid\Grid */
+        $grid = $container->build("zf-metal-datagrid", ["customKey" => "acef-entity-deuda"]);
+        return new \Acef\Controller\DeudaController($em,$grid);
     }
 
 

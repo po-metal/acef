@@ -5,7 +5,7 @@ namespace Acef\Repository;
 use Doctrine\ORM\EntityRepository;
 
 /**
- * DuedaRefinanciacionRepository
+ * DeudaRepository
  *
  *
  *
@@ -13,15 +13,15 @@ use Doctrine\ORM\EntityRepository;
  * @license Creative Commons
  * @link https://github.com/zf-metal
  */
-class DuedaRefinanciacionRepository extends EntityRepository
+class DeudaRepository extends EntityRepository
 {
 
-    public function save(\Acef\Entity\DuedaRefinanciacion $entity)
+    public function save(\Acef\Entity\Deuda $entity)
     {
         $this->getEntityManager()->persist($entity); $this->getEntityManager()->flush();
     }
 
-    public function remove(\Acef\Entity\DuedaRefinanciacion $entity)
+    public function remove(\Acef\Entity\Deuda $entity)
     {
         $this->getEntityManager()->remove($entity); $this->getEntityManager()->flush();
     }
