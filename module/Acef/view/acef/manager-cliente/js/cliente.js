@@ -82,3 +82,8 @@ function editarCliente(clienteId) {
     });
 }
 
+function actualizarDeudaPagos(clienteId) {
+    console.log('cambio');
+    var deudaActualizada = $('#parcialDeuda1').text(); 
+    $('#parcialDeuda2').text(deudaActualizada);
+}
