@@ -40,28 +40,37 @@ return [
             'columnsConfig' => [
                 'id' => [
                     'displayName' => 'ID',
+                    'priority' => 10,
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
                     'type' => 'relational',
-                ],
+                    'hidden' => 'true',
+                ], 
                 'fecha' => [
                     'displayName' => 'Fecha',
                     'type' => 'date',
                     'format' => 'Y-m-d H:i:s',
+                    'priority' => 20,
                 ],
                 'monto' => [
                     'displayName' => 'Monto',
+                    'priority' => 30,
                 ],
                 'deudaActualizada' => [
                     'displayName' => 'Deuda Actualizada',
+                    'priority' => 40,
                 ],
                 'detalle' => [
                     'displayName' => 'Detalle',
+                    'priority' => 60,
+                    'type' => 'text',
+                    'length' => 30
                 ],
                 'responsable' => [
                     'displayName' => 'Responsable',
                     'type' => 'relational',
+                    'priority' => 50,
                 ],
             ],
             'crudConfig' => [
