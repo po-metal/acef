@@ -255,7 +255,7 @@ class ManagerClienteController extends AbstractActionController
 
         $grid->prepare();
 
-        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid));
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=> $cliente->getDeuda()));
 
         $view->setTerminal(TRUE);
 
@@ -306,7 +306,7 @@ class ManagerClienteController extends AbstractActionController
 
         $grid->prepare();
         
-        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid));
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=>$cliente->getDeuda()));
 
         $view->setTerminal(TRUE);
 
