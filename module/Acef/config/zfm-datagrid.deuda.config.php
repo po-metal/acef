@@ -4,6 +4,8 @@ return [
     'zf-metal-datagrid.custom' => [
         'acef-entity-deuda' => [
             'gridId' => 'zfmdg_Deuda',
+            'title_add' => 'Agregar Deuda',
+            'title_edit' => 'Editar Deuda',
             'multi_filter_config' => [
                 "enable" => false,
                 "properties_disabled" => []

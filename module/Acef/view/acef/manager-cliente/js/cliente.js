@@ -15,13 +15,13 @@
             });
 
             $.get("/acef/manager-cliente/pagos/" + clienteId).done(function (data) {
-                $("#formPagos").html(data);
+                $("#zfmdg_Pago").html(data);
             });
 
             $.get("/acef/manager-cliente/deudas/" + clienteId).done(function (data) {
-                $("#formDeudas").html(data);
+                $("#zfmdg_Deuda").html(data);
             });
-
+            /*
             $.get("/acef/manager-cliente/deuda/" + clienteId).done(function (data) {
                 $("#formDeuda1").html(data);
             });
@@ -29,7 +29,7 @@
             $.get("/acef/manager-cliente/deuda/" + clienteId).done(function (data) {
                 $("#formDeuda2").html(data);
             });
-
+            */
             $.get("/acef/deuda-actualizacion/form/" + clienteId).done(function (data) {
                 $("#formActualizacion").html(data);
             });
