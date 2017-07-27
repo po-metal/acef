@@ -8,7 +8,7 @@ float: left;
 margin-right: 5px;
 margin-bottom: 10px;
 font-weight: 600;"></i><span style="font-size: 2em;
-line-height: 1;"><?= $deuda ?></span>
+line-height: 1;" id="parcialDeudas2"><?= $deuda ?></span>
 </div>
 </div>
 <div style="padding-left: 25px; padding-right: 25px; margin-bottom: 10px;">
@@ -19,3 +19,6 @@ line-height: 1;"><?= $deuda ?></span>
 <?php echo $this->Grid($this->grid);?>
 </div>
 <div class="clearfix"></div>
+<script>
+	$('#parcialDeudas1').text($('#parcialDeudas2').text());
+</script>
