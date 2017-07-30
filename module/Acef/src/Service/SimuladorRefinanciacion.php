@@ -92,7 +92,7 @@ class SimuladorRefinanciacion extends \Zend\Hydrator\ArraySerializable implement
     }
 
     function setMontoRefinanciar($montoRefinanciar) {
-        $this->montoRefinanciar = $montoRefinanciar;
+        $this->montoRefinanciar = round($montoRefinanciar);
     }
 
     function setInteres($interes) {
@@ -108,7 +108,7 @@ class SimuladorRefinanciacion extends \Zend\Hydrator\ArraySerializable implement
     }
 
     function setMontoDeCuota($montoDeCuota) {
-        $this->montoDeCuota = $montoDeCuota;
+        $this->montoDeCuota = round($montoDeCuota);
     }
 
     function setMesesCuentas($mesesCuentas) {
