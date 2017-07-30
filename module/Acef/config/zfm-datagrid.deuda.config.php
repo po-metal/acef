@@ -41,6 +41,7 @@ return [
                 'id' => [
                     'displayName' => 'ID',
                     'priority' => 10,
+                    'hidden' => 'true',
                 ],
                 'cliente' => [
                     'displayName' => 'Cliente',
@@ -50,7 +51,7 @@ return [
                 'fecha' => [
                     'displayName' => 'Fecha',
                     'type' => 'date',
-                    'format' => 'Y-m-d H:i:s',
+                    'format' => 'Y-m-d',
                     'priority' => 20,
                 ],
                 'monto' => [
