@@ -255,7 +255,7 @@ class ManagerClienteController extends AbstractActionController
 
         $grid->prepare();
 
-        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=> $cliente->getDeuda()));
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=> $cliente->getDeuda(), 'deudaContable'=>$cliente->getDeudaContable()));
 
         $view->setTerminal(TRUE);
 
@@ -299,6 +299,9 @@ class ManagerClienteController extends AbstractActionController
             $record = $e->getParam('record');
             $record->setResponsable($responsable);
             $deudaActualizada = $cliente->getDeuda() + $record->getMonto();
+            if($cliente->getDeudaContable() == 0){
+                $cliente->setDeudaContable($deudaActualizada);
+            }
             $cliente->setDeuda($deudaActualizada);
             $record->setDeudaActualizada($deudaActualizada);
             $em->persist($cliente);
@@ -306,7 +309,7 @@ class ManagerClienteController extends AbstractActionController
 
         $grid->prepare();
         
-        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=>$cliente->getDeuda()));
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=>$cliente->getDeuda(), 'deudaContable'=>$cliente->getDeudaContable()));
 
         $view->setTerminal(TRUE);
 

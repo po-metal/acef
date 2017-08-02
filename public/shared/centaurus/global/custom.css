@@ -164,3 +164,22 @@ body{
 .btnDetalleEdit{
     margin-right: 2px;
 }
+
+.boxDeuda{
+    float: left;
+}
+
+.titleDeuda {
+    font-size: 14px !important; 
+    padding-bottom: 10px !important;
+    color: #999;
+}
+
+.symbolMoney{
+    font-size: 15px;
+    line-height: 1.5;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}

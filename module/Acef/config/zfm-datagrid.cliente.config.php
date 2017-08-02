@@ -15,10 +15,14 @@ return [
                 'tipoDni' => [
                     'displayName' => 'Tipo Documento',
                     'priority' => 15,
-                ],
+                ],  
                 'cuit' => [
                     'displayName' => 'Cuit',
                     'priority' => 20,
+                ],
+                'deudaContable' => [
+                    'priority' => 25,
+                    'displayName'=> 'Deuda Contable'
                 ],
                 'deuda' => [
                     'priority' => 30,
@@ -89,7 +93,7 @@ return [
             ],
             "multi_search_config" => [
                 "enable" => true,
-                "properties_enabled" => ['razonSocial','cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deuda']
+                "properties_enabled" => ['razonSocial','cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deudaContable', 'deuda']
             ],
             'sourceConfig' => [
                 'type' => 'doctrine',
@@ -108,7 +112,7 @@ return [
                         'title' => null,
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit','domicilio', 'localidad', 'telefono', 'telefonoAlternativo',  'email', 'deuda','responsable',  'estado',]
+                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit','domicilio', 'localidad', 'telefono', 'telefonoAlternativo',  'email','deudaContable', 'deuda','responsable',  'estado',]
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
@@ -137,6 +141,11 @@ return [
                 'cuit' => [
                     'displayName' => 'Documento',
                     'priority' => 20,
+                ],
+                'deudaContable' => [
+                    'priority' => 25,
+                    'displayName'=> 'Deuda Contable',
+                    "hidden" => true
                 ],
                 'deuda' => [
                     'priority' => 30,
