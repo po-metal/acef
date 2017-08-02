@@ -149,7 +149,7 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text", "readonly":"readonly"})
-     * @Annotation\Options({"label":"Deuda", "description":"", "addon":"fa fa-money"})
+     * @Annotation\Options({"label":"Deuda Financiera", "description":"", "addon":"fa fa-money"})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda")
      */
@@ -172,6 +172,15 @@ class Cliente
      * @ORM\Column(type="string", unique=false, nullable=true, columnDefinition="ENUM('CUIT/CUIL','DNI','LC','LE')", name="tipo_dni")
      */
     public $tipoDni = null;
+
+    /**
+     * @Annotation\Type("Zend\Form\Element\Text")
+     * @Annotation\Attributes({"type":"text", "readonly":"readonly"})
+     * @Annotation\Options({"label":"Deuda Contable", "description":"", "addon":"fa fa-money"})
+     * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
+     * name="deuda_contable")
+     */
+    public $deudaContable = 0;
 
     public function getId()
     {
@@ -338,6 +347,24 @@ class Cliente
         return  $this->razonSocial;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDeudaContable()
+    {
+        return $this->deudaContable;
+    }
 
+    /**
+     * @param mixed $deudaContable
+     *
+     * @return self
+     */
+    public function setDeudaContable($deudaContable)
+    {
+        $this->deudaContable = $deudaContable;
+
+        return $this;
+    }
 }
 

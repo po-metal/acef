@@ -1,14 +1,15 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="clearfix" style="padding: 15px">
-	<h2 class="title" style="font-size: 14px; padding-bottom: 10px;
-color: #999;">Deuda Actual</h2> 
-	<i class="fa fa-usd" style="font-size: 15px;
-line-height: 1.5;
-float: left;
-margin-right: 5px;
-margin-bottom: 10px;
-font-weight: 600;"></i><span style="font-size: 2em;
-line-height: 1;" id="parcialDeudas2"><?= $deuda ?></span>
+<div class="clearfix">
+<div class="boxDeuda" style="padding: 15px">
+	<h2 class="titleDeuda">Deuda Contable</h2> 
+	<i class="fa fa-usd symbolMoney"></i><span style="font-size: 2em;
+line-height: 1;" id="deudaContable2"><?= $deudaContable ?></span>
+</div>
+<div class="boxDeuda" style="padding: 15px">
+	<h2 class="titleDeuda">Deuda Financiera</h2> 
+	<i class="fa fa-usd symbolMoney"></i><span style="font-size: 2em;
+line-height: 1;" id="deudaFinanciera2"><?= $deuda ?></span>
+</div>
 </div>
 </div>
 <div style="padding-left: 25px; padding-right: 25px; margin-bottom: 10px;">
@@ -20,5 +21,6 @@ line-height: 1;" id="parcialDeudas2"><?= $deuda ?></span>
 </div>
 <div class="clearfix"></div>
 <script>
-	$('#parcialDeudas1').text($('#parcialDeudas2').text());
+	$('#deudaFinanciera1').text($('#deudaFinanciera2').text());
+	$('#deudaContable1').text($('#deudaContable2').text());
 </script>
