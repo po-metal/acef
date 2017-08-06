@@ -68,6 +68,37 @@ class ClientesController extends AbstractActionController {
                 'priority' => '1'
                 )
                 );
+
+            $this->grid->getCrud()->getCrudForm()->get('deudaContable')->setAttribute('disabled','disabled');
+
+        }
+
+        if($this->grid->getCrud()->getAction() == 'addSubmit'){
+            $identity = $this->identity();
+            $responsable = $this->getEm()->getRepository("ZfMetal\Security\Entity\User")->find($identity->getId());
+            $em = $this->getEm();
+
+            $this->grid->getSource()->getEventManager()->attach('saveRecord_post', function($e) use ( $responsable, $em) {
+                $record = $e->getParam('record');
+                if($record->getDeudaContable()){
+                    $record->setDeuda($record->getDeudaContable());
+                }
+
+            });
+
+            $this->grid->getSource()->getEventManager()->attach('saveRecord_post', function($e) use ( $responsable, $em) {
+                $record = $e->getParam('record');
+                if($record->getDeudaContable()){
+                    $deuda = new \Acef\Entity\Deuda();
+                    $deuda->setCliente($record);
+                    $deuda->setResponsable($responsable);
+                    $deuda->setMonto($record->getDeudaContable());
+                    $deuda->setDeudaActualizada($record->getDeudaContable());
+                    $deuda->setDetalle("Deuda inicial.");     
+                    $em->persist($deuda);
+                    $em->flush();       
+                }
+            });
         }
 
 

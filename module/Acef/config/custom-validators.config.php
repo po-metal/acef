@@ -24,7 +24,7 @@ return [
                     'object_repository' => $container->get('doctrine.entitymanager.orm_default')->getRepository('Acef\Entity\Cliente'),
                     'object_manager' => $container->get('doctrine.entitymanager.orm_default'),
                     'messages' => [
-                        'objectNotUnique' => 'La Razon Social ingresada ya existe en otro registro.'
+                        'objectNotUnique' => 'El Razon Social ingresada ya existe en otro registro.'
                     ]
                 ));
                 return $uniqueObject;

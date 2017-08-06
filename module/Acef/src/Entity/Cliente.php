@@ -35,8 +35,8 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Razón Social", "description":"", "addon":""})
      * @Annotation\Validator({"name":"RazonSocialValidator"})
+     * @Annotation\Options({"label":"Razón Social", "description":"", "addon":""})
      * @ORM\Column(type="string", length=200, unique=true, nullable=false,
      * name="razon_social")
      */
@@ -45,7 +45,7 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"N° de documento", "description":"", "addon":"fa fa-male"})
+     * @Annotation\Options({"label":"Cuit", "description":"", "addon":"fa fa-male"})
      * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
      */
     public $cuit = null;
@@ -95,14 +95,13 @@ class Cliente
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Email", "description":"", "addon":"fa
      * fa-envelope"})
-     * @Annotation\Validator({"name":"Zend\Validator\EmailAddress", "options":{"messages":{"emailAddressInvalidFormat": "El formato de email es inválido."}}})
      * @ORM\Column(type="string", length=30, unique=false, nullable=true, name="email")
      */
     public $email = null;
 
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
-     * @Annotation\Attributes({"type":"date","id":"fechaAsignacion"})
+     * @Annotation\Attributes({"type":"date"})
      * @Annotation\Options({"label":"Fecha Asignación", "description":"", "addon":"fa
      * fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_asignacion")
@@ -111,7 +110,7 @@ class Cliente
 
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
-     * @Annotation\Attributes({"type":"date", "readonly":"readonly","id":"fechaRetencion"})
+     * @Annotation\Attributes({"type":"date"})
      * @Annotation\Options({"label":"Fecha de Retencion", "description":"", "addon":"fa
      * fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_retencion")
@@ -148,16 +147,17 @@ class Cliente
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Deuda", "description":"", "addon":""})
      * @Annotation\Attributes({"type":"text", "readonly":"readonly"})
-     * @Annotation\Options({"label":"Deuda Financiera", "description":"", "addon":"fa fa-money"})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda")
      */
-    public $deuda = 0;
+    public $deuda = null;
 
     /**
      * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
-     * @Annotation\Options({"label":"Tipo Cliente","empty_option": "",
+     * @Annotation\Options({"label":"Tipo","empty_option": "",
      * "target_class":"\Acef\Entity\TipoCliente", "description":""})
      * @ORM\ManyToOne(targetEntity="\Acef\Entity\TipoCliente")
      * @ORM\JoinColumn(name="tipo_cliente_id", referencedColumnName="id",
@@ -166,21 +166,22 @@ class Cliente
     public $tipoCliente = null;
 
     /**
-     * @Annotation\Type("Zend\Form\Element\Select")
-     * @Annotation\Options({"label":"Tipo Documento", "description":"", "addon":"","empty_option": ""})
-     * @Annotation\Attributes({"options":{"CUIT/CUIL":"CUIT/CUIL","DNI":"DNI","LC":"LC","LE":"LE"}})
-     * @ORM\Column(type="string", unique=false, nullable=true, columnDefinition="ENUM('CUIT/CUIL','DNI','LC','LE')", name="tipo_dni")
+     * @Annotation\Type("Zend\Form\Element\Text")
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Tipo DNI", "description":"", "addon":""})
+     * @ORM\Column(type="integer", length=1, unique=false, nullable=false,
+     * name="tipo_dni")
      */
     public $tipoDni = null;
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Attributes({"type":"text", "readonly":"readonly"})
-     * @Annotation\Options({"label":"Deuda Contable", "description":"", "addon":"fa fa-money"})
+     * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Options({"label":"Deuda Contable", "description":"", "addon":""})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda_contable")
      */
-    public $deudaContable = 0;
+    public $deudaContable = null;
 
     public function getId()
     {
@@ -342,11 +343,6 @@ class Cliente
         $this->tipoDni = $tipoDni;
     }
 
-    public function __toString()
-    {
-        return  $this->razonSocial;
-    }
-
     /**
      * @return mixed
      */
@@ -363,8 +359,14 @@ class Cliente
     public function setDeudaContable($deudaContable)
     {
         $this->deudaContable = $deudaContable;
-
         return $this;
     }
+
+    public function __toString()
+    {
+        return  $this->razonSocial;
+    }
+
+
 }
 

@@ -40,7 +40,8 @@ class ClienteRepository extends EntityRepository
                         ->getQuery()->getArrayResult();
     }
 
-    public function getClientesPorRetencion(\Datetime $inicio, \Datetime $fin){
+    public function getClientesPorRetencion(\Datetime $inicio, \Datetime $fin)
+    {
         return $this->getEntityManager()->createQueryBuilder()
                         ->select("u.id,u.razonSocial, u.fechaRetencion")
                         ->from(self::ENTITY, "u")
@@ -50,6 +51,7 @@ class ClienteRepository extends EntityRepository
                         ->setParameter('fin',$fin->format('Y-m-d'))
                         ->getQuery()->getArrayResult();
     }
+
 
 }
 
