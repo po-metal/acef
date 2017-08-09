@@ -50,10 +50,9 @@ class ClientesController extends AbstractActionController {
 
     public function gridAction() {
 
-        $this->grid->getSource()->getEventManager()->attach('buildCrudForm', function($e) {
-            $form = $e->getParam('form');
-            $form->add(new \Zend\Form\Element\Hidden("id"));
-        });
+        $this->grid->getCrudForm()->add(new \Zend\Form\Element\Hidden("id"));
+
+        $this->grid->getCrudForm()->get('id')->setValue($this->grid->getCrudForm()->getObject()->getId());
 
         if($this->grid->getCrud()->getAction() == 'edit'){
             $this->grid->getCrud()->getCrudForm()->add(array(
@@ -100,6 +99,7 @@ class ClientesController extends AbstractActionController {
                 }
             });
         }
+
 
 
         $this->grid->prepare();

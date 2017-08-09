@@ -62,6 +62,7 @@ class EstadosController extends AbstractActionController
         });
         
         $this->grid->prepare();
+        
         return array("grid" => $this->grid);
     }
 

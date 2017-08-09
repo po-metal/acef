@@ -45,6 +45,7 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
+     * @Annotation\Validator({"name":"CuitValidator"})
      * @Annotation\Options({"label":"Cuit", "description":"", "addon":"fa fa-male"})
      * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
      */
