@@ -112,7 +112,7 @@ return [
                         'title' => null,
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit','domicilio', 'localidad', 'telefono', 'telefonoAlternativo',  'email','deudaContable', 'deuda','responsable',  'estado',]
+                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit','domicilio', 'localidad', 'telefono', 'telefonoAlternativo',  'email','deudaContable', 'responsable','deuda',  'estado',]
                     ],
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,

@@ -149,7 +149,7 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Deuda Financiera", "description":"", "addon":""})
+     * @Annotation\Options({"label":"Deuda Financiera", "description":"", "addon":"fa fa-usd"})
      * @Annotation\Attributes({"type":"text", "readonly":"readonly"})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda")
@@ -177,7 +177,7 @@ class Cliente
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
-     * @Annotation\Options({"label":"Deuda Contable", "description":"", "addon":""})
+     * @Annotation\Options({"label":"Deuda Contable", "description":"", "addon":"fa fa-usd"})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda_contable")
      */
