@@ -47,7 +47,7 @@ class Cliente
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Validator({"name":"CuitValidator"})
      * @Annotation\Options({"label":"Cuit", "description":"", "addon":"fa fa-male"})
-     * @ORM\Column(type="string", length=200, unique=true, nullable=true, name="cuit")
+     * @ORM\Column(type="string", length=200, unique=true, nullable=false, name="cuit")
      */
     public $cuit = null;
 
