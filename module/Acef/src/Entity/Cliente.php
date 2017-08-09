@@ -111,7 +111,7 @@ class Cliente
 
     /**
      * @Annotation\Type("Zend\Form\Element\Date")
-     * @Annotation\Attributes({"type":"date","readonly":"readonly"})
+     * @Annotation\Attributes({"type":"date","disabled":"disabled"})
      * @Annotation\Options({"label":"Fecha de Retencion", "description":"", "addon":"fa
      * fa-calendar"})
      * @ORM\Column(type="date", unique=false, nullable=true, name="fecha_retencion")
