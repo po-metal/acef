@@ -46,7 +46,7 @@ class Cliente
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Validator({"name":"CuitValidator"})
-     * @Annotation\Options({"label":"Cuit", "description":"", "addon":"fa fa-male"})
+     * @Annotation\Options({"label":"Documento", "description":"", "addon":"fa fa-male"})
      * @ORM\Column(type="string", length=200, unique=true, nullable=false, name="cuit")
      */
     public $cuit = null;
@@ -150,7 +150,7 @@ class Cliente
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Deuda Financiera", "description":"", "addon":"fa fa-usd"})
-     * @Annotation\Attributes({"type":"text", "readonly":"readonly"})
+     * @Annotation\Attributes({"type":"text"})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="deuda")
      */

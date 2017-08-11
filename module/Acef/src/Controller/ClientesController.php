@@ -88,6 +88,7 @@ class ClientesController extends AbstractActionController
             );
 
             $this->grid->getCrud()->getCrudForm()->get('deudaContable')->setAttribute('disabled', 'disabled');
+            $this->grid->getCrud()->getCrudForm()->get('deuda')->setAttribute('disabled', 'disabled');
         }
 
         if ($this->grid->getCrud()->getAction() == 'addSubmit') {
@@ -98,7 +99,7 @@ class ClientesController extends AbstractActionController
             $this->grid->getSource()->getEventManager()->attach('saveRecord_before', function ($e) use ($responsable, $em) {
                 /** \Acef\Entity\Cliente $record */
                 $record = $e->getParam('record');
-                if ($record->getDeudaContable()) {
+                if (!$record->getDeuda() && $record->getDeudaContable()) {
                     $record->setDeuda($record->getDeudaContable());
                 }
 

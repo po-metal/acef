@@ -17,7 +17,7 @@ return [
                     'priority' => 15,
                 ],  
                 'cuit' => [
-                    'displayName' => 'Cuit',
+                    'displayName' => 'Documento',
                     'priority' => 20,
                 ],
                 'deudaContable' => [
@@ -112,8 +112,9 @@ return [
                         'title' => null,
                         'columns' => \ZfMetal\Commons\Consts::COLUMNS_TWO,
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
-                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit','domicilio', 'localidad', 'telefono', 'telefonoAlternativo',  'email','deudaContable', 'responsable','deuda',  'estado',]
+                        'fields' => ['tipoCliente','razonSocial', 'tipoDni', 'cuit','domicilio', 'localidad', 'telefono', 'telefonoAlternativo',  'email','deudaContable',  'estado','deuda','fechaAsignacion', 'fechaRetencion', 'fechaActualizacion', 'responsable']
                     ],
+                    /*
                     [
                         'type' => \ZfMetal\Commons\Options\FormGroupConfig::TYPE_HORIZONTAL,
                         'id' => 'User',
@@ -122,6 +123,7 @@ return [
                         'style' => \ZfMetal\Commons\Consts::STYLE_VERTICAL,
                         'fields' => ['fechaAsignacion', 'fechaRetencion', 'fechaActualizacion']
                     ],
+                    */  
                 ]
             ],
             'columnsConfig' => [
