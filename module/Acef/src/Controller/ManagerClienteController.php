@@ -255,7 +255,7 @@ class ManagerClienteController extends AbstractActionController
 
         $grid->prepare();
 
-        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=> $cliente->getDeuda(), 'deudaContable'=>$cliente->getDeudaContable()));
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid,  'deuda'=>number_format($cliente->getDeuda(),0,',',''), 'deudaContable'=> number_format($cliente->getDeudaContable(),0,',','')));
 
         $view->setTerminal(TRUE);
 
@@ -309,7 +309,7 @@ class ManagerClienteController extends AbstractActionController
 
         $grid->prepare();
         
-        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=>$cliente->getDeuda(), 'deudaContable'=>$cliente->getDeudaContable()));
+        $view = new \Zend\View\Model\ViewModel(array('grid' => $grid, 'deuda'=>number_format($cliente->getDeuda(),0,',',''), 'deudaContable'=> number_format($cliente->getDeudaContable(),0,',',''))) ;
 
         $view->setTerminal(TRUE);
 
