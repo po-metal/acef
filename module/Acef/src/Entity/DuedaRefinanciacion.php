@@ -101,7 +101,7 @@ class DuedaRefinanciacion
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text", "disabled":"disabled" })
-     * @Annotation\Options({"label":"Tasa", "description":"", "addon":""})
+     * @Annotation\Options({"label":"% Tasa", "description":"", "addon":""})
      * @ORM\Column(type="decimal", scale=2, precision=11,  unique=false, nullable=true, name="tasa")
      */
     public $tasa = null;
@@ -213,7 +213,7 @@ class DuedaRefinanciacion
 
     public function getTasa()
     {
-        return $this->tasa;
+        return number_format(($this->tasa * 100),2,".","");
     }
 
     public function setTasa($tasa)

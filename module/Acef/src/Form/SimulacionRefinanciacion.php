@@ -116,7 +116,7 @@ class SimulacionRefinanciacion extends \Zend\Form\Form {
                 'disabled' => 'disabled'
             ),
             'options' => array(
-                'label' => 'Tasa',
+                'label' => '% Tasa',
             )
         ));
 
