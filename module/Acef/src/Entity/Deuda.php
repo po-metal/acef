@@ -51,7 +51,7 @@ class Deuda
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Attributes({"type":"text"})
      * @Annotation\Options({"label":"Monto", "description":"", "addon":""})
-     * @Annotation\Validator({"name":"Zend\Validator\Digits", "options":{"messages":{"notDigits":"El valor ingresado no es numérico"}}})
+     * @Annotation\Validator({"name":"Zend\I18n\Validator\IsFloat", "options":{"messages":{"notFloat":"El valor ingresado no es numérico"}}})
      * @ORM\Column(type="decimal", scale=2, precision=11, unique=false, nullable=true,
      * name="monto")
      */
