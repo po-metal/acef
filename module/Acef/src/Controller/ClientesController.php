@@ -87,8 +87,8 @@ class ClientesController extends AbstractActionController
                 )
             );
 
-            $this->grid->getCrud()->getCrudForm()->get('deudaContable')->setAttribute('disabled', 'disabled');
-            $this->grid->getCrud()->getCrudForm()->get('deuda')->setAttribute('disabled', 'disabled');
+           // $this->grid->getCrud()->getCrudForm()->get('deudaContable')->setAttribute('disabled', 'disabled');
+           // $this->grid->getCrud()->getCrudForm()->get('deuda')->setAttribute('disabled', 'disabled');
         }
 
         if ($this->grid->getCrud()->getAction() == 'addSubmit') {

@@ -93,7 +93,7 @@ return [
             ],
             "multi_search_config" => [
                 "enable" => true,
-                "properties_enabled" => ['razonSocial','cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deudaContable', 'deuda']
+                "properties_enabled" => ['razonSocial','cuit', 'domicilio', 'localidad', 'telefono', 'telefonoAlternativo', 'email', 'responsable', 'estado', 'deudaContable', 'deuda', 'tipoCliente']
             ],
             'sourceConfig' => [
                 'type' => 'doctrine',
